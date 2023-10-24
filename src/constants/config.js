@@ -1,0 +1,20 @@
+export const META_TITLE = 'Creos';
+export const META_DESCRIPTION =
+  'The Future WorkForce, Where dreams intersect disruptive innovations!';
+export const META_IMAGE = '';
+export const META_IMAGE_ALT = 'Creos Logo';
+export const META_IMAGE_WIDTH = '1200';
+export const META_IMAGE_HEIGHT = '630';
+export const META_IMAGE_TYPE = 'image/png';
+export const META_IMAGE_QUALITY = '100';
+export const META_IMAGE_URL_ALT = 'Creos Logo';
+export const META_IMAGE_WIDTH_ALT = '1200';
+export const META_IMAGE_HEIGHT_ALT = '630';
+export const META_IMAGE_TYPE_ALT = 'image/png';
+export const META_IMAGE_QUALITY_ALT = '100';
+export const META_URL = 'https://Creos.vercel.app/'; //will change to  the real domain later
+export const META_TYPE = 'website';
+export const META_AUTHOR = 'Creos Dev Team';
+export const META_PUBLISHER = 'Creos Inc';
+export const META_PUBLISHED_AT = '2023-09-27';
+export const META_KEYWORDS = 'Creos, creators, publishers,';
