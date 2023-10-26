@@ -6,6 +6,9 @@ import {
   useLocation,
 } from 'react-router-dom';
 import AnimatedCursor from 'react-animated-cursor';
+import { Footer, Navbar } from './components';
+import { useEffect } from 'react';
+import { Home } from './pages';
 
 const Root = () => {
   const { pathname } = useLocation();
@@ -25,10 +28,10 @@ const Root = () => {
 
   return (
     <div>
-      {/* <Navbar /> */}
+      <Navbar />
       <ScrollRestoration />
       <Outlet />
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };
@@ -44,7 +47,7 @@ const router = createBrowserRouter([
       },
       {
         index: true,
-        element: 'Creos',
+        element: <Home />,
       },
     ],
   },
