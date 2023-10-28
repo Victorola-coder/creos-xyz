@@ -1,11 +1,12 @@
 import React from 'react';
 import { Container } from '../../components';
+import { P } from '../../utils/typography';
 
 export default function Hero() {
   return (
     <Container>
       <header>
-        <p></p>
+        <P></P>
       </header>
     </Container>
   );

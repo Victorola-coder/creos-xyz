@@ -1,3 +1,9 @@
+import Container from './container';
+
 export default function Footer() {
-  return <div>Footer</div>;
+  return (
+    <footer className='bg-[#E6EAE8]'>
+      <Container className={`lg:py-[100px]`}></Container>
+    </footer>
+  );
 }

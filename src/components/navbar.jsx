@@ -29,7 +29,7 @@ export default function Navbar() {
 
   return (
     <header>
-      <nav className='flex flex-row rounded-[100px] border-[#E6EAE8] border-solid border-[5px] items-center justify-between lg:mx-[100px] my-[20px] px-[20px] py-[18px] lg:my-[60px] lg:px-[60px] lg:py-[34px]'>
+      <nav className='fixed top-0  flex flex-row rounded-[100px] border-[#E6EAE8] border-solid border-[5px] items-center justify-between gap-[200px] lg:mx-[100px] my-[20px] px-[20px] py-[18px] lg:my-[60px] lg:px-[60px] lg:py-[34px]'>
         <Link to='/'>
           <figure className='flex flex-row'>
             <Logo className={`w-[36px] h-[24px] md:w-[80px] md:h-[54px]`} />
@@ -98,7 +98,7 @@ export default function Navbar() {
               <div>
                 <div
                   ref={navRef}
-                  className={`z-[100] min-h-[100vh] w-full absolute bg-[#012b1d] rounded-[8px] py-[28px] block px-[30px] mt-[90px] md:hidden transition-all duration-300 ${
+                  className={`z-[100] min-h-[100%] w-full absolute bg-[#012b1d] rounded-[8px] py-[28px] block px-[30px] mt-[90px] md:hidden transition-all duration-300 ${
                     isOpened ? '-translate-y-[50px]' : '-translate-y-[200%]'
                   } pt-4 left-0 right-0`}
                 >
