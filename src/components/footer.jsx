@@ -1,7 +1,13 @@
 import { Link } from 'react-router-dom';
 import { H3, H1, Text } from '../utils/typography';
 import { Button, Container } from './';
-import { DiscordLogo } from '../assets/svgs/svg';
+import {
+  DiscordLogo,
+  FbLogo,
+  GhLogo,
+  IgLogo,
+  TwLogo,
+} from '../assets/svgs/svg';
 
 export default function Footer() {
   return (
@@ -39,17 +45,34 @@ export default function Footer() {
               About Creos
             </H1>
             <Text
-              className={`font-jar md:max-w-[369px] !text-[14px] font-normal leading-[22px]`}
+              className={`font-jar md:max-w-[369px] !text-[14px] font-normal leading-[22px] text-[#011A11]`}
             >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
               dictum aliquet accumsan porta lectus ridiculus in mattis. Netus
               sodales in volutpat ullamcorper amet adipiscing fermentum.
             </Text>
-          </div>
-          <div className='flex flex-row items-center gap-[20px]'>
-            <Link>
-              <figure></figure>
-            </Link>
+            <div className='flex flex-row items-center gap-[20px]'>
+              <Link to='.'>
+                <figure>
+                  <TwLogo />
+                </figure>
+              </Link>
+              <Link to='#'>
+                <figure>
+                  <FbLogo />
+                </figure>
+              </Link>
+              <Link to='.'>
+                <figure>
+                  <IgLogo />
+                </figure>
+              </Link>
+              <Link to='#'>
+                <figure>
+                  <GhLogo />
+                </figure>
+              </Link>
+            </div>
           </div>
         </section>
       </Container>
