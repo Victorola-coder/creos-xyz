@@ -29,11 +29,13 @@ export default function Navbar() {
 
   return (
     <header>
-      <nav className='flex flex-row rounded-[100px] border-[#E6EAE8] border-solid border-[5px] items-center justify-between lg:mx-[100px] lg:my-[60px] lg:px-[60px] py-[34px]'>
+      <nav className='flex flex-row rounded-[100px] border-[#E6EAE8] border-solid border-[5px] items-center justify-between lg:mx-[100px] my-[20px] px-[20px] py-[18px] lg:my-[60px] lg:px-[60px] lg:py-[34px]'>
         <Link to='/'>
           <figure className='flex flex-row'>
-            <Logo />
-            <LogoName />
+            <Logo className={`w-[36px] h-[24px] md:w-[80px] md:h-[54px]`} />
+            <LogoName
+              className={`w-[54px] h-[20px] lg:w-[120px] lg:h-[45px]`}
+            />
           </figure>
         </Link>
 
@@ -59,9 +61,83 @@ export default function Navbar() {
             </NavLink>
           ))}
         </ul>
-        <Button type='button' className='bg-[#E6EAE8] hover:bg-[#D9DFDD] '>
-          Join our community
-        </Button>
+        <div className='hidden lg:block'>
+          <Button type='button' className='bg-[#E6EAE8] hover:bg-[#D9DFDD] '>
+            Join our community
+          </Button>
+        </div>
+
+        {/* mobile navigation */}
+        <div className='flex flex-row items-center gap-5 md:hidden'>
+          <div className='md:hidden'>
+            <div className=''>
+              <button
+                className='space-y-1.5 focus:outline-none focus:ring focus:ring-white/60 p-1 pb-1.5 rounded-md'
+                onClick={() => setIsOpened(!isOpened)}
+              >
+                <div
+                  className={`h-[3px] bg-white transition-all duration-300 ${
+                    isOpened
+                      ? 'w-7 rotate-45 translate-y-[10px]'
+                      : 'w-7 rotate-0 translate-x-0'
+                  }`}
+                />
+                <div
+                  className={`h-[3px] bg-white w-7 transition-all duration-300  ${
+                    isOpened ? 'opacity-0' : 'opacity-100'
+                  }`}
+                />
+                <div
+                  className={`h-[3px] bg-white self-end transition-all duration-300 ${
+                    isOpened
+                      ? 'w-7 -rotate-45 -translate-y-[8px]'
+                      : 'w-7  rotate-0'
+                  }`}
+                />
+              </button>
+              <div>
+                <div
+                  ref={navRef}
+                  className={`z-[100] min-h-[100vh] w-full absolute bg-[#012b1d] rounded-[8px] py-[28px] block px-[30px] mt-[90px] md:hidden transition-all duration-300 ${
+                    isOpened ? '-translate-y-[50px]' : '-translate-y-[200%]'
+                  } pt-4 left-0 right-0`}
+                >
+                  <div className='px-3 mx-auto'>
+                    <ul className='flex flex-col items-start space-y-[10px] '>
+                      {navLinks.map((route) => (
+                        <li key={route.id}>
+                          <NavLink to={route.path}>
+                            {({ isActive }) => (
+                              <div
+                                onClick={() => setIsOpened(false)}
+                                className='flex items-center gap-1.5 group'
+                              >
+                                <div
+                                  className={`bg-creos/60 w-1 rounded-full hidden transition-all duration-300  ${
+                                    isActive ? 'h-6' : 'group-hover:h-6 h-1'
+                                  }`}
+                                />
+                                <p
+                                  className={`rounded-md p-2 font-medium leading-[30px] tracking-[0.5px] text-[18px] text-[#E6EAE8] transition-all duration-300 w-full max-w-md ${
+                                    isActive
+                                      ? 'bg-white/20s hover:bg-white/20'
+                                      : 'hover:bg-white/20'
+                                  }`}
+                                >
+                                  {route.route}
+                                </p>
+                              </div>
+                            )}
+                          </NavLink>
+                        </li>
+                      ))}
+                    </ul>{' '}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </nav>
     </header>
   );

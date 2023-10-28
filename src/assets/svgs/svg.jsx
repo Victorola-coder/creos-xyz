@@ -2,8 +2,8 @@ export const LogoName = ({ className, ...props }) => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
-      width='120'
-      height='46'
+      // width='120'
+      // height='46'
       className={className}
       {...props}
       viewBox='0 0 120 46'
@@ -37,8 +37,8 @@ export function Logo({ className, ...props }) {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
-      width='80'
-      height='54'
+      // width='80'
+      // height='54'
       className={className}
       {...props}
       viewBox='0 0 80 54'
