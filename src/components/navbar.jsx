@@ -42,21 +42,21 @@ export default function Navbar() {
         <ul className='items-center hidden md:gap-6 lg:gap-[60px] lg:flex'>
           {navLinks.map((route) => (
             <NavLink
-              target={route.external ? '_blank' : undefined}
-              rel={route.external ? 'noopener noreferrer' : undefined}
-              key={route.id}
-              to={route.path}
+              target={route?.external ? '_blank' : undefined}
+              rel={route?.external ? 'noopener noreferrer' : undefined}
+              key={route?.id}
+              to={route?.path}
             >
               {({ isActive }) => (
-                <div
+                <h5
                   className={`lg:text-base text-xs font-medium before:content-[''] before:bg-creos font-sat before:absolute before:h-1 before:-bottom-1 before:transition-all before:duration-300 ${
                     isActive
                       ? 'text-creos/70 font-bold before:w-full'
                       : 'text-[#E6EAE8] before:w-[0px] hover:before:w-full'
                   } relative`}
                 >
-                  {route.route}
-                </div>
+                  {route?.route}
+                </h5>
               )}
             </NavLink>
           ))}
@@ -104,9 +104,9 @@ export default function Navbar() {
                 >
                   <div className='px-3 mx-auto'>
                     <ul className='flex flex-col items-start space-y-[10px] '>
-                      {navLinks.map((route) => (
+                      {navLinks?.map((route) => (
                         <li key={route.id}>
-                          <NavLink to={route.path}>
+                          <NavLink to={route?.path}>
                             {({ isActive }) => (
                               <div
                                 onClick={() => setIsOpened(false)}
@@ -124,7 +124,7 @@ export default function Navbar() {
                                       : 'hover:bg-white/20'
                                   }`}
                                 >
-                                  {route.route}
+                                  {route?.route}
                                 </p>
                               </div>
                             )}

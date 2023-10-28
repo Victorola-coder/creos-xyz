@@ -8,6 +8,7 @@ import {
   IgLogo,
   TwLogo,
 } from '../assets/svgs/svg';
+import { company, events, legal, products, resources } from '../data/data';
 
 export default function Footer() {
   return (
@@ -38,8 +39,9 @@ export default function Footer() {
         {/* line */}
         <div className='bg-[#012B1D] w-full h-[1px] my-[50px]'></div>
 
-        {/* about section */}
-        <section>
+        {/* about AND LINKS section */}
+        <section className='flex flex-row items-start justify-center gap-[100px]'>
+          {/* about */}
           <div className='flex flex-col gap-[28px]'>
             <H1 className='text-[#000F0A] lg:!text[20px] lg:leading-[30px]   font-black'>
               About Creos
@@ -51,7 +53,7 @@ export default function Footer() {
               dictum aliquet accumsan porta lectus ridiculus in mattis. Netus
               sodales in volutpat ullamcorper amet adipiscing fermentum.
             </Text>
-            <div className='flex flex-row items-center gap-[20px]'>
+            <div className='flex flex-row items-center gap-[20px] transition-all duration-500 hover:text-[#00130D]/60'>
               <Link to='.'>
                 <figure>
                   <TwLogo />
@@ -72,6 +74,93 @@ export default function Footer() {
                   <GhLogo />
                 </figure>
               </Link>
+            </div>
+          </div>
+          {/* links */}
+          <div>
+            {/* company  */}
+            <H3
+              className={`!text-base text-[#000F0A] leading-[24px] font-jar font-bold capitalize`}
+            >
+              Company
+            </H3>
+            <div className='flex flex-col mt-5 gap-5'>
+              {company?.map((route) => (
+                <ul key={route?.id}>
+                  <li className='font-sat capitalize leading-[24px] text-base text-[#00130D] transition-all duration-500 hover:text-[#00130D]/60'>
+                    <Link to={route?.path}>{route?.name}</Link>
+                  </li>
+                </ul>
+              ))}
+            </div>
+          </div>
+          <div>
+            {/* events  */}
+            <H3
+              className={`!text-base text-[#000F0A] leading-[24px] font-jar font-bold capitalize`}
+            >
+              events
+            </H3>
+            <div className='flex flex-col mt-5 gap-5'>
+              {events?.map((route) => (
+                <ul key={route?.id}>
+                  <li className='font-sat whitespace-nowrap capitalize leading-[24px] text-base text-[#00130D] transition-all duration-500 hover:text-[#00130D]/60'>
+                    <Link to={route?.path}>{route?.name}</Link>
+                  </li>
+                </ul>
+              ))}
+            </div>
+          </div>
+          <div>
+            {/* products */}
+            <H3
+            
+              className={`!text-base whitespace-nowrap text-[#000F0A] leading-[24px] font-jar font-bold capitalize`}
+            >
+              products
+            </H3>
+            <div className='flex flex-col mt-5 gap-5'>
+              {products?.map((route) => (
+                <ul key={route?.id}>
+                  <li className='font-sat whitespace-nowrap capitalize leading-[24px] text-base text-[#00130D] transition-all duration-500 hover:text-[#00130D]/60'>
+                    <Link to={route?.path}>{route?.name}</Link>
+                  </li>
+                </ul>
+              ))}
+            </div>
+          </div>
+          <div>
+            {/* resources  */}
+            <H3
+              className={`!text-base text-[#000F0A] leading-[24px] font-jar font-bold capitalize`}
+            >
+              resources
+            </H3>
+            <div className='flex flex-col mt-5 gap-5'>
+              {resources?.map((route) => (
+                <ul key={route?.id}>
+                  <li className='font-sat capitalize leading-[24px] text-base text-[#00130D] transition-all duration-500 hover:text-[#00130D]/60'>
+                    <Link to={route?.path}>{route?.name}</Link>
+                  </li>
+                </ul>
+              ))}
+            </div>
+          </div>
+          <div>
+            {/* legal  */}
+            <H3
+              className={`!text-base text-[#000F0A] leading-[24px] font-jar font-bold capitalize`}
+            >
+              legal
+            </H3>
+            <div className='flex flex-col mt-5 gap-5'>
+              {legal?.map((route) => (
+                <ul key={route?.id}>
+                  <li className='font-sat whitespace-nowrap capitalize leading-[24px] text-base font-normal text-[#00130D] transition-all duration-500 hover:text-[#00130D]/60'>
+                    <Link to={route?.path}>{route?.name}</Link>
+                  </li>
+                </ul>
+              ))}
             </div>
           </div>
         </section>

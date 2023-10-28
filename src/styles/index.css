@@ -7,11 +7,13 @@
   padding: 0;
   box-sizing: border-box;
   outline: 1px solid red;
+  @apply transition-all duration-300;
 }
 
 body {
   overflow-x: hidden;
   color: white;
+  scroll-behavior: smooth;
   background-color: #012b1d;
   font-family: 'Satoshi', sans-serif;
 }

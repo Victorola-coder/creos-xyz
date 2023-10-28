@@ -46,3 +46,53 @@ export const events = [
   { id: nanoid(), name: 'Create Events', path: '/events/create' },
   { id: nanoid(), name: 'Browse Events', path: '/events/browse' },
 ];
+
+export const products = [
+  { id: nanoid(), name: 'Creos Edu', path: '/creos-edu' },
+  {
+    id: nanoid(),
+    name: 'Creos Lab',
+    path: '/creos-lab',
+  },
+  {
+    id: nanoid(),
+    name: 'Creos Token',
+    path: '/creos-token',
+  },
+];
+
+export const resources = [
+  {
+    id: nanoid(),
+    name: 'Career',
+    path: '/career',
+  },
+  {
+    id: nanoid(),
+    name: 'contact us',
+    path: '/contact-us',
+  },
+  {
+    id: nanoid(),
+    name: 'blog',
+    path: '/blog',
+  },
+  {
+    id: nanoid(),
+    name: 'partners',
+    path: '/partner',
+  },
+];
+
+export const legal = [
+  {
+    id: nanoid(),
+    name: 'Terms and Conditions',
+    path: '/terms-and-conditions',
+  },
+  {
+    id: nanoid(),
+    name: 'Privacy policy',
+    path: '/privacy-policy',
+  },
+];
