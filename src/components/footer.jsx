@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { H3, H1, Text } from '../utils/typography';
+import { H3, H1, Text, P } from '../utils/typography';
 import { Button, Container } from './';
 import {
   DiscordLogo,
@@ -12,18 +12,20 @@ import { company, events, legal, products, resources } from '../data/data';
 
 export default function Footer() {
   return (
-    <footer className='mt-[100px] font-sat bg-[#E6EAE8]'>
-      <Container className={`lg:py-[100px] lg:px-[100px] !mx-0`}>
-        <div className='flex flex-row items-center justify-between'>
+    <footer className='lg:mt-[100px] font-sat bg-[#E6EAE8]'>
+      <Container
+        className={`px-[30px] py-[20px] lg:py-[100px] lg:px-[100px] !mx-0`}
+      >
+        <div className='flex flex-col lg:flex lg:flex-row lg:items-center justify-between'>
           <H3
-            className={`text-base text-[#000F0A] md:text-[32px] md:max-w-[784px] md:tracking-[-0.2px] md:leading-[48px]`}
+            className={`text-base text-[#000F0A] text-[24px] max-w-[353px] md:text-[30px] md:leading-[40px] lg:text-[32px] md:max-w-[784px] lg:tracking-[-0.2px] lg:leading-[48px]`}
           >
             Welcome to Creos, where dreams meet disruption, and together, we
             build a better world.
           </H3>
           <Link>
             <Button
-              className={`!bg-[#00130D] justify-center !text-[#FEFAF5] flex flex-row gap-[10px] !w-[393px] items-center border-solid border-[4px] border-[#B0BDB9]`}
+              className={`!bg-[#00130D] justify-center !text-[#FEFAF5] flex flex-row gap-[10px] max-w-full !w-[330px] lg:!w-[393px] items-center border-solid border-[4px] border-[#B0BDB9]`}
             >
               <span>
                 <figure>
@@ -37,17 +39,17 @@ export default function Footer() {
           </Link>
         </div>
         {/* line */}
-        <div className='bg-[#012B1D] w-full h-[1px] my-[50px]'></div>
+        <div className='bg-[#012B1D] w-full h-[1px] my-[20px] md:my-[30px] lg:my-[50px]'></div>
 
         {/* about AND LINKS section */}
-        <section className='flex flex-row items-start justify-center gap-[100px]'>
+        <section className='flex flex-row flex-wrap lg:flex-nowrap items-start justify-center lg:gap-[100px]'>
           {/* about */}
-          <div className='flex flex-col gap-[28px]'>
-            <H1 className='text-[#000F0A] lg:!text[20px] lg:leading-[30px]   font-black'>
+          <div className='flex flex-col gap-[20px] lg:gap-[28px]'>
+            <H1 className='text-[#000F0A] !text[20px] mb-0 !leading-[30px]   font-black'>
               About Creos
             </H1>
             <Text
-              className={`font-jar md:max-w-[369px] !text-[14px] font-normal leading-[22px] text-[#011A11]`}
+              className={`font-jar max-w-[353px] mt-0 md:max-w-[369px] !text-[14px] font-normal leading-[22px] text-[#011A11]`}
             >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
               dictum aliquet accumsan porta lectus ridiculus in mattis. Netus
@@ -114,7 +116,6 @@ export default function Footer() {
           <div>
             {/* products */}
             <H3
-            
               className={`!text-base whitespace-nowrap text-[#000F0A] leading-[24px] font-jar font-bold capitalize`}
             >
               products
@@ -164,6 +165,12 @@ export default function Footer() {
             </div>
           </div>
         </section>
+        <div>
+          <P className='text-[#000F0A] text-[20px] leading-[30px] font-normal mx-auto text-center mt-[100px] '>
+            Ⓒ creos | All rights reserved 2021 -
+            <span>{new Date().getFullYear()}</span>
+          </P>
+        </div>
       </Container>
     </footer>
   );
