@@ -14,7 +14,7 @@ export default function Footer() {
   return (
     <footer className='lg:mt-[100px] font-sat bg-[#E6EAE8]'>
       <Container
-        className={`px-[30px] py-[20px] lg:py-[100px] lg:px-[100px] !mx-0`}
+        className={`!m-0 px-[30px] py-[20px] lg:py-[100px] lg:px-[100px] !mx-0`}
       >
         <div className='flex flex-col justify-between lg:flex lg:flex-row lg:items-center'>
           <H3

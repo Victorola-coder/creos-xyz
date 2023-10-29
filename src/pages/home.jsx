@@ -1,14 +1,15 @@
-import { Container, SEO } from '../components';
-import { Hero, Slider } from '../layouts';
+import { SEO } from '../components';
+import { Hero, Slider, Partner } from '../layouts';
 
 export default function Home() {
   return (
     <>
       <SEO title='Home' />
-      <Container>
+      <main>
         <Hero />
         <Slider />
-      </Container>
+        <Partner />
+      </main>
     </>
   );
 }
