@@ -1,4 +1,5 @@
 import { nanoid } from 'nanoid';
+import hero1 from '../assets/images/1.png';
 
 export const navLinks = [
   {
@@ -94,5 +95,83 @@ export const legal = [
     id: nanoid(),
     name: 'Privacy policy',
     path: '/privacy-policy',
+  },
+];
+
+export const imgSlider = [
+  {
+    id: nanoid(),
+    alt: 'user_Illustration',
+    src: hero1,
+  },
+  {
+    id: nanoid(),
+    alt: 'user_Illustration',
+    src: hero1,
+  },
+  {
+    id: nanoid(),
+    alt: 'user_Illustration',
+    src: hero1,
+  },
+  {
+    id: nanoid(),
+    alt: 'user_Illustration',
+    src: hero1,
+  },
+  {
+    id: nanoid(),
+    alt: 'user_Illustration',
+    src: hero1,
+  },
+  {
+    id: nanoid(),
+    alt: 'user_Illustration',
+    src: hero1,
+  },
+  {
+    id: nanoid(),
+    alt: 'user_Illustration',
+    src: hero1,
+  },
+  {
+    id: nanoid(),
+    alt: 'user_Illustration',
+    src: hero1,
+  },
+  {
+    id: nanoid(),
+    alt: 'user_Illustration',
+    src: hero1,
+  },
+  {
+    id: nanoid(),
+    alt: 'user_Illustration',
+    src: hero1,
+  },
+  {
+    id: nanoid(),
+    alt: 'user_Illustration',
+    src: hero1,
+  },
+  {
+    id: nanoid(),
+    alt: 'user_Illustration',
+    src: hero1,
+  },
+  {
+    id: nanoid(),
+    alt: 'user_Illustration',
+    src: hero1,
+  },
+  {
+    id: nanoid(),
+    alt: 'user_Illustration',
+    src: hero1,
+  },
+  {
+    id: nanoid(),
+    alt: 'user_Illustration',
+    src: hero1,
   },
 ];
