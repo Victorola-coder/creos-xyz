@@ -78,20 +78,20 @@ export default function Navbar() {
                 <div
                   className={`h-[3px] bg-white transition-all duration-300 ${
                     isOpened
-                      ? 'w-7 rotate-45 translate-y-[10px]'
-                      : 'w-7 rotate-0 translate-x-0'
+                      ? 'w-[24px] rotate-45 translate-y-[10px]'
+                      : 'w-[24px] rotate-0 translate-x-0'
                   }`}
                 />
                 <div
-                  className={`h-[3px] bg-white w-7 transition-all duration-300  ${
+                  className={`h-[3px] bg-white w-[24px] transition-all duration-300  ${
                     isOpened ? 'opacity-0' : 'opacity-100'
                   }`}
                 />
                 <div
                   className={`h-[3px] bg-white self-end transition-all duration-300 ${
                     isOpened
-                      ? 'w-7 -rotate-45 -translate-y-[8px]'
-                      : 'w-7  rotate-0'
+                      ? 'w-[24px] -rotate-45 -translate-y-[8px]'
+                      : 'w-[24px]  rotate-0'
                   }`}
                 />
               </button>

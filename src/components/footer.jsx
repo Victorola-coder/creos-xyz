@@ -80,7 +80,7 @@ export default function Footer() {
             </div>
           </div>
           {/* links */}
-          <div className='grid grid-cols-2  gap-10 mt-5 lg:items-start lg:flex lg:flex-row lg:gap-[100px]'>
+          <div className='grid grid-cols-2  gap-10 mt-4 lg:mt-5 lg:items-start lg:flex lg:flex-row lg:gap-[100px]'>
             <div>
               {/* company  */}
               <H3
@@ -88,7 +88,7 @@ export default function Footer() {
               >
                 Company
               </H3>
-              <div className='flex flex-col gap-5 mt-5'>
+              <div className='flex flex-col gap-4 mt-4 md:gap-5 lg:mt-5'>
                 {company?.map((route) => (
                   <ul key={route?.id}>
                     <li className='font-sat capitalize leading-[24px] text-base text-[#00130D] transition-all duration-500 hover:text-[#00130D]/60'>
@@ -105,7 +105,7 @@ export default function Footer() {
               >
                 events
               </H3>
-              <div className='flex flex-col gap-5 mt-5'>
+              <div className='flex flex-col gap-4 mt-4 md:gap-5 lg:mt-5'>
                 {events?.map((route) => (
                   <ul key={route?.id}>
                     <li className='font-sat whitespace-nowrap capitalize leading-[24px] text-base text-[#00130D] transition-all duration-500 hover:text-[#00130D]/60'>
@@ -122,7 +122,7 @@ export default function Footer() {
               >
                 products
               </H3>
-              <div className='flex flex-col gap-5 mt-5'>
+              <div className='flex flex-col gap-4 mt-4 md:gap-5 lg:mt-5'>
                 {products?.map((route) => (
                   <ul key={route?.id}>
                     <li className='font-sat whitespace-nowrap capitalize leading-[24px] text-base text-[#00130D] transition-all duration-500 hover:text-[#00130D]/60'>
@@ -139,7 +139,7 @@ export default function Footer() {
               >
                 resources
               </H3>
-              <div className='flex flex-col gap-5 mt-5'>
+              <div className='flex flex-col gap-4 mt-4 md:gap-5 lg:mt-5'>
                 {resources?.map((route) => (
                   <ul key={route?.id}>
                     <li className='font-sat capitalize leading-[24px] text-base text-[#00130D] transition-all duration-500 hover:text-[#00130D]/60'>
@@ -156,7 +156,7 @@ export default function Footer() {
               >
                 legal
               </H3>
-              <div className='flex flex-col gap-5 mt-5'>
+              <div className='flex flex-col gap-4 mt-4 md:gap-5 lg:mt-5'>
                 {legal?.map((route) => (
                   <ul key={route?.id}>
                     <li className='font-sat whitespace-nowrap capitalize leading-[24px] text-base font-normal text-[#00130D] transition-all duration-500 hover:text-[#00130D]/60'>
