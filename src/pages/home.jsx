@@ -1,5 +1,5 @@
 import { SEO } from '../components';
-import { Hero, Slider, Partner } from '../layouts';
+import { Hero, Slider, Partner, Haven } from '../layouts';
 
 export default function Home() {
   return (
@@ -9,6 +9,7 @@ export default function Home() {
         <Hero />
         <Slider />
         <Partner />
+        <Haven />
       </main>
     </>
   );

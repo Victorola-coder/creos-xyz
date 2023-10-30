@@ -1,6 +1,5 @@
 import React from 'react';
 import { H2 } from '../../utils/typography';
-import { partners } from '../../data/data';
 import {
   Bloomberg,
   BussinessInsode,
