@@ -1,5 +1,13 @@
 import { nanoid } from 'nanoid';
 import hero1 from '../assets/images/1.png';
+import {
+  Bloomberg,
+  BussinessInsode,
+  Forbes,
+  TheGuardian,
+  Engadget,
+  TechCrunch,
+} from '../assets/svgs/svg';
 
 export const navLinks = [
   {
@@ -173,5 +181,13 @@ export const imgSlider = [
     id: nanoid(),
     alt: 'user_Illustration',
     src: hero1,
+  },
+];
+
+export const partners = [
+  {
+    id: nanoid(),
+    alt: 'bloomberg',
+    icon: Bloomberg,
   },
 ];

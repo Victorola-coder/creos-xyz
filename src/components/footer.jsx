@@ -16,7 +16,7 @@ export default function Footer() {
       <Container
         className={`!m-0 px-[30px] py-[20px] lg:py-[100px] lg:px-[100px] !mx-0`}
       >
-        <div className='flex flex-col justify-between lg:flex lg:flex-row lg:items-center'>
+        <div className='flex flex-col justify-center lg:gap-[350px] lg:flex lg:flex-row lg:items-center'>
           <H3
             className={`text-base text-[#000F0A] text-[24px] max-w-[353px] md:text-[30px] md:leading-[40px] lg:text-[32px] md:max-w-[784px] lg:tracking-[-0.2px] lg:leading-[48px]`}
           >
