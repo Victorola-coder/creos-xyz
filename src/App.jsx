@@ -14,6 +14,7 @@ import Events from './pages/events';
 import Community from './pages/community';
 import Contact from './pages/contact';
 import Waitlist from './pages/waitlist';
+import Team from './pages/team';
 
 const Root = () => {
   const { pathname } = useLocation();
@@ -73,6 +74,10 @@ const router = createBrowserRouter([
       {
         path: '/waitlist',
         element: <Waitlist />
+      },
+      {
+        path: '/team',
+        element: <Team />
       }
     ],
   },

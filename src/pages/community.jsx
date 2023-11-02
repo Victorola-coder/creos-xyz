@@ -126,7 +126,7 @@ const WhyJoinCreos = () => {
 
                         Your journey to innovation begins here. Let&rsquo;s build a better future together. Join Creos, where your ideas transform into realities.
                     </h5>
-                    <div className="h-[1px] w-full bg-[#E6EAE8] absolute bottom-[-30px] lg:bottom-[-100px]"></div>
+                    <div className="h-[1px] w-full bg-[#E6EAE8] absolute bottom-[-5px] lg:bottom-[-50px]"></div>
                 </div>
             </Container>
         </section>
