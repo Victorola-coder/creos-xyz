@@ -3,6 +3,6 @@
 export default function Box({ className, children }){
 
     return (
-        <div className={`p-5 lg:p-[100px] ${className ?? ''}`}>{children}</div>
+        <div className={`px-5 py-[30px] lg:p-[100px] ${className ?? ''}`}>{children}</div>
     )
 }
