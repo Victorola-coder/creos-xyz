@@ -9,6 +9,9 @@ import AnimatedCursor from 'react-animated-cursor';
 import { Footer, Navbar } from './components';
 import { useEffect } from 'react';
 import { Home } from './pages';
+import Products from './pages/products';
+import Events from './pages/events';
+import Community from './pages/community';
 
 const Root = () => {
   const { pathname } = useLocation();
@@ -49,6 +52,18 @@ const router = createBrowserRouter([
         index: true,
         element: <Home />,
       },
+      {
+        path: '/products',
+        element: <Products />
+      },
+      {
+        path: '/events',
+        element: <Events />
+      },
+      {
+        path: '/community',
+        element: <Community />
+      }
     ],
   },
 ]);
