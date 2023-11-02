@@ -1,7 +1,7 @@
 import { Button, Container, SEO } from "../components";
 import Input from "../components/input";
 import Revolution from "../components/revolution";
-import { H1, P } from "../utils/typography";
+import { H1 } from "../utils/typography";
 
 export default function Community() {
 

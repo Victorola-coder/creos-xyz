@@ -12,6 +12,7 @@ import { Home } from './pages';
 import Products from './pages/products';
 import Events from './pages/events';
 import Community from './pages/community';
+import Contact from './pages/contact';
 
 const Root = () => {
   const { pathname } = useLocation();
@@ -63,6 +64,10 @@ const router = createBrowserRouter([
       {
         path: '/community',
         element: <Community />
+      },
+      {
+        path: '/contact',
+        element: <Contact />
       }
     ],
   },
