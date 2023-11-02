@@ -13,6 +13,7 @@ import Products from './pages/products';
 import Events from './pages/events';
 import Community from './pages/community';
 import Contact from './pages/contact';
+import Waitlist from './pages/waitlist';
 
 const Root = () => {
   const { pathname } = useLocation();
@@ -68,6 +69,10 @@ const router = createBrowserRouter([
       {
         path: '/contact',
         element: <Contact />
+      },
+      {
+        path: '/waitlist',
+        element: <Waitlist />
       }
     ],
   },
