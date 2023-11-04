@@ -57,28 +57,28 @@ const router = createBrowserRouter([
       },
       {
         path: '/products',
-        element: <Products />
+        element: <Products />,
       },
       {
         path: '/events',
-        element: <Events />
+        element: <Events />,
       },
       {
         path: '/community',
-        element: <Community />
+        element: <Community />,
       },
       {
         path: '/contact',
-        element: <Contact />
+        element: <Contact />,
       },
       {
         path: '/waitlist',
-        element: <Waitlist />
+        element: <Waitlist />,
       },
       {
         path: '/team',
-        element: <Team />
-      }
+        element: <Team />,
+      },
     ],
   },
 ]);
@@ -93,7 +93,7 @@ function App() {
       <AnimatedCursor
         innerSize={8}
         outerSize={44}
-        color='255, 0, 233'
+        color='0, 0, 0'
         outerAlpha={0.3}
         innerScale={0.7}
         outerScale={1.2}
@@ -114,7 +114,7 @@ function App() {
             options: {
               innerSize: 12,
               outerSize: 12,
-              color: '255, 0, 255',
+              color: '1, 43, 29',
               outerAlpha: 0.3,
               innerScale: 0.7,
               outerScale: 5,
