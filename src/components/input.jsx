@@ -1,12 +1,13 @@
 /* eslint-disable react/prop-types */
-export default function Input(props) {
+export default function Input({ className, value, onChange, ...prop }) {
+  //   const { className, value, onChange, ...prop } = props;
 
-    const { className, ...prop } = props
-
-    return (
-        <input
-            className={`${className} w-full rounded-[8px] h-[64px] bg-[#E6EAE8] px-[20px] text-[#012B1D]`}
-            {...prop} 
-        />
-    )
+  return (
+    <input
+      {...prop}
+      value={value}
+      onChange={onChange}
+      className={`${className} outline-none w-full placeholder:text-[#012B1D] min-w-[300px] text-[#012B1D] text-[20px] leading-[30px] font-medium rounded-[8px]  bg-[#E6EAE8] py-[17px] pl-[20px]  pr-[16px] px-[20px] font-sat`}
+    />
+  );
 }

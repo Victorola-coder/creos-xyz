@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Container } from '../../components';
 import { H1, P } from '../../utils/typography';
+import { Link } from 'react-router-dom';
 
 export default function Hero() {
   return (
@@ -21,9 +22,11 @@ export default function Hero() {
           disruptive technologies. At Creos, dreams transcend boundaries and
           innovation redefine realities.
         </h5>
-        <Button className={`text-[#012B1D] bg-[#B0BDB9]`}>
-          Join our community
-        </Button>
+        <Link to='/community'>
+          <Button className={`text-[#012B1D] !bg-[#F7CB9C] !border-[#F7CB9C]`}>
+            Join our community
+          </Button>
+        </Link>
       </section>
     </Container>
   );

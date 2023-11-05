@@ -62,9 +62,11 @@ export default function Navbar() {
           ))}
         </ul>
         <div className='hidden md:block'>
-          <Button type='button' className='bg-[#E6EAE8] hover:bg-[#D9DFDD] '>
-            Join our community
-          </Button>
+          <Link to='/community'>
+            <Button type='button' className='bg-[#E6EAE8] hover:bg-[#D9DFDD] '>
+              Join our community
+            </Button>
+          </Link>
         </div>
 
         {/* mobile navigation */}
