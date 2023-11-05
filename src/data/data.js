@@ -1,13 +1,20 @@
 import { nanoid } from 'nanoid';
-import hero1 from '../assets/images/1.png';
-import {
-  Bloomberg,
-  BussinessInsode,
-  Forbes,
-  TheGuardian,
-  Engadget,
-  TechCrunch,
-} from '../assets/svgs/svg';
+import hero1 from '../assets/images/img-pix.png';
+import hero2 from '../assets/images/img-pix-1.png';
+import hero3 from '../assets/images/img-pix-2.png';
+import hero4 from '../assets/images/img-pix-3.png';
+import hero5 from '../assets/images/img-pix-4.png';
+import hero6 from '../assets/images/img-pix-5.png';
+import hero7 from '../assets/images/img-pix-6.png';
+import hero8 from '../assets/images/img-pix-7.png';
+import hero9 from '../assets/images/img-pix-8.png';
+import hero10 from '../assets/images/img-pix-9.png';
+import hero11 from '../assets/images/img-pix-10.png';
+import hero12 from '../assets/images/img-pix-11.png';
+import hero13 from '../assets/images/img-pix-12.png';
+import hero14 from '../assets/images/img-pix-13.png';
+import hero15 from '../assets/images/img-pix-14.png';
+import hero16 from '../assets/images/img-pix-15.png';
 
 export const navLinks = [
   {
@@ -115,79 +122,76 @@ export const imgSlider = [
   {
     id: nanoid(),
     alt: 'user_Illustration',
-    src: hero1,
+    src: hero2,
   },
   {
     id: nanoid(),
     alt: 'user_Illustration',
-    src: hero1,
+    src: hero3,
   },
   {
     id: nanoid(),
     alt: 'user_Illustration',
-    src: hero1,
+    src: hero4,
   },
   {
     id: nanoid(),
     alt: 'user_Illustration',
-    src: hero1,
+    src: hero5,
   },
   {
     id: nanoid(),
     alt: 'user_Illustration',
-    src: hero1,
+    src: hero6,
   },
   {
     id: nanoid(),
     alt: 'user_Illustration',
-    src: hero1,
+    src: hero7,
   },
   {
     id: nanoid(),
     alt: 'user_Illustration',
-    src: hero1,
+    src: hero8,
   },
   {
     id: nanoid(),
     alt: 'user_Illustration',
-    src: hero1,
+    src: hero9,
   },
   {
     id: nanoid(),
     alt: 'user_Illustration',
-    src: hero1,
+    src: hero10,
   },
   {
     id: nanoid(),
     alt: 'user_Illustration',
-    src: hero1,
+    src: hero11,
   },
   {
     id: nanoid(),
     alt: 'user_Illustration',
-    src: hero1,
+    src: hero12,
   },
   {
     id: nanoid(),
     alt: 'user_Illustration',
-    src: hero1,
+    src: hero13,
   },
   {
     id: nanoid(),
     alt: 'user_Illustration',
-    src: hero1,
+    src: hero14,
   },
   {
     id: nanoid(),
     alt: 'user_Illustration',
-    src: hero1,
+    src: hero15,
   },
-];
-
-export const partners = [
   {
     id: nanoid(),
-    alt: 'bloomberg',
-    icon: Bloomberg,
+    alt: 'user_Illustration',
+    src: hero16,
   },
 ];

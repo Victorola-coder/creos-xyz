@@ -23,7 +23,9 @@ export default function Hero() {
           innovation redefine realities.
         </h5>
         <Link to='/community'>
-          <Button className={`text-[#012B1D] !bg-[#F7CB9C] !border-[#F7CB9C]`}>
+          <Button
+            className={`text-[#012B1D] !border-[4px] !border-[#DEB78C] lg:!w-[286px]  !bg-[#F7CB9C] `}
+          >
             Join our community
           </Button>
         </Link>

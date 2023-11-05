@@ -9,21 +9,23 @@ export default function SlidingImages() {
       <Container>
         <Marquee className='space-x-3' speed={100} pauseOnHover>
           <section className='my-5'>
-            <figure className='flex  flex-row  gap-[28px]'>
+            <div className='flex  flex-row  gap-[28px] mx-4'>
               {imgSlider.map((img) => (
-                <img
-                  key={img.id}
-                  alt={img.alt}
-                  src={img.src}
-                  className='object-cover'
-                  loading='lazy'
-                  draggable='false'
-                  decoding='async'
-                  fetchpriority='high'
-                  referrerpolicy='no-referrer'
-                />
+                <figure className='outline-[#E6EAE8] w-[52px] lg:w-[120px] outline-[4px] lg:outline-[8px] outline rounded-[12px] lg:rounded-[26px] hover:scale-105'>
+                  <img
+                    key={img.id}
+                    alt={img.alt}
+                    src={img.src}
+                    className='object-cover w-fit rounded-[12px] lg:rounded-[26px]'
+                    loading='lazy'
+                    draggable='false'
+                    decoding='async'
+                    fetchpriority='high'
+                    referrerpolicy='no-referrer'
+                  />
+                </figure>
               ))}
-            </figure>
+            </div>
           </section>
         </Marquee>
       </Container>

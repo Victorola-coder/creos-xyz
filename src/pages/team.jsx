@@ -50,7 +50,7 @@ const Content = () => {
             <img
               src={team.img}
               alt={team.name}
-              className='w-[300px] h-[300px] mix-blend-luminosity'
+              className='w-[300px] h-[300px] mix-blend-luminosity object-cover hover:scale-95'
             />
             <div className='grid place-items-center gap-[11px] py-[30px]'>
               <h1 className='text-[28px] lg:text-[32px] font-extrabold text-[#E6EAE8]'>
