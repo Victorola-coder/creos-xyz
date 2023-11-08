@@ -73,7 +73,6 @@ const JoinWaitlist = () => {
                         // direction="vertical"
                         creativeEffect={{
                             prev: {
-                                shadow: true,
                                 translate: [0, 0, -400],
                             },
                             next: {
