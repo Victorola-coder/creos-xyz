@@ -3,7 +3,8 @@ import { P } from '../utils/typography';
 import Button from './button';
 import Container from './container';
 import Input from './input';
-
+import { Slide, ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 export default function Revolution() {
   const [form, setForm] = useState({
     email: '',
@@ -12,6 +13,12 @@ export default function Revolution() {
 
   function handleSubmit(e) {
     e.preventDefault();
+
+    if (form.email === '' || form.firstName === '') {
+      toast.error('All fields are required');
+    } else {
+      return;
+    }
   }
 
   const formDataHandler = (e) => {
@@ -24,10 +31,10 @@ export default function Revolution() {
   return (
     <Container>
       <div className='w-full max-w-[1030px] mx-auto grid place-items-center'>
-        <P className='text-[#D9DFDD] !text-base leading-[24px] lg:!text-[32px] font-normal lg:leading-[48px]'>
+        <P className='text-[#D9DFDD] !text-base leading-[24px] lg:!text-[32px] font-medium lg:leading-[48px]'>
           Join the Revolution
         </P>
-        <h5 className='text-white text-center text-[20px] leading-[36px] lg:leading-[57.6px] lg:text-[32px] my-5'>
+        <h5 className='text-white text-center text-[20px] font-medium leading-[36px] lg:leading-[57.6px] lg:text-[32px] my-5'>
           Are you ready to turn your dreams into disruptions? To be part of a
           community where your ideas are not just valued but vital? Creos
           invites you to join the revolution.
@@ -54,9 +61,12 @@ export default function Revolution() {
               placeholder='Email address'
             />
           </fieldset>
-          <Button className='text-white'>Join our newsletter</Button>
+          <Button className='text-[#012B1D] bg-[#B0BDB9] active:bg-[#FEFAF5] hover:bg-[#FEFAF5]'>
+            Join our newsletter
+          </Button>
         </form>
       </div>
+      <ToastContainer />
     </Container>
   );
 }
