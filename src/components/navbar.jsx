@@ -29,7 +29,7 @@ export default function Navbar() {
 
   return (
     <header>
-      <nav className='fixe flex flex-row rounded-[100px] border-[#E6EAE8] border-solid border-[5px] items-center justify-between mx-5 lg:mx-[100px] my-[20px] px-[20px] py-[18px] md:py-[10px] lg:my-[60px] lg:px-[60px] lg:py-[30px]'>
+      <nav className='fixe flex flex-row rounded-[100px] border-[#F7CB9C] border-solid border-[5px] items-center justify-between mx-5 lg:mx-[100px] my-[20px] px-[20px] py-[18px] md:py-[10px] lg:my-[60px] lg:px-[60px] lg:py-[30px]'>
         <Link to='/'>
           <figure className='flex flex-row items-center'>
             <Logo className={`w-[36px] h-[24px] md:w-[80px] md:h-[54px]`} />
@@ -49,10 +49,10 @@ export default function Navbar() {
             >
               {({ isActive }) => (
                 <h5
-                  className={`lg:text-base text-xs font-medium before:content-[''] before:bg-creos font-sat before:absolute before:h-1 before:-bottom-1 before:transition-all before:duration-300 ${
+                  className={`lg:text-[24px] lg:leading-[36px] text-xs font-medium before:content-[''] before:bg-creos font-sat before:absolute before:h-1 before:-bottom-1 before:transition-all before:duration-300 ${
                     isActive
-                      ? 'text-creos/70 font-bold before:w-full'
-                      : 'text-[#E6EAE8] before:w-[0px] hover:before:w-full'
+                      ? 'text-[#F7CB9C] font-bold text-[20px] before:w-full'
+                      : 'text-[#F7CB9C] font-normal before:w-[0px] hover:before:w-full'
                   } relative`}
                 >
                   {route?.route}
@@ -63,7 +63,10 @@ export default function Navbar() {
         </ul>
         <div className='hidden md:block'>
           <Link to='/community'>
-            <Button type='button' className='bg-[#E6EAE8] hover:bg-[#D9DFDD] '>
+            <Button
+              type='button'
+              className='!border-none bg-[#F7CB9C] hover:bg-[#D9DFDD] '
+            >
               Join our community
             </Button>
           </Link>

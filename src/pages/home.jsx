@@ -25,7 +25,7 @@ const Community = () => {
   return (
     <Container>
       <div className='grid place-items-center gap-[24px] w-full max-w-[1163px] mx-auto text-center'>
-        <h1 className='text-[32px] lg:text-[48px] leading-[48px] lg:leading-[72px] text-white'>
+        <h1 className='text-[32px] font-black lg:text-[48px] leading-[48px] lg:leading-[72px] text-white'>
           A Community of Fearless Disruptors
         </h1>
         <p className='text-[#B0BDB9] lg:text-[28px] leading-[28px] lg:leading-[50px]'>
