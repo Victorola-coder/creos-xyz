@@ -19,7 +19,7 @@ import hero16 from '../assets/images/img-pix-15.png';
 export const navLinks = [
   {
     id: nanoid(),
-    route: 'Product',
+    route: 'Products',
     path: '/products',
   },
   {
