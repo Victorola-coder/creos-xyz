@@ -1,6 +1,15 @@
-import { Container, SEO } from "../components";
+import { nanoid } from "nanoid";
+import { Button, Container, SEO } from "../components";
+import ProductCard from "../components/products/productCard";
 import Revolution from "../components/revolution";
 import { H1 } from "../utils/typography";
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { EffectCreative } from 'swiper/modules';
+
+import 'swiper/css';
+import 'swiper/css/effect-creative';
+import { useState } from "react";
 
 export default function Products() {
 
@@ -39,12 +48,51 @@ const Hero = () => {
 
 const JoinWaitlist = () => {
 
+    const [activeIndex, setActiveIndex] = useState(0); // State to track the active slide index
+
+    const handleSlideChange = (swiper) => {
+        console.log(swiper)
+        setActiveIndex(swiper.activeIndex); // Update the active index when the slide changes
+    };
+
+    const cards = [
+        <ProductCard key={1} index={0} />,
+        <ProductCard key={2} index={1} />,
+        <ProductCard key={3} index={2} />
+    ]
+
     return (
         <section className="bg-[#E6EAE8] py-[30px] lg:py-[100px]">
-            <Container>
-                
+            <Container className="">
+                <div className="w-full max-w-[1550px] mx-auto ">
+                    <Swiper
+                        initialSlide={2}
+                        onSlideChange={handleSlideChange}
+                        grabCursor={true}
+                        effect={'creative'}
+                        // direction="vertical"
+                        creativeEffect={{
+                            prev: {
+                                shadow: true,
+                                translate: [0, 0, -400],
+                            },
+                            next: {
+                                translate: ['100%', 0, 0],
+                            },
+                        }}
+                        modules={[EffectCreative]}
+                        className="h-max"
+                    >
+                        {
+                            cards.map((card, i) => (
+                                <SwiperSlide key={i} className={`h-max`}>
+                                    {card}
+                                </SwiperSlide>
+                            ))
+                        }
+                    </Swiper>
+                </div>
             </Container>
         </section>
     )
 }
-

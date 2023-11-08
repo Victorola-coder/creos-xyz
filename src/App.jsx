@@ -90,7 +90,7 @@ function App() {
 
   return (
     <>
-      <AnimatedCursor
+      {/* <AnimatedCursor
         innerSize={8}
         outerSize={44}
         color='0, 0, 0'
@@ -121,7 +121,7 @@ function App() {
             },
           },
         ]}
-      />
+      /> */}
 
       <RouterProvider router={router} />
     </>
