@@ -1,15 +1,13 @@
-import { nanoid } from "nanoid";
-import { Button, Container, SEO } from "../components";
+import { Container, SEO } from "../components";
 import ProductCard from "../components/products/productCard";
 import Revolution from "../components/revolution";
 import { H1 } from "../utils/typography";
 
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectCreative } from 'swiper/modules';
-
 import 'swiper/css';
 import 'swiper/css/effect-creative';
-import { useState } from "react";
+import { useEffect, useRef } from "react";
+import Box from "../components/box";
+import { useInView } from "framer-motion";
 
 export default function Products() {
 
@@ -48,50 +46,51 @@ const Hero = () => {
 
 const JoinWaitlist = () => {
 
-    const [activeIndex, setActiveIndex] = useState(0); // State to track the active slide index
+    const containerRef = useRef();
+    const firstCardRef = useRef();
+    const secondCardRef = useRef();
+    const thirdCardRef = useRef();
 
-    const handleSlideChange = (swiper) => {
-        console.log(swiper)
-        setActiveIndex(swiper.activeIndex); // Update the active index when the slide changes
-    };
+    const containerInView = useInView(containerRef, { amount: 0.12 });
+    const secondCardInView = useInView(secondCardRef);
+    const thirdCardInView = useInView(thirdCardRef);
+    
 
-    const cards = [
-        <ProductCard key={1} index={0} />,
-        <ProductCard key={2} index={1} />,
-        <ProductCard key={3} index={2} />
-    ]
+    useEffect(() => {
+        console.log("Hi")
+        if(containerInView){
+            if(!thirdCardInView){
+                console.log(secondCardRef.current)
+                const height = secondCardRef.current.clientHeight
+                secondCardRef.current.style.transform =  `translateY(${height + 200}px)`
+                firstCardRef.current.style.transform =  `translateY(${height + 200}px)`
+            } else{
+                secondCardRef.current.style.transform =  `translateY(0px)`
+                firstCardRef.current.style.transform =  `translateY(0px)`
+            }
+            
+            if(!secondCardInView && !thirdCardInView){
+                const height = firstCardRef.current.clientHeight
+                firstCardRef.current.style.transform =  `translateY(${(height * 3) + 25}px)`
+            }else{
+                firstCardRef.current.style.transform =  `translateY(0px)`
+            }
+        }
+    }, [thirdCardInView, secondCardInView])
+    
 
     return (
-        <section className="bg-[#E6EAE8] py-[30px] lg:py-[100px]">
-            <Container className="">
-                <div className="w-full max-w-[1550px] mx-auto ">
-                    <Swiper
-                        initialSlide={2}
-                        onSlideChange={handleSlideChange}
-                        grabCursor={true}
-                        effect={'creative'}
-                        // direction="vertical"
-                        creativeEffect={{
-                            prev: {
-                                translate: [0, 0, -400],
-                            },
-                            next: {
-                                translate: ['100%', 0, 0],
-                            },
-                        }}
-                        modules={[EffectCreative]}
-                        className="h-max"
-                    >
-                        {
-                            cards.map((card, i) => (
-                                <SwiperSlide key={i} className={`h-max`}>
-                                    {card}
-                                </SwiperSlide>
-                            ))
-                        }
-                    </Swiper>
+        <section className="bg-[#E6EAE8] py-[30px] lg:py-[100px]" ref={containerRef}>
+            <Box className="">
+                <div className="w-full max-w-[1550px] mx-auto relative pb-[400px]">
+                    <ProductCard index={0} ref={firstCardRef} className="absolute top-0 z-[10]" />
+                    <ProductCard index={1} ref={secondCardRef} className="left-0 top-[70px] lg:top-[150px] absolute z-[20]" />
+                    <ProductCard index={2} ref={thirdCardRef} className="left-0 top-[140px] lg:top-[300px] absolute z-[30]" />
+                    <ProductCard index={0} className="invisible" />
+                    <ProductCard index={1} className="invisible" />
+                    <ProductCard index={2} className="invisible" />
                 </div>
-            </Container>
+            </Box>
         </section>
     )
 }

@@ -1,12 +1,17 @@
+/* eslint-disable react/display-name */
 /* eslint-disable react/prop-types */
+import { forwardRef } from "react"
 import Button from "../button"
 
-export default function ProductCard({ index }) {
+
+const ProductCard = forwardRef((props, ref) => {
+
+    const { index, className } = props
 
     switch (index) {
         case 0: {
             return (
-                <div className="select-none h-max grid lg:grid-cols-2 gap-[30px] lg:gap-[63px] bg-[#F7CB9C] px-[20px] py-[30px] lg:px-[100px] lg:py-[101px] rounded-[20px] lg:rounded-[100px]">
+                <div ref={ref} className={`select-none h-max grid lg:grid-cols-2 gap-[30px] lg:gap-[63px] bg-[#F7CB9C] px-[20px] py-[30px] lg:px-[100px] lg:py-[101px] rounded-[20px] lg:rounded-[100px] ${className ?? ''}`}>
                     <div className="flex flex-col gap-[24px]">
                         <header>
                             <h2 className="font-sat text-[#564737] lg:text-[24px] mb-[20px] ">Creos Edu and Mentors Platform</h2>
@@ -28,7 +33,7 @@ export default function ProductCard({ index }) {
         }
         case 1: {
             return (
-                <div className="select-none grid lg:grid-cols-2 gap-[30px] lg:gap-[63px] bg-[#012B1D] px-[20px] py-[30px] lg:px-[100px] lg:py-[101px] rounded-[20px] lg:rounded-[100px]">
+                <div ref={ref} className={`select-none grid lg:grid-cols-2 gap-[30px] lg:gap-[63px] bg-[#012B1D] px-[20px] py-[30px] lg:px-[100px] lg:py-[101px] rounded-[20px] lg:rounded-[100px] ${className ?? ''}`}>
                     <div className="flex flex-col gap-[24px]">
                         <header>
                             <h2 className="font-sat text-[#FDEFE0] lg:text-[24px] mb-[20px] ">Creos Token</h2>
@@ -49,10 +54,10 @@ export default function ProductCard({ index }) {
         }
         case 2: {
             return (
-                <div className="select-none grid lg:grid-cols-2 gap-[30px] lg:gap-[63px] bg-[#564737] px-[20px] py-[30px] lg:px-[100px] lg:py-[101px] rounded-[20px] lg:rounded-[100px]">
+                <div ref={ref} className={`select-none grid lg:grid-cols-2 gap-[30px] lg:gap-[63px] bg-[#564737] px-[20px] py-[30px] lg:px-[100px] lg:py-[101px] rounded-[20px] lg:rounded-[100px] ${className ?? ''}`}>
                     <div className="flex flex-col gap-[24px]">
                         <header>
-                            <h2 className="font-sat text-[#FDEFE0] lg:text-[24px] mb-[20px] ">Creos Lab</h2>
+                            <h2 className="font-sat text-[#FDEFE0] lg:text-[24px] mb-[20px]">Creos Lab</h2>
                             <h1 className="text-[28px] lg:text-[48px] leading-[42px] lg:leading-[72px] font-extrabold text-[#E6EAE8] lg:text-[#F7CB9C]">Bridging the Gap Between Talent and Opportunities</h1>
                         </header>
                         <p className="text-[#D8D8D8] leading-[28px] lg:leading-[43px] lg:text-[24px]">Creos Lab opens doors to a world of highly paid gigs and AI jobs. Whether you&rsquo;re an AI expert, a data scientist, or a tech enthusiast, Creos Lab connects you with businesses and projects that value your skills. Find meaningful, high-paying gigs that not only challenge your expertise but also contribute to groundbreaking innovations.</p>
@@ -75,4 +80,7 @@ export default function ProductCard({ index }) {
             return Error("Product Card Index must be between range 0-2")
         }
     }
-}
+});
+
+
+export default ProductCard
