@@ -57,7 +57,7 @@ const Content = () => {
                 {team.name}
               </h1>
               <h2 className='lg:text-[24px]'>{team.role}</h2>
-              <div className='flex gap-4 items-center'>
+              <div className='flex items-center gap-4'>
                 <XIcon />
                 <LinkedInIcon />
                 <InstagramIcon />
