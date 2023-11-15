@@ -18,7 +18,7 @@ export default function Events() {
 
 const Hero = () => {
   return (
-    <header className='bg-primary pb-[30px] pb-[20px] lg:pb-[50px]'>
+    <header className='bg-primary pb-[30px] lg:pb-[50px]'>
       <Container>
         <div className='w-full max-w-[1188px] mx-auto grid place-items-center'>
           <H1 className='text-[#D9DFDD] font-black text-center !text-[32px] leading-[48px] w-full lg:!text-[72px] lg:leading-[108px] max-w-[869px]'>
@@ -28,7 +28,9 @@ const Hero = () => {
             Join us in the dynamic world of Creos Events, where creativity meets
             competition and innovation sparks to life.
           </h5>
-          <Button className='bg-[#B0BDB9]'>Create Events</Button>
+          <Button className='bg-[#F7CB9C] hover:bg-[#DEB78C] transition-all duration-200 !border-[#DEB78C] text-black'>
+            Create Events
+          </Button>
         </div>
       </Container>
       <div className='mx-5 lg:mx-[100px]'>
@@ -115,4 +117,8 @@ const CreosEvents = () => {
       </Container>
     </section>
   );
+};
+
+const BrowserEvent = () => {
+  return <section></section>;
 };

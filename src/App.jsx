@@ -8,14 +8,15 @@ import {
 import AnimatedCursor from 'react-animated-cursor';
 import { Footer, Navbar } from './components';
 import { useEffect } from 'react';
-import { Home } from './pages';
-import Products from './pages/products';
-import Events from './pages/events';
-import Community from './pages/community';
-import Contact from './pages/contact';
-import Waitlist from './pages/waitlist';
-import Team from './pages/team';
-
+import {
+  Home,
+  Community,
+  Contact,
+  Events,
+  Team,
+  Waitlist,
+  products,
+} from './pages';
 const Root = () => {
   const { pathname } = useLocation();
 
@@ -60,8 +61,18 @@ const router = createBrowserRouter([
         element: <Products />,
       },
       {
-        path: '/events',
-        element: <Events />,
+        path: 'events',
+        children: [
+          {
+            index: true,
+            element: <Events />,
+          },
+          { path: 'create-events', element: 'create-event' },
+          {
+            path: 'browse',
+            element: 'browse-event',
+          },
+        ],
       },
       {
         path: '/community',

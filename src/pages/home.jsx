@@ -48,7 +48,7 @@ const Purpose = () => {
             <h2 className='font-medium text-primary lg:text-[20px] leading-[24px] lg:leading-[30px]'>
               Guided by Purpose, Driven by Impact
             </h2>
-            <h1 className='text-[28px] lg:text-[36px] leading-[42px] lg:leading-[54px] text-[#000F0A] font-medium'>
+            <h1 className='text-[28px] max-w-[915px] lg:text-[36px] leading-[42px] lg:leading-[54px] text-[#000F0A] font-medium'>
               While we celebrate disruptive technologies, we are equally focused
               on their impact. At Creos, purpose guides our innovations.
             </h1>
@@ -77,10 +77,10 @@ const Innovation = () => {
         <section className='grid lg:grid-cols-2 gap-[41px] lg:gap-[134px]'>
           <div className='flex'>
             <div className='my-auto'>
-              <h1 className='text-[#222222] text-[32px] lg:text-[48px] font-extrabold'>
+              <h1 className='text-[#222222] lg:max-w-[570px] text-[32px] lg:text-[48px] font-extrabold'>
                 Where Innovation Finds Its Voice
               </h1>
-              <p className='lg:text-[24px] py-[29px] leading-[28px] lg:leading-[43px] text-black'>
+              <p className='lg:text-[24px] max-w-[728px] py-[29px] leading-[28px] lg:leading-[43px] text-black'>
                 In the heart of Creos, innovation finds its voice. Our
                 collaborative ecosystem fosters an environment where ideas are
                 shared, refined, and transformed into disruptive technologies.
