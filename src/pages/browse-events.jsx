@@ -71,7 +71,7 @@ const Events = () => {
           {[...Array(8)].map((_, i) => (
             <div
               key={i}
-              className='transition-all duration-500 group hover:bg-primary border-primary border-[1px] rounded-[20px] py-[30px] px-[20px] flex flex-col gap-5'
+              className='transition-all duration-500 cursor-pointer group hover:bg-primary border-primary border-[1px] rounded-[20px] py-[30px] px-[20px] flex flex-col gap-5'
             >
               <figure className='border-[1px] overflow-hidden rounded-[10px]'>
                 <img
