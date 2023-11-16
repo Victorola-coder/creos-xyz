@@ -96,17 +96,17 @@ const Main = () => {
                   a fee of $2,000, here&rsquo;s what you get:
                 </p>
                 <ul className='lg:text-[24px] py-[32px] leading-[43px] text-black flex flex-col gap-2'>
-                  <li className='pl-6 relative before:absolute before:left-0 before:top-[10px] before:h-2 before:w-2 before:rounded-[100%] before:bg-black before:top-[18px]'>
+                  <li className='pl-6 relative before:absolute before:left-0 before:top-[10px]s before:h-2 before:w-2 before:rounded-[100%] before:bg-black before:top-[18px]'>
                     Instant Global Recognition: Your unique story will be
                     featured in press releases across 12+ international
                     platforms, amplifying your reach and influence.
                   </li>
-                  <li className='pl-6 relative before:absolute before:left-0 before:top-[10px] before:h-2 before:w-2 before:rounded-[100%] before:bg-black before:top-[18px]'>
+                  <li className='pl-6 relative before:absolute before:left-0 before:top-[10px]s before:h-2 before:w-2 before:rounded-[100%] before:bg-black before:top-[18px]'>
                     Personalized Spotlight: Creos Press will conduct a live
                     one-on-one interview, delving into the fascinating tale of
                     how it all began for you.
                   </li>
-                  <li className='pl-6 relative before:absolute before:left-0 before:top-[10px] before:h-2 before:w-2 before:rounded-[100%] before:bg-black before:top-[18px]'>
+                  <li className='pl-6 relative before:absolute before:left-0 before:top-[10px]s before:h-2 before:w-2 before:rounded-[100%] before:bg-black before:top-[18px]'>
                     Exclusive Membership Kit: Welcome to Creos with an official
                     Non-Fungible Token (NFT) identity card, a symbol of your
                     unique presence within our community. Plus, receive a
