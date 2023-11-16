@@ -49,11 +49,11 @@ export default function Navbar() {
             >
               {({ isActive }) => (
                 <h5
-                  className={`lg:text-[24px] lg:leading-[36px] text-xs font-medium before:content-['']  font-sat before:absolute before:h-1 before:-bottom-1 before:transition-all before:duration-300 ${
+                  className={`relative transition-all duration-300 lg:text-[24px] lg:leading-[36px] text-xs before:content-['']  font-sat before:absolute before:h-1 before:-bottom-1 before:transition-all before:duration-300 ${
                     isActive
-                      ? 'text-[#F7CB9C] font-bold text-[20px] before:w-full'
-                      : 'text-[#F7CB9C] font-normal before:w-[0px] hover:before:w-full'
-                  } relative`}
+                      ? 'text-[#F7CB9C] font-bold text-[24px] before:w-full'
+                      : 'text-[#F7CB9C] font-normal text-[20px] before:w-[0px] hover:before:w-full'
+                  }`}
                 >
                   {route?.route}
                 </h5>

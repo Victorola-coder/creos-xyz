@@ -10,6 +10,7 @@ export default {
       fontFamily: {
         sat: ['Satoshi', 'sans-serif'],
         jar: ['Plus Jakarta Sans', 'sans-serif'],
+        int: ['Inter', 'sans-serif'],
       },
     },
   },
