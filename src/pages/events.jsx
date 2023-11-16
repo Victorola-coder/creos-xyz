@@ -35,17 +35,11 @@ const Hero = () => {
       </Container>
       <div className='mx-5 lg:mx-[100px]'>
         <div className='py-[20px] flex items-center lg:px-[20px] lg:text-[24px] gap-[10px] lg:gap-[20px]'>
-          <Link
-            to='/events/create'
-            className='text-[#E6EAE8] font-bold'
-          >
+          <Link to='/events/create' className='text-[#F7CB9C] font-bold'>
             Creos Events
           </Link>
-          <div className='w-[1px] h-[24px] lg:h-[36px] bg-[#E6EAE8]'></div>
-          <Link
-            to='/events/browse'
-            className='text-[#E6EAE8]'
-          >
+          <div className='w-[1px] h-[24px] lg:h-[36px] bg-[#F7CB9C]'></div>
+          <Link to='/events/browse' className='text-[#F7CB9C]'>
             Browse Events
           </Link>
         </div>
@@ -55,7 +49,6 @@ const Hero = () => {
 };
 
 const CreosEvents = () => {
-
   return (
     <section className='bg-[#E6EAE8] py-[30px] lg:py-[100px]'>
       <Container>
@@ -129,5 +122,3 @@ const CreosEvents = () => {
     </section>
   );
 };
-
-

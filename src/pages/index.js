@@ -7,3 +7,5 @@ export { default as Team } from './team';
 export { default as Waitlist } from './waitlist';
 export { default as ErrorPage } from './notFound';
 export { default as Test } from './test';
+export { default as EventDetails } from './event-details';
+export { default as BrowseEvents } from './browse-events';

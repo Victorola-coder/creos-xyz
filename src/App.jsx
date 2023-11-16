@@ -18,9 +18,9 @@ import {
   Products,
   ErrorPage,
   Test,
+  BrowseEvents,
+  EventDetails,
 } from './pages';
-import BrowseEvents from './pages/browse-events';
-import CreateEvent from './pages/create-event';
 const Root = () => {
   const { pathname } = useLocation();
 
@@ -75,9 +75,9 @@ const router = createBrowserRouter([
             index: true,
             element: <Events />,
           },
-          { 
-            path: 'create', 
-            element: <CreateEvent />
+          {
+            path: 'create',
+            element: <EventDetails />,
           },
           {
             path: 'browse',
