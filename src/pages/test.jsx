@@ -1,39 +1,38 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import styles from './Navbar.module.css';
+// Events.js
+import React from 'react';
+import { NavLink, useParams } from 'react-router-dom';
+NavLink;
 
-const Test = () => {
-  const [activeLink, setActiveLink] = useState('creosEvents'); // Initialize active link state
-
-  const handleLinkClick = (linkName) => {
-    setActiveLink(linkName); // Update active link state based on clicked link
-  };
+const Events = () => {
+  const { eventType } = useParams();
 
   return (
-    <div className={styles.navbar}>
-      <div className={styles.navLinks}>
-        <Link
-          className={`${styles.link} ${
-            activeLink === 'creosEvents' ? styles.active : ''
-          }`}
-          to='/'
-          onClick={() => handleLinkClick('creosEvents')}
-        >
-          Creos Events
-        </Link>
-        <div className={styles.divider}></div>
-        <Link
-          className={`${styles.link} ${
-            activeLink === 'browseEvents' ? styles.active : ''
-          }`}
-          to='/browse-events'
-          onClick={() => handleLinkClick('browseEvents')}
-        >
-          Browse Events
-        </Link>
+    <div>
+      <div className='mx-5 lg:mx-[100px]'>
+        <div className='py-[20px] flex items-center lg:px-[20px] lg:text-[24px] gap-[10px] lg:gap-[20px]'>
+          <NavLink
+            to='/events/creos'
+            className={eventType === 'creos' ? 'active-link' : 'inactive-link'}
+          >
+            Creos Events
+          </NavLink>
+          <div className='w-[1px] h-[24px] lg:h-[36px] bg-[#E6EAE8]'></div>
+          <button
+            to='/events/browse'
+            className={eventType === 'browse' ? 'active-link' : 'inactive-link'}
+          >
+            Browse Events
+          </button>
+        </div>
       </div>
+
+      {/* Render content based on eventType */}
+      {eventType === 'creos' && <CreosEventsContent />}
+      {eventType === 'browse' && <BrowseEventsContent />}
     </div>
   );
 };
 
-export default Test;
+export default Events;
+
+// CreosEventsContent.js and BrowseEventsContent.js can be separate components with the content for each type of event.

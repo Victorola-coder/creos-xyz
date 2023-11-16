@@ -6,4 +6,4 @@ export { default as Products } from './products';
 export { default as Team } from './team';
 export { default as Waitlist } from './waitlist';
 export { default as ErrorPage } from './notFound';
-export { default as Test } from './team';
+export { default as Test } from './test';

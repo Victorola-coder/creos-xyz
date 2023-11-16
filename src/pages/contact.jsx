@@ -18,7 +18,7 @@ export default function Contact() {
 const Main = () => {
   return (
     <Container>
-      <div className='grid lg:grid-cols-2 gap-[20px] pt-5'>
+      <div className='grid lg:grid-cols-2 mb-[182px] gap-[20px] pt-5'>
         <div>
           <div className='max-w-[487px]'>
             <h2 className='text-[#E6EAE8] text-[20px] lg:text-[40px]'>

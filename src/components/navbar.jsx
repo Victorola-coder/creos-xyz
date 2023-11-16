@@ -29,7 +29,7 @@ export default function Navbar() {
 
   return (
     <header>
-      <nav className='fixe flex flex-row rounded-[100px] border-[#F7CB9C] border-solid border-[5px] items-center justify-between mx-5 lg:mx-[100px] my-[20px] px-[20px] py-[18px] md:py-[10px] lg:my-[60px] lg:px-[60px] lg:py-[30px]'>
+      <nav className='transition-all duration-300 fixe flex flex-row rounded-[100px] border-[#F7CB9C] border-solid border-[5px] items-center justify-between mx-5 lg:mx-[100px] my-[20px] px-[20px] py-[18px] md:py-[10px] lg:my-[60px] lg:px-[60px] lg:py-[30px]'>
         <Link to='/'>
           <figure className='flex flex-row items-center'>
             <Logo className={`w-[36px] h-[24px] md:w-[80px] md:h-[54px]`} />
