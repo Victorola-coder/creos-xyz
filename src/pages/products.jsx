@@ -2,7 +2,6 @@ import { Container, SEO } from "../components";
 import ProductCard from "../components/products/productCard";
 import Revolution from "../components/revolution";
 import { H1 } from "../utils/typography";
-
 import 'swiper/css';
 import 'swiper/css/effect-creative';
 import { useEffect, useRef } from "react";
@@ -62,8 +61,7 @@ const JoinWaitlist = () => {
             if(!thirdCardInView){
                 console.log(secondCardRef.current)
                 const height = secondCardRef.current.clientHeight
-                secondCardRef.current.style.transform =  `translateY(${height + 200}px)`
-                firstCardRef.current.style.transform =  `translateY(${height + 200}px)`
+                secondCardRef.current.style.transform =  `translateY(${(height * 1.2) + 200}px)`
             } else{
                 secondCardRef.current.style.transform =  `translateY(0px)`
                 firstCardRef.current.style.transform =  `translateY(0px)`
@@ -71,22 +69,21 @@ const JoinWaitlist = () => {
             
             if(!secondCardInView && !thirdCardInView){
                 const height = firstCardRef.current.clientHeight
-                firstCardRef.current.style.transform =  `translateY(${(height * 3) + 25}px)`
+                firstCardRef.current.style.transform =  `translateY(${(height * 3) + 200}px)`
             }else{
                 firstCardRef.current.style.transform =  `translateY(0px)`
             }
         }
     }, [thirdCardInView, secondCardInView])
     
-
     return (
         <section className="bg-[#E6EAE8] py-[30px] lg:py-[100px]" ref={containerRef}>
             <Box className="">
-                <div className="w-full max-w-[1550px] mx-auto relative pb-[400px]">
+                <div className="w-full max-w-[1550px] mx-auto relative pb-[500px]">
                     <ProductCard index={0} ref={firstCardRef} className="absolute top-0 z-[10]" />
                     <ProductCard index={1} ref={secondCardRef} className="left-0 top-[70px] lg:top-[150px] absolute z-[20]" />
                     <ProductCard index={2} ref={thirdCardRef} className="left-0 top-[140px] lg:top-[300px] absolute z-[30]" />
-                    <ProductCard index={0} className="invisible" />
+                    <ProductCard index={0} className="mb-[200px] invisible" />
                     <ProductCard index={1} className="invisible" />
                     <ProductCard index={2} className="invisible" />
                 </div>
