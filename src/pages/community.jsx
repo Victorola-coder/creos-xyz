@@ -6,7 +6,7 @@ import { H1 } from '../utils/typography';
 export default function Community() {
   return (
     <>
-      <SEO title='Community' />
+      <SEO title='Join the Community' />
       <main>
         <Hero />
         <Main />

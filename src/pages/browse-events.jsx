@@ -78,7 +78,7 @@ const Events = () => {
                   src='/images/browse-event-img.svg'
                   alt='Browse Event'
                   draggable={false}
-                  className='w-full object-cover'
+                  className='object-cover w-full'
                 />
               </figure>
               <div>

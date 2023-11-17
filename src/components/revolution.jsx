@@ -11,11 +11,14 @@ export default function Revolution() {
     firstName: '',
   });
 
+  const warn = (error) =>
+    toast.error(error, { toastId: 'revolve', autoClose: 2000 });
+
   function handleSubmit(e) {
     e.preventDefault();
 
     if (form.email === '' || form.firstName === '') {
-      toast.error('All fields are required');
+      warn('All fields are required');
     } else {
       return;
     }
