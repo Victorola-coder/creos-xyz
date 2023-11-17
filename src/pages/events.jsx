@@ -53,13 +53,13 @@ const CreosEvents = () => {
     <section className='bg-[#E6EAE8] py-[30px] lg:py-[100px]'>
       <Container>
         <div className='flex flex-col gap-[95px]'>
-          <section className='xl:flex xl:items-center xl:flex-row xl:justify-center gap-[200px]'>
+          <section className='xl:flex xl:items-center xl:flex-row xl:justify-center grid lg:grid-cols-2 gap-[200px]'>
             <div>
               <div>
                 <h2 className='text-primary text-base leading-[24px] font-normal lg:text-[24px]'>
                   Creos Hackathon
                 </h2>
-                <h1 className='text-[#222222] font-black leading-[48px] max-w-[353px] text-[32px] lg:leading-[72px] lg:text-[48px] lg:max-w-[680px]'>
+                <h1 className='text-[#222222] font-black leading-[48px] max-w-[353px] text-[32px] lg:leading-[72px] lg:text-[40px] lg:max-w-[659px]'>
                   Pioneering Sustainable Solutions for a Better Future
                 </h1>
                 <p className='max-w-[353px] leading-[36px] text-[20px] lg:max-w-[645px] font-normal lg:text-[24px] py-[29px] lg:leading-[43.2px] text-black'>
