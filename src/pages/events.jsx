@@ -53,14 +53,16 @@ const CreosEvents = () => {
     <section className='bg-[#E6EAE8] py-[30px] lg:py-[100px]'>
       <Container>
         <div className='flex flex-col gap-[95px]'>
-          <section className='grid lg:grid-cols-2 gap-[134px]'>
+          <section className='xl:flex xl:items-center xl:flex-row xl:justify-center gap-[200px]'>
             <div>
               <div>
-                <h2 className='text-primary lg:text-[24px]'>Creos Hackathon</h2>
-                <h1 className='text-[#222222] text-[32px] lg:text-[48px] font-extrabold'>
+                <h2 className='text-primary text-base leading-[24px] font-normal lg:text-[24px]'>
+                  Creos Hackathon
+                </h2>
+                <h1 className='text-[#222222] font-black leading-[48px] max-w-[353px] text-[32px] lg:leading-[72px] lg:text-[48px] lg:max-w-[680px]'>
                   Pioneering Sustainable Solutions for a Better Future
                 </h1>
-                <p className='lg:text-[24px] py-[29px] leading-[43px] text-black'>
+                <p className='max-w-[353px] leading-[36px] text-[20px] lg:max-w-[645px] font-normal lg:text-[24px] py-[29px] lg:leading-[43.2px] text-black'>
                   Join us for the groundbreaking event of the year, Creos
                   Hackathon, where creators, innovators, and visionaries unite
                   to shape a sustainable future aligned with the United
@@ -70,7 +72,7 @@ const CreosEvents = () => {
                   technologies, collaborative problem-solving, and the thrill of
                   bringing game-changing ideas to life.
                 </p>
-                <Button className='bg-primary text-white !w-[312px] border-[#B0BDB9]'>
+                <Button className='bg-[#00130D] active:bg-[#B0BDB9] text-[#E6EAE8] !w-[312px] border-[#B0BDB9]'>
                   Get event tickets today
                 </Button>
               </div>

@@ -74,7 +74,7 @@ const Innovation = () => {
   return (
     <section className='bg-[#E6EAE8]'>
       <Box>
-        <section className='grid lg:grid-cols-2 gap-[41px] lg:gap-[134px]'>
+        <section className='flex flex-row items-start justify-center gap-[143px]'>
           <div className='flex'>
             <div className='my-auto'>
               <h1 className='text-[#222222] lg:max-w-[570px] text-[32px] lg:text-[48px] font-extrabold'>

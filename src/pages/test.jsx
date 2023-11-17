@@ -1,38 +1,51 @@
-// Events.js
-import React from 'react';
-import { NavLink, useParams } from 'react-router-dom';
-NavLink;
+import React, { useState } from 'react';
 
-const Events = () => {
-  const { eventType } = useParams();
+const ProgressSteps = () => {
+  const [step, setStep] = useState(1);
+
+  const handleNext = () => {
+    setStep((prevStep) => prevStep + 1);
+  };
+
+  const handlePrev = () => {
+    setStep((prevStep) => prevStep - 1);
+  };
 
   return (
-    <div>
-      <div className='mx-5 lg:mx-[100px]'>
-        <div className='py-[20px] flex items-center lg:px-[20px] lg:text-[24px] gap-[10px] lg:gap-[20px]'>
-          <NavLink
-            to='/events/creos'
-            className={eventType === 'creos' ? 'active-link' : 'inactive-link'}
+    <div className='flex items-center justify-center h-screen'>
+      <div className='flex space-x-4'>
+        {[1, 2, 3, 4].map((number) => (
+          <div
+            key={number}
+            className={`h-10 w-10 flex items-center justify-center rounded-full border ${
+              number <= step
+                ? 'bg-blue-500 text-white'
+                : 'bg-white text-gray-500'
+            }`}
           >
-            Creos Events
-          </NavLink>
-          <div className='w-[1px] h-[24px] lg:h-[36px] bg-[#E6EAE8]'></div>
-          <button
-            to='/events/browse'
-            className={eventType === 'browse' ? 'active-link' : 'inactive-link'}
-          >
-            Browse Events
-          </button>
-        </div>
+            {number}
+          </div>
+        ))}
       </div>
 
-      {/* Render content based on eventType */}
-      {eventType === 'creos' && <CreosEventsContent />}
-      {eventType === 'browse' && <BrowseEventsContent />}
+      <div className='ml-4'>
+        <button
+          onClick={handlePrev}
+          disabled={step === 1}
+          className='px-4 py-2 text-white bg-blue-500 rounded'
+        >
+          Previous
+        </button>
+        <button
+          onClick={handleNext}
+          disabled={step === 4}
+          className='px-4 py-2 ml-4 text-white bg-blue-500 rounded'
+        >
+          Next
+        </button>
+      </div>
     </div>
   );
 };
 
-export default Events;
-
-// CreosEventsContent.js and BrowseEventsContent.js can be separate components with the content for each type of event.
+export default ProgressSteps;
