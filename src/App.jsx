@@ -21,10 +21,11 @@ import {
   BrowseEvents,
   EventDetails,
 } from './pages';
+import CreateEvent from './pages/create-event';
 const Root = () => {
   const { pathname } = useLocation();
 
-  const noLayoutRoutes = ['/login', '/register'];
+  const noLayoutRoutes = ['/login', '/register', '/events/create'];
 
   const isNoLayout = noLayoutRoutes.some((nlr) => nlr === pathname);
 
@@ -76,12 +77,16 @@ const router = createBrowserRouter([
             element: <Events />,
           },
           {
-            path: 'create',
+            path: 'details',
             element: <EventDetails />,
           },
           {
             path: 'browse',
             element: <BrowseEvents />,
+          },
+          {
+            path: 'create',
+            element: <CreateEvent />,
           },
         ],
       },

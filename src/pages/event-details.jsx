@@ -1,11 +1,10 @@
 import { Button, Container, SEO } from '../components';
 import Box from '../components/box';
-import Revolution from '../components/revolution';
 
 export default function EventDetails() {
   return (
     <>
-      <SEO title='Create Event' />
+      <SEO title='Event Details' />
       <main>
         <Hero />
         <GetTickets />
