@@ -42,6 +42,7 @@ const Hero = () => {
               `text-[#F7CB9C] ${isActive ? 'font-bold' : 'font-normal'}`
             }
             to='/events/'
+            preventScrollReset={true}
           >
             Creos Events
           </NavLink>
@@ -51,6 +52,7 @@ const Hero = () => {
               `text-[#F7CB9C] ${isActive ? 'font-bold' : 'font-normal'}`
             }
             to='/events/browse'
+            preventScrollReset={true}
           >
             Browse Events
           </NavLink>

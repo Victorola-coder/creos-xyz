@@ -35,11 +35,11 @@ const Hero = () => {
       </Container>
       <div className='mx-5 lg:mx-[100px]'>
         <div className='py-[20px] flex items-center lg:px-[20px] lg:text-[24px] gap-[10px] lg:gap-[20px]'>
-          <Link to='/events/create' className='text-[#F7CB9C] font-bold'>
+          <Link to='/events/create' className='text-[#F7CB9C] font-bold' preventScrollReset={true}>
             Creos Events
           </Link>
           <div className='w-[1px] h-[24px] lg:h-[36px] bg-[#F7CB9C]'></div>
-          <Link to='/events/browse' className='text-[#F7CB9C]'>
+          <Link to='/events/browse' className='text-[#F7CB9C]' preventScrollReset={true}>
             Browse Events
           </Link>
         </div>
