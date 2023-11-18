@@ -13,9 +13,9 @@ import {
 
 export default function Partner() {
   return (
-    <section className='bg-[#E6EAE8] w-ful px-5 py-[32px] lg:py-[100px] lg:px-[100px] lg:mb-[100px] flex flex-col items-center gap-4 lg:gap-10'>
+    <section className='bg-[#E6EAE8] px-5 py-[32px] lg:py-[100px] lg:px-[100px] lg:mb-[100px] flex flex-col items-center gap-4 lg:gap-10'>
       <H2 className={`text-[#222222] `}>Media Partners</H2>
-      <div className='hidden md:flex flex-row flex-wrap lg:flex-nowrap items-start justify-around md:gap-[40px] lg:gap-[79px]'>
+      <div className='hidden md:flex flex-row flex-wrap lg:flex-nowrap items-start justify-around md:gap-[40px] lg:gap-[60px]'>
         <figure>
           <Bloomberg />
         </figure>

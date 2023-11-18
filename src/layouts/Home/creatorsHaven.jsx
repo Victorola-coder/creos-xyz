@@ -23,7 +23,7 @@ export default function CreatorsHaven() {
           </p>
           <img
             draggable={false}
-            className='object-cover w-full'
+            className='object-cover'
             src='./images/team.svg'
             alt='team_ilustration might be here'
           />

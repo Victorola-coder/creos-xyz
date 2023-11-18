@@ -77,7 +77,7 @@ const Events = () => {
             >
               <figure className='border-[1px] overflow-hidden rounded-[10px]'>
                 <img
-                  src='/images/browse-event-img.svg'
+                  src='./images/browse-event-img.svg'
                   alt='Browse Event'
                   draggable={false}
                   className='object-cover w-full'
@@ -116,7 +116,7 @@ const Search = () => {
     <div className='w-full max-w-[650px] px-[32px] lg:px-[53px] border-[1px] border-[#012B1D] h-[56px] lg:h-[76px] rounded-[100px] flex gap-3 items-center'>
       <SearchIcon />
       <input
-        className='lg:text-[24px] text-creos text-base bg-transparent placeholder-[#012B1D] flex-1 outline-none'
+        className='lg:text-[24px] text-black text-base bg-transparent placeholder-[#012B1D] flex-1 outline-none'
         placeholder='Search events'
       />
     </div>

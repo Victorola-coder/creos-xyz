@@ -20,8 +20,8 @@ import {
   Test,
   BrowseEvents,
   EventDetails,
+  CreateEvent,
 } from './pages';
-import CreateEvent from './pages/create-event';
 const Root = () => {
   const { pathname } = useLocation();
 

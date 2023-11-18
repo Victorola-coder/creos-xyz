@@ -9,3 +9,4 @@ export { default as ErrorPage } from './notFound';
 export { default as Test } from './test';
 export { default as EventDetails } from './event-details';
 export { default as BrowseEvents } from './browse-events';
+export { default as CreateEvent } from './create-event';
