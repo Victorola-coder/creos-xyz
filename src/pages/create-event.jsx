@@ -186,7 +186,12 @@ const StepSlide = () => {
             </div>
           </div>
           <div>
-            <img src={imgPath[slides.currentIndex]} alt='Creos' />
+            <img
+              className='transition-all duration-300'
+              draggable={false}
+              src={imgPath[slides.currentIndex]}
+              alt='Creos'
+            />
           </div>
         </div>
       </div>
