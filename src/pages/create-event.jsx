@@ -141,7 +141,7 @@ const StepSlide = () => {
         To be one of our global event conveners, the Creos license is required
         and available to interested applicants above the age of 18.
       </p>
-      <div className='flex gap-4 items-center pt-5'>
+      <div className='flex items-center gap-4 pt-5'>
         <CheckBox checked={checked} setChecked={toggleCheck} />
         <p className='text-creos text-[28px]'>
           I&rsquo;m fully eligible and ready to apply for the Creos License.
@@ -197,7 +197,7 @@ const StepSlide = () => {
       </div>
       <div className='border-t-[#E6EAE8] border-t-[1px] pt-[40px] flex justify-between'>
         <button className='border-[1px] rounded-[100px] border-creos w-[169px] h-[62px] grid place-items-center text-creos text-[20px]'>
-          <div className='flex gap-2 items-center'>
+          <div className='flex items-center gap-2'>
             Skip <ArrowRightIcon />
           </div>
         </button>
@@ -205,7 +205,7 @@ const StepSlide = () => {
           onClick={nextSlide}
           className='border-[1px] rounded-[100px] bg-creos w-[169px] h-[62px] grid place-items-center text-black text-[20px]'
         >
-          <div className='flex gap-2 items-center'>
+          <div className='flex items-center gap-2'>
             Next <ArrowRightIcon fill='#000000' />
           </div>
         </button>
