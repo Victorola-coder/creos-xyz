@@ -23,7 +23,11 @@ export default function Footer() {
             Welcome to Creos, where dreams meet disruption, and together, we
             build a better world.
           </H3>
-          <Link>
+          <Link
+            to='https://discord.com/invite/qwPRUfccwT'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
             <Button
               className={`!bg-[#00130D] justify-center !text-[#FEFAF5] flex flex-row gap-[10px] max-w-full !w-[330px] lg:!w-[393px] items-center border-solid border-[4px] border-[#B0BDB9]`}
             >
@@ -57,22 +61,30 @@ export default function Footer() {
             </Text>
             {/* social links */}
             <div className='flex flex-row items-center gap-[20px] transition-all duration-500 hover:text-[#00130D]/60'>
-              <Link to='.'>
+              <Link
+                to='https://x.com/creosxyz?t=R2AECtU2Ol10et64y_ACzg&s=09'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
                 <figure>
                   <TwLogo className={``} />
                 </figure>
               </Link>
-              <Link to='#'>
+              <Link to='#' target='_blank' rel='noopener noreferrer'>
                 <figure>
                   <FbLogo />
                 </figure>
               </Link>
-              <Link to='.'>
+              <Link
+                to='https://instagram.com/creos.xyz?igshid=NzZlODBkYWE4Ng=='
+                target='_blank'
+                rel='noopener noreferrer'
+              >
                 <figure>
                   <IgLogo />
                 </figure>
               </Link>
-              <Link to='#'>
+              <Link to='#' target='_blank' rel='noopener noreferrer'>
                 <figure>
                   <GhLogo />
                 </figure>
