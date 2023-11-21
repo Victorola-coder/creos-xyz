@@ -22,12 +22,13 @@ import {
   EventDetails,
   CreateEvent,
 } from './pages';
+import Dashboard from './layouts/dashboard';
 const Root = () => {
   const { pathname } = useLocation();
 
-  const noLayoutRoutes = ['/login', '/register', '/events/create'];
+  const noLayoutRoutes = ['/login', '/register', '/events/create', '/dashboard'];
 
-  const isNoLayout = noLayoutRoutes.some((nlr) => nlr === pathname);
+  const isNoLayout = noLayoutRoutes.some((link) => pathname.includes(link));
 
   if (isNoLayout) {
     return (
@@ -106,6 +107,20 @@ const router = createBrowserRouter([
         path: '/team',
         element: <Team />,
       },
+      {
+        path: '/dashboard',
+        element: <Dashboard />,
+        children: [
+          {
+            index: true,
+            element: <div>Event</div>
+          },
+          {
+            path: 'contact',
+            element: <div>Contact</div>
+          },
+        ]
+      }
     ],
   },
 ]);
