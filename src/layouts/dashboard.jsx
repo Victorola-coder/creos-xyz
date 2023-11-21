@@ -10,7 +10,7 @@ export default function Dashboard() {
       <TopNavigation />
       <div className="flex flex-1">
         <SideNavigation />
-        <div className="px-[60px] py-[44px]">
+        <div className="px-[60px] py-[44px] flex-1">
           <Outlet />
         </div>
       </div>

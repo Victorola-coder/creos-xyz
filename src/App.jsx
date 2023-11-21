@@ -23,6 +23,7 @@ import {
   CreateEvent,
 } from './pages';
 import Dashboard from './layouts/dashboard';
+import DashboardEvents from './pages/dashboard/events';
 const Root = () => {
   const { pathname } = useLocation();
 
@@ -113,7 +114,7 @@ const router = createBrowserRouter([
         children: [
           {
             index: true,
-            element: <div>Event</div>
+            element: <DashboardEvents />
           },
           {
             path: 'contact',
