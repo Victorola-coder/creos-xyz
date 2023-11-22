@@ -6,7 +6,7 @@ import { Outlet } from "react-router-dom"
 
 export default function Dashboard() {
   return (
-    <div className='w-full h-[100vh] flex flex-col bg-[#E6EAE8]'>
+    <div className='w-full min-h-[100vh] flex flex-col bg-[#E6EAE8]'>
       <TopNavigation />
       <div className="flex flex-1">
         <SideNavigation />
@@ -51,7 +51,7 @@ const links = [
 const SideNavigation = () => {
 
   return (
-    <nav className="w-[300px] h-full py-[40px] px-[20px] bg-[#D9DFDD] flex flex-col gap-[22px]">
+    <nav className="w-[300px] py-[40px] px-[20px] bg-[#D9DFDD] flex flex-col gap-[22px]">
       {
         links.map((link, i) => (
           <NavLink key={i} to={link.to} end>
