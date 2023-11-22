@@ -24,6 +24,7 @@ import {
 } from './pages';
 import Dashboard from './layouts/dashboard';
 import DashboardEvents from './pages/dashboard/events';
+import DashboardContacts from './pages/dashboard/contact';
 const Root = () => {
   const { pathname } = useLocation();
 
@@ -118,7 +119,7 @@ const router = createBrowserRouter([
           },
           {
             path: 'contact',
-            element: <div>Contact</div>
+            element: <DashboardContacts />
           },
         ]
       }
