@@ -2,70 +2,93 @@ import { useState } from 'react';
 import Button from '../../components/button';
 import { SearchIcon } from '../../components/svgs';
 import { List, Tab } from '../../assets/svgs/svg';
-
+import { SEO } from '../../components';
 
 const VIEW = {
   LIST: 'LIST',
-  COLUMN: 'COLUMN'
-}
+  COLUMN: 'COLUMN',
+};
 
 export default function DashboardEvents() {
-  const [eventCount, setEventCount] = useState('4');
+  const [eventCount, setEventCount] = useState('3');
 
-  const [view, setView] = useState(VIEW.LIST)
+  const [view, setView] = useState(VIEW.LIST);
 
-  const handleListView = () => setView(VIEW.LIST)
+  const handleListView = () => setView(VIEW.LIST);
 
-  const handleColumnView = () => setView(VIEW.COLUMN)
+  const handleColumnView = () => setView(VIEW.COLUMN);
 
   return (
-    <div className='flex flex-col gap-[64px]'>
-      <header className='flex justify-between items-center gap-10'>
-        <h1 className='text-[36px] font-sat whitespace-nowrap font-bold text-primary'>
-          Event Dashboard
-        </h1>
-        <div className='w-full px-[20px] max-w-[576px] h-[62px] rounded-[100px] border-[1px] border-primary flex gap-2 items-center'>
-          <input
-            className='outline-none flex-1 placeholder-primary text-primary bg-transparent text-[20px] font-medium caret-primary'
-            placeholder='Search Events'
-          />
-          <SearchIcon />
+    <>
+      <SEO title={`Dashboard || Events`} />
+
+      <div className='flex flex-col gap-[64px]'>
+        <header className='flex justify-between items-center gap-10'>
+          <h1 className='text-[36px] font-sat whitespace-nowrap font-bold text-primary'>
+            Event Dashboard
+          </h1>
+          <div className='w-full px-[20px] max-w-[576px] h-[62px] rounded-[100px] border-[1px] border-primary flex gap-2 items-center'>
+            <input
+              className='outline-none flex-1 placeholder-primary text-primary bg-transparent text-[20px] font-medium caret-primary'
+              placeholder='Search Events'
+            />
+            <SearchIcon />
+          </div>
+          <Button className='w-[229px] bg-primary text-white'>
+            Create Events
+          </Button>
+        </header>
+        <div className='flex justify-between'>
+          <h4 className='font-sat text-[24px] leading-[36px] font-medium text-[#012B1D] '>
+            {eventCount} <span>Events</span>
+          </h4>
+          <div className='flex !transition-none !duration-0 flex-row items-center justify-center gap-3'>
+            <button
+              onClick={handleListView}
+              className='flex gap-5 items-center text-primary text-[20px] font-bold'
+            >
+              <div
+                className={`${
+                  view === VIEW.LIST ? 'bg-primary' : ''
+                } rounded-[12px] p-[12px]`}
+              >
+                <List
+                  className={`${
+                    view === VIEW.LIST
+                      ? 'fill-[#E6EAE8] stroke-[#E6EAE8]'
+                      : 'fill-primary stroke-primary'
+                  }`}
+                />
+              </div>
+            </button>
+            <button
+              onClick={handleColumnView}
+              className='flex gap-5 items-center text-primary text-[20px] font-bold'
+            >
+              <div
+                className={`${
+                  view === VIEW.COLUMN ? 'bg-primary' : ''
+                } rounded-[12px] p-[12px]`}
+              >
+                <Tab
+                  className={`${
+                    view === VIEW.COLUMN
+                      ? 'fill-[#E6EAE8] stroke-[#E6EAE8]'
+                      : 'fill-primary stroke-primary'
+                  }`}
+                />
+              </div>
+            </button>
+          </div>
+          <div></div>
         </div>
-        <Button className='w-[229px] bg-primary text-white'>
-          Create Events
-        </Button>
-      </header>
-      <div className='flex justify-between'>
-        <h4 className='font-sat text-[24px] leading-[36px] font-medium text-[#012B1D] '>
-          {eventCount} <span>Events</span>
-        </h4>
-        <div className='flex flex-row items-center justify-center gap-3'>
-          <button onClick={handleListView} className="flex gap-5 items-center text-primary text-[20px] font-bold">
-            <div className={`${view === VIEW.LIST ? "bg-primary" : ""} rounded-[12px] p-[12px]`}>
-              <List className={`${view === VIEW.LIST ? 'fill-[#E6EAE8] stroke-[#E6EAE8]' : 'fill-primary stroke-primary'}`} />
-            </div>
-          </button>
-          <button onClick={handleColumnView} className="flex gap-5 items-center text-primary text-[20px] font-bold">
-            <div className={`${view === VIEW.COLUMN ? "bg-primary" : ""} rounded-[12px] p-[12px]`}>
-              <Tab className={`${view === VIEW.COLUMN ? 'fill-[#E6EAE8] stroke-[#E6EAE8]' : 'fill-primary stroke-primary'}`} />
-            </div>
-          </button>
-        </div>
-        <div></div>
+        {view === VIEW.LIST ? <ListView /> : <ColumnView />}
       </div>
-      {
-        view === VIEW.LIST ?
-          <ListView />
-          :
-          <ColumnView />
-      }
-    </div>
+    </>
   );
 }
 
-
 const ListView = () => {
-
   return (
     <div className='border-[1px] border-black'>
       <header className='px-[20px] grid grid-cols-[94px_1.5fr_1fr_1fr_1fr_1fr] gap-[40px] text-[24px] font-bold text-primary py-[25px]'>
@@ -76,26 +99,26 @@ const ListView = () => {
         <h1>Venue</h1>
         <h1>Attending</h1>
       </header>
-      {
-        [...Array(3)].map((_, i) => (
-          <div key={i} className='border-t-[1px] border-black px-[20px] grid grid-cols-[94px_1.5fr_1fr_1fr_1fr_1fr] gap-[40px] items-center text-[24px] text-primary py-[25px]'>
-            <figure className='rounded-[10px] overflow-hidden'>
-              <img src='/images/browse-event-img.svg' alt="" />
-            </figure>
-            <h1 className='font-bold'>Digital Innovation Summit</h1>
-            <h1>Nov 29. 2023</h1>
-            <h1>10:00</h1>
-            <h1>Online</h1>
-            <h1>10</h1>
-          </div>
-        ))
-      }
+      {[...Array(3)].map((_, i) => (
+        <div
+          key={i}
+          className='border-t-[1px] border-black px-[20px] grid grid-cols-[94px_1.5fr_1fr_1fr_1fr_1fr] gap-[40px] items-center text-[24px] text-primary py-[25px]'
+        >
+          <figure className='rounded-[10px] overflow-hidden'>
+            <img src='/images/browse-event-img.svg' alt='' />
+          </figure>
+          <h1 className='font-bold'>Digital Innovation Summit</h1>
+          <h1>Nov 29. 2023</h1>
+          <h1>10:00</h1>
+          <h1>Online</h1>
+          <h1>10</h1>
+        </div>
+      ))}
     </div>
-  )
-}
+  );
+};
 
 const ColumnView = () => {
-
   return (
     <section className='grid grid-cols-3 gap-x-[10px] gap-y-[40px]'>
       {[...Array(3)].map((_, i) => (
@@ -135,5 +158,5 @@ const ColumnView = () => {
         </div>
       ))}
     </section>
-  )
-}
+  );
+};

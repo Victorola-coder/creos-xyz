@@ -4,7 +4,6 @@ import { H1 } from '../utils/typography';
 import Revolution from '../components/revolution';
 import Box from '../components/box';
 import { SearchIcon } from '../components/svgs';
-import event from '../../public/images/browse-event-img.svg';
 
 export default function BrowseEvents() {
   return (
