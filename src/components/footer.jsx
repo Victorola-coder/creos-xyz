@@ -6,6 +6,8 @@ import {
   FbLogo,
   GhLogo,
   IgLogo,
+  LinkedInIcon,
+  ThreadIcon,
   TwLogo,
 } from '../assets/svgs/svg';
 import { company, events, legal, products, resources } from '../data/data';
@@ -61,6 +63,7 @@ export default function Footer() {
             </Text>
             {/* social links */}
             <div className='flex flex-row items-center gap-[20px] transition-all duration-500 hover:text-[#00130D]/60'>
+              {/* x */}
               <Link
                 to='https://x.com/creosxyz?t=R2AECtU2Ol10et64y_ACzg&s=09'
                 target='_blank'
@@ -70,11 +73,13 @@ export default function Footer() {
                   <TwLogo className={``} />
                 </figure>
               </Link>
-              <Link to='#' target='_blank' rel='noopener noreferrer'>
+              {/* facebook  */}
+              {/* <Link to='#' target='_blank' rel='noopener noreferrer'>
                 <figure>
                   <FbLogo />
                 </figure>
-              </Link>
+              </Link> */}
+              {/* instagram  */}
               <Link
                 to='https://instagram.com/creos.xyz?igshid=NzZlODBkYWE4Ng=='
                 target='_blank'
@@ -84,11 +89,32 @@ export default function Footer() {
                   <IgLogo />
                 </figure>
               </Link>
-              <Link to='#' target='_blank' rel='noopener noreferrer'>
+              {/* threads */}
+              <Link
+                to='https://instagram.com/creos.xyz?igshid=NzZlODBkYWE4Ng=='
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                <figure>
+                  <ThreadIcon />
+                </figure>
+              </Link>
+              {/* linkedin */}
+              <Link
+                to='https://instagram.com/creos.xyz?igshid=NzZlODBkYWE4Ng=='
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                <figure>
+                  <LinkedInIcon />
+                </figure>
+              </Link>
+              {/* github */}
+              {/* <Link to='#' target='_blank' rel='noopener noreferrer'>
                 <figure>
                   <GhLogo />
                 </figure>
-              </Link>
+              </Link> */}
             </div>
           </div>
           {/* links */}

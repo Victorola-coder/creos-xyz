@@ -90,7 +90,10 @@ const Form = () => {
   ];
 
   return (
-    <form className='flex flex-col mb-[180px] gap-[20px]'>
+    <form
+      onSubmit={(e) => e.preventDefault()}
+      className='flex flex-col mb-[180px] gap-[20px]'
+    >
       <fieldset>
         <label className='text-white inline-block mb-2 text-[20px] lg:text-[24px]'>
           Full Name

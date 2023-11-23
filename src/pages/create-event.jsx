@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import { SEO } from '../components';
 import { Logo, LogoName } from '../assets/svgs/svg';
 import { useState } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css/effect-flip';
 // import required modules
 import { EffectFlip } from 'swiper/modules';
@@ -197,9 +196,9 @@ const StepSlide = () => {
       </div>
       <div className='border-t-[#E6EAE8] border-t-[1px] pt-[40px] flex justify-between'>
         <button className='border-[1px] rounded-[100px] border-creos w-[169px] h-[62px] grid place-items-center text-creos text-[20px]'>
-          <div className='flex items-center gap-2'>
+          <Link to='/login' className='flex items-center gap-2'>
             Skip <ArrowRightIcon />
-          </div>
+          </Link>
         </button>
         <button
           onClick={nextSlide}

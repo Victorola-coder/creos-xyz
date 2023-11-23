@@ -25,10 +25,16 @@ import {
 import Dashboard from './layouts/dashboard';
 import DashboardEvents from './pages/dashboard/events';
 import DashboardContacts from './pages/dashboard/contact';
+import { Login } from './pages/auth';
 const Root = () => {
   const { pathname } = useLocation();
 
-  const noLayoutRoutes = ['/login', '/register', '/events/create', '/dashboard'];
+  const noLayoutRoutes = [
+    '/login',
+    '/register',
+    '/events/create',
+    '/dashboard',
+  ];
 
   const isNoLayout = noLayoutRoutes.some((link) => pathname.includes(link));
 
@@ -59,6 +65,10 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home />,
+      },
+      {
+        path: '/login',
+        element: <Login />,
       },
       {
         path: '*',
@@ -115,14 +125,14 @@ const router = createBrowserRouter([
         children: [
           {
             index: true,
-            element: <DashboardEvents />
+            element: <DashboardEvents />,
           },
           {
             path: 'contact',
-            element: <DashboardContacts />
+            element: <DashboardContacts />,
           },
-        ]
-      }
+        ],
+      },
     ],
   },
 ]);
