@@ -133,7 +133,7 @@ export default function register() {
             name='distinction'
             value={formData.distinction}
             onChange={formDataHandler}
-            className='placeholder:text-[#B0BDB9] w-full lg:w-[720px] rounded-[12px] text-[20px] lg:text-[24px]'
+            className='placeholder:text-[#B0BDB9]  w-full lg:w-[720px] rounded-[12px] text-[20px] lg:text-[24px]'
           />
         </fieldset>
       </form>
