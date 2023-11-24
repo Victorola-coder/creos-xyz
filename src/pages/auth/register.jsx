@@ -127,13 +127,13 @@ export default function register() {
           <label className='text-white inline-block text-[20px] lg:text-[24px]'>
             Distinction
           </label>
-          <Input
+          <input
             placeholder='tell us about yourself and what you are doing differently with emerging disruptive technologies in three paragraphs'
             type='text'
             name='distinction'
             value={formData.distinction}
             onChange={formDataHandler}
-            className='placeholder:text-[#B0BDB9]  w-full lg:w-[720px] rounded-[12px] text-[20px] lg:text-[24px]'
+            className='placeholder:text-[#B0BDB9] text-primary max w-full lg:w-[720px] rounded-[12px] text-[20px] lg:text-[24px]'
           />
         </fieldset>
       </form>
