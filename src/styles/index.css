@@ -76,3 +76,23 @@ html.lenis {
 .swiper-wrapper {
   height: max-content !important;
 }
+
+/* Style the scrollbar track */
+.form::-webkit-scrollbar-track {
+  background-color: #f5f5f5; /* Change the background color of the track */
+  width: 8px; /* Change the width of the track */
+}
+
+/* Style the scrollbar thumb */
+.form::-webkit-scrollbar-thumb {
+  background-color: #000000; /* Change the background color of the thumb */
+  border: 2px solid #555555; /* Add a border to the thumb */
+  border-radius: 10px; /* Add a rounded border to the thumb */
+}
+
+/* Style the scrollbar buttons */
+.form::-webkit-scrollbar-button {
+  background-color: #f5f5f5; /* Change the background color of the buttons */
+  width: 20px; /* Change the width of the buttons */
+  height: 20px; /* Change the height of the buttons */
+}
