@@ -28,9 +28,11 @@ const Hero = () => {
             Join us in the dynamic world of Creos Events, where creativity meets
             competition and innovation sparks to life.
           </h5>
-          <Button className='bg-[#F7CB9C] hover:bg-[#DEB78C] transition-all duration-200 !border-[#DEB78C] text-black'>
-            Create Events
-          </Button>
+          <Link to='/dashboard'>
+            <Button className='bg-[#F7CB9C] hover:bg-[#DEB78C] transition-all duration-200 !border-[#DEB78C] text-black'>
+              Create Events
+            </Button>
+          </Link>
         </div>
       </Container>
       <div className='mx-5 lg:mx-[100px]'>
