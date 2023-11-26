@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { Button, Container, SEO } from '../components';
 import { H1 } from '../utils/typography';
 import Revolution from '../components/revolution';
@@ -71,7 +71,8 @@ const Events = () => {
         </header>
         <section className='grid sm:grid-cols-2 lg:grid-cols-4 gap-x-[10px] gap-y-[40px]'>
           {[...Array(8)].map((_, i) => (
-            <div
+            <Link
+              to="/events/details"
               key={i}
               className='transition-all duration-500 cursor-pointer group hover:bg-primary border-primary border-[1px] rounded-[20px] py-[30px] px-[20px] flex flex-col gap-5'
             >
@@ -103,7 +104,7 @@ const Events = () => {
                   £ 2,000
                 </p>
               </div>
-            </div>
+            </Link>
           ))}
         </section>
       </Box>
