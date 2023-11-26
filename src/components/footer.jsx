@@ -91,7 +91,7 @@ export default function Footer() {
               </Link>
               {/* threads */}
               <Link
-                to='https://instagram.com/creos.xyz?igshid=NzZlODBkYWE4Ng=='
+                to='https://www.threads.net/@creos.xyz'
                 target='_blank'
                 rel='noopener noreferrer'
               >
@@ -101,7 +101,7 @@ export default function Footer() {
               </Link>
               {/* linkedin */}
               <Link
-                to='https://instagram.com/creos.xyz?igshid=NzZlODBkYWE4Ng=='
+                to=' https://www.linkedin.com/company/creosxyz/'
                 target='_blank'
                 rel='noopener noreferrer'
               >
