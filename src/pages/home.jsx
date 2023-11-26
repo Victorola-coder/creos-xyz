@@ -98,19 +98,19 @@ const Innovation = () => {
           <figure className='flex gap-[25px] items-center row-start-1 lg:col-start-2'>
             <div className='flex flex-col gap-[25px]'>
               <img
-                src='./images/innovation-img-1.svg'
+                src='/images/innovation-img-1.svg'
                 draggable={false}
                 className='object-cover w-fit hover:scale-95'
                 alt='Innovation'
               />
               <img
-                src='./images/innovation-img-2.svg'
+                src='/images/innovation-img-2.svg'
                 draggable={false}
                 className='object-cover w-fit hover:scale-95'
                 alt='Innovation'
               />
               <img
-                src='./images/innovation-img-3.svg'
+                src='/images/innovation-img-3.svg'
                 draggable={false}
                 className='object-cover w-fit hover:scale-95'
                 alt='Innovation'
@@ -118,39 +118,19 @@ const Innovation = () => {
             </div>
             <div className='flex flex-col gap-[25px] mb-[89px]'>
               <img
-                src='./images/innovation-img-4.svg'
+                src='/images/innovation-img-4.svg'
                 draggable={false}
                 className='object-cover w-fit hover:scale-95'
                 alt='Innovation'
               />
               <img
-                src='./images/innovation-img-5.svg'
+                src='/images/innovation-img-5.svg'
                 draggable={false}
                 className='object-cover w-fit hover:scale-95'
                 alt='Innovation'
               />
               <img
-                src='./images/innovation-img-6.svg'
-                draggable={false}
-                className='object-cover w-fit hover:scale-95'
-                alt='Innovation'
-              />
-            </div>
-            <div className='flex flex-col gap-[25px]'>
-              <img
-                src='./images/innovation-img-7.svg'
-                draggable={false}
-                className='object-cover w-fit hover:scale-95'
-                alt='Innovation'
-              />
-              <img
-                src='./images/innovation-img-8.svg'
-                draggable={false}
-                className='object-cover w-fit hover:scale-95'
-                alt='Innovation'
-              />
-              <img
-                src='./images/innovation-img-9.svg'
+                src='/images/innovation-img-6.svg'
                 draggable={false}
                 className='object-cover w-fit hover:scale-95'
                 alt='Innovation'
@@ -158,13 +138,33 @@ const Innovation = () => {
             </div>
             <div className='flex flex-col gap-[25px]'>
               <img
-                src='./images/innovation-img-10.svg'
+                src='/images/innovation-img-7.svg'
                 draggable={false}
                 className='object-cover w-fit hover:scale-95'
                 alt='Innovation'
               />
               <img
-                src='./images/innovation-img-11.svg'
+                src='/images/innovation-img-8.svg'
+                draggable={false}
+                className='object-cover w-fit hover:scale-95'
+                alt='Innovation'
+              />
+              <img
+                src='/images/innovation-img-9.svg'
+                draggable={false}
+                className='object-cover w-fit hover:scale-95'
+                alt='Innovation'
+              />
+            </div>
+            <div className='flex flex-col gap-[25px]'>
+              <img
+                src='/images/innovation-img-10.svg'
+                draggable={false}
+                className='object-cover w-fit hover:scale-95'
+                alt='Innovation'
+              />
+              <img
+                src='/images/innovation-img-11.svg'
                 draggable={false}
                 className='object-cover w-fit hover:scale-95'
                 alt='Innovation'

@@ -69,18 +69,14 @@ const Main = () => {
               </div>
             </div>
             <figure>
-              <img
-                src='./images/share.svg'
-                alt='Creos Hackathon'
-                className=''
-              />
+              <img src='/images/share.svg' alt='Creos Hackathon' className='' />
             </figure>
           </section>
           <div className='h-[1px] w-full bg-primary'></div>
           <section className='grid lg:grid-cols-2 gap-[134px]'>
             <figure className='row-start-2 lg:col-start-1 lg:row-start-1'>
               <img
-                src='./images/greeks-out.svg'
+                src='/images/greeks-out.svg'
                 alt='Creos Hackathon'
                 className=''
               />
