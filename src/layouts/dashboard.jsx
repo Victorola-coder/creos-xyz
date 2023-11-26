@@ -37,12 +37,12 @@ const TopNavigation = () => {
 
 const links = [
   {
-    to: '/dashboard',
+    to: '/dashboard/events',
     label: 'Events',
     leading: CalenderIcon
   },
   {
-    to: '/dashboard/contact',
+    to: '/dashboard/contacts',
     label: 'Contact',
     leading: IdentityIcon
   },
@@ -54,7 +54,7 @@ const SideNavigation = () => {
     <nav className="w-[300px] py-[40px] px-[20px] bg-[#D9DFDD] flex flex-col gap-[22px]">
       {
         links.map((link, i) => (
-          <NavLink key={i} to={link.to} end>
+          <NavLink key={i} to={link.to} >
             {
               (({ isActive }) => (
                 <button

@@ -26,6 +26,7 @@ import { Login, Register } from './pages/auth';
 import Dashboard from './layouts/dashboard';
 import DashboardEvents from './pages/dashboard/events';
 import DashboardContacts from './pages/dashboard/contact';
+import DashboardCreateEvent from './pages/dashboard/create-event';
 const Root = () => {
   const { pathname } = useLocation();
 
@@ -124,7 +125,7 @@ const router = createBrowserRouter([
         element: <Team />,
       },
       {
-        path: '/dashboard',
+        path: '/dashboard/events',
         element: <Dashboard />,
         children: [
           {
@@ -132,7 +133,17 @@ const router = createBrowserRouter([
             element: <DashboardEvents />,
           },
           {
-            path: 'contact',
+            path: 'create-event',
+            element: <DashboardCreateEvent />,
+          },
+        ],
+      },
+      {
+        path: '/dashboard/contacts',
+        element: <Dashboard />,
+        children: [
+          {
+            index: true,
             element: <DashboardContacts />,
           },
         ],

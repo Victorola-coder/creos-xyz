@@ -3,6 +3,7 @@ import Button from '../../components/button';
 import { SearchIcon } from '../../components/svgs';
 import { List, Tab } from '../../assets/svgs/svg';
 import { SEO } from '../../components';
+import { Link } from 'react-router-dom';
 
 const VIEW = {
   LIST: 'LIST',
@@ -34,9 +35,11 @@ export default function DashboardEvents() {
             />
             <SearchIcon />
           </div>
-          <Button className='w-[229px] bg-primary text-white'>
-            Create Events
-          </Button>
+          <Link to="/dashboard/events/create-event">
+            <Button className='w-[229px] bg-primary text-white'>
+              Create Events
+            </Button>
+          </Link>
         </header>
         <div className='flex justify-between'>
           <h4 className='font-sat text-[24px] leading-[36px] font-medium text-[#012B1D]'>
@@ -48,16 +51,14 @@ export default function DashboardEvents() {
               className='flex gap-5 items-center text-primary text-[20px] font-bold'
             >
               <div
-                className={`${
-                  view === VIEW.LIST ? 'bg-primary' : ''
-                } rounded-[12px] p-[12px]`}
+                className={`${view === VIEW.LIST ? 'bg-primary' : ''
+                  } rounded-[12px] p-[12px]`}
               >
                 <List
-                  className={`${
-                    view === VIEW.LIST
-                      ? 'fill-[#E6EAE8] stroke-[#E6EAE8]'
-                      : 'fill-primary stroke-primary'
-                  }`}
+                  className={`${view === VIEW.LIST
+                    ? 'fill-[#E6EAE8] stroke-[#E6EAE8]'
+                    : 'fill-primary stroke-primary'
+                    }`}
                 />
               </div>
             </button>
@@ -66,16 +67,14 @@ export default function DashboardEvents() {
               className='flex gap-5 items-center text-primary text-[20px] font-bold'
             >
               <div
-                className={`${
-                  view === VIEW.COLUMN ? 'bg-primary' : ''
-                } rounded-[12px] p-[12px]`}
+                className={`${view === VIEW.COLUMN ? 'bg-primary' : ''
+                  } rounded-[12px] p-[12px]`}
               >
                 <Tab
-                  className={`${
-                    view === VIEW.COLUMN
-                      ? 'fill-[#E6EAE8] stroke-[#E6EAE8]'
-                      : 'fill-primary stroke-primary'
-                  }`}
+                  className={`${view === VIEW.COLUMN
+                    ? 'fill-[#E6EAE8] stroke-[#E6EAE8]'
+                    : 'fill-primary stroke-primary'
+                    }`}
                 />
               </div>
             </button>
@@ -128,7 +127,7 @@ const ColumnView = () => {
         >
           <figure className='border-[1px] overflow-hidden rounded-[10px]'>
             <img
-              src='./images/browse-event-img.svg'
+              src='/images/browse-event-img.svg'
               // src={event}
               alt='Browse Event'
               draggable={false}
