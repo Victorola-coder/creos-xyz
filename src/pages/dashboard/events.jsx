@@ -128,7 +128,7 @@ const ColumnView = () => {
         >
           <figure className='border-[1px] overflow-hidden rounded-[10px]'>
             <img
-              src='./images/browse-event-img.svg'
+              src='/images/browse-event-img.svg'
               // src={event}
               alt='Browse Event'
               draggable={false}

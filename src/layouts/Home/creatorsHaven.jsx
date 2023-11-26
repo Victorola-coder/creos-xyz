@@ -24,7 +24,7 @@ export default function CreatorsHaven() {
           <img
             draggable={false}
             className='object-cover'
-            src='./images/team.svg'
+            src='/images/team.svg'
             alt='team_ilustration might be here'
           />
         </section>

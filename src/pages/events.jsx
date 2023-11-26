@@ -28,7 +28,7 @@ const Hero = () => {
             Join us in the dynamic world of Creos Events, where creativity meets
             competition and innovation sparks to life.
           </h5>
-          <Link to='/dashboard'>
+          <Link to='/events/'>
             <Button className='bg-[#F7CB9C] hover:bg-[#DEB78C] transition-all duration-200 !border-[#DEB78C] text-black'>
               Create Events
             </Button>
@@ -89,7 +89,7 @@ const CreosEvents = () => {
             </div>
             <figure>
               <img
-                src='./images/creos-hackathon.svg'
+                src='/images/creos-hackathon.svg'
                 alt='Creos Hackathon'
                 draggable={false}
                 className='object-cover w-fit hover:scale-95'
@@ -100,7 +100,7 @@ const CreosEvents = () => {
           <section className='grid lg:grid-cols-2 gap-[134px]'>
             <figure className='row-start-2 lg:col-start-1 lg:row-start-1'>
               <img
-                src='./images/greeks-out.svg'
+                src='/images/greeks-out.svg'
                 alt='Creos Hackathon'
                 draggable={false}
                 className='object-cover w-fit hover:scale-95'
