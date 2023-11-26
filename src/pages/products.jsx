@@ -11,7 +11,7 @@ import { useInView } from 'framer-motion';
 export default function Products() {
   return (
     <>
-      <SEO title='Products' />
+      <SEO title='Our Solid Products' />
       <main>
         <Hero />
         <JoinWaitlist />

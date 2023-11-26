@@ -7,7 +7,7 @@ import { H1 } from '../utils/typography';
 export default function Team() {
   return (
     <>
-      <SEO title='Our Team' />
+      <SEO title='Meet Our Solid Team' />
       <main>
         <Hero />
         <Content />

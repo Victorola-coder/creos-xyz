@@ -6,7 +6,7 @@ import { Hero, Slider, Partner, Haven } from '../layouts';
 export default function Home() {
   return (
     <>
-      <SEO title='Home' />
+      <SEO title='Welcome to CreosXYZ' />
       <main>
         <Hero />
         <Slider />
