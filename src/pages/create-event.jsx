@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
 import { SEO } from '../components';
 import { Logo, LogoName } from '../assets/svgs/svg';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css/effect-flip';
 // import required modules
 import { EffectFlip } from 'swiper/modules';
@@ -33,26 +34,10 @@ export default function CreateEvent() {
 }
 
 const StepSlide = () => {
+
+  const [swiper, setSwiper] = useState(undefined)
   const [slides, setSlides] = useState({
     currentIndex: 0,
-    views: [
-      {
-        index: 0,
-        viewed: true,
-      },
-      {
-        index: 1,
-        viewed: false,
-      },
-      {
-        index: 2,
-        viewed: false,
-      },
-      {
-        index: 3,
-        viewed: false,
-      },
-    ],
   });
 
   const [checked, setChecked] = useState(false);
@@ -62,45 +47,32 @@ const StepSlide = () => {
   };
 
   const handleSlides = (index) => {
-    setSlides((prev) => {
-      const views = JSON.parse(JSON.stringify(prev.views));
-
-      views[index].viewed = !views[index].viewed;
-      views[0].viewed = true;
-
-      return {
-        ...prev,
-        currentIndex: index,
-        views,
-      };
-    });
+    setSlides(() => ({
+      currentIndex: index
+    }))
   };
 
   const nextSlide = () => {
-    setSlides((prev) => {
-      const views = JSON.parse(JSON.stringify(prev.views));
+    setSlides(prev => {
 
-      if (prev.currentIndex < 3) {
-        views[prev.currentIndex + 1].viewed =
-          !views[prev.currentIndex + 1].viewed;
-        views[0].viewed = true;
+      let nextActiveIndex = prev.currentIndex + 1
+
+      if (nextActiveIndex < 4) {
+
+        return {
+          currentIndex: nextActiveIndex
+        };
       }
 
-      return {
-        ...prev,
-        currentIndex:
-          prev.currentIndex < 3 ? prev.currentIndex + 1 : prev.currentIndex,
-        views,
-      };
-    });
+      return prev
+    })
   };
 
-  const imgPath = [
-    '/images/create-event-img-1.svg',
-    '/images/create-event-img-2.svg',
-    '/images/create-event-img-3.svg',
-    '/images/create-event-img-4.svg',
-  ];
+  useEffect(() => {
+    swiper?.slideTo(slides.currentIndex)
+  }, [slides.currentIndex])
+
+  console.log(slides)
 
   const JSX = [
     <div key={0}>
@@ -160,20 +132,17 @@ const StepSlide = () => {
                   <div key={index} className='flex items-center'>
                     {index !== 0 && (
                       <div
-                        className={`w-[48px] h-[4px] bg-[#E6EAE8] ${
-                          slides.views.find((view) => view.index === index)
-                            .viewed
-                            ? 'bg-[#F7CB9C]'
-                            : 'bg-[#E6EAE8]'
-                        }`}
+                        className={`w-[48px] h-[4px] ${index === 0
+                          ? 'bg-[#F7CB9C]'
+                          : 'bg-[#E6EAE8]'
+                          }`}
                       />
                     )}
                     <div
-                      className={`${
-                        slides.views.find((view) => view.index === index).viewed
-                          ? 'text-primary bg-[#F7CB9C]'
-                          : 'bg-primary text-white'
-                      } w-[32px] h-[32px] border-[#E6EAE8] border-[1px] rounded-full grid place-items-center`}
+                      className={`${index === 0
+                        ? 'text-primary bg-[#F7CB9C]'
+                        : 'bg-primary text-white'
+                        } w-[32px] h-[32px] border-[#E6EAE8] border-[1px] rounded-full grid place-items-center`}
                       onClick={() => handleSlides(index)}
                     >
                       {index + 1}
@@ -185,21 +154,57 @@ const StepSlide = () => {
             </div>
           </div>
           <div>
-            <img
-              className='transition-all duration-300'
-              draggable={false}
-              src={imgPath[slides.currentIndex]}
-              alt='Creos'
-            />
+            <Swiper
+              effect={'flip'}
+              grabCursor={false}
+              modules={[EffectFlip]}
+              onSwiper={setSwiper}
+              allowTouchMove={false}
+            >
+              <SwiperSlide>
+                <img
+                  className='transition-all duration-300'
+                  draggable={false}
+                  src="/images/create-event-img-1.svg"
+                  alt='Creos'
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img
+                  className='transition-all duration-300'
+                  draggable={false}
+                  src="/images/create-event-img-2.svg"
+                  alt='Creos'
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img
+                  className='transition-all duration-300'
+                  draggable={false}
+                  src="/images/create-event-img-3.svg"
+                  alt='Creos'
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img
+                  className='transition-all duration-300'
+                  draggable={false}
+                  src="/images/create-event-img-4.svg"
+                  alt='Creos'
+                />
+              </SwiperSlide>
+            </Swiper>
           </div>
         </div>
       </div>
       <div className='border-t-[#E6EAE8] border-t-[1px] pt-[40px] flex justify-between'>
-        <button className='border-[1px] rounded-[100px] border-creos w-[169px] h-[62px] grid place-items-center text-creos text-[20px]'>
-          <Link to='/login' className='flex items-center gap-2'>
-            Skip <ArrowRightIcon />
-          </Link>
-        </button>
+        <Link to='/login'>
+          <button className='border-[1px] rounded-[100px] border-creos w-[169px] h-[62px] grid place-items-center text-creos text-[20px]'>
+            <div className='flex items-center gap-2'>
+              Skip <ArrowRightIcon />
+            </div>
+          </button>
+        </Link>
         <button
           onClick={nextSlide}
           className='border-[1px] rounded-[100px] bg-creos w-[169px] h-[62px] grid place-items-center text-black text-[20px]'

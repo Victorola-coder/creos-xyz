@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import Button from '../../components/button';
 import { SearchIcon } from '../../components/svgs';
-import { List, Tab } from '../../assets/svgs/svg';
 import CheckBox from '../../components/checkbox';
 import { SEO } from '../../components';
 

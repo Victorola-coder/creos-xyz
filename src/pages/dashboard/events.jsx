@@ -39,7 +39,7 @@ export default function DashboardEvents() {
           </Button>
         </header>
         <div className='flex justify-between'>
-          <h4 className='font-sat text-[24px] leading-[36px] font-medium text-[#012B1D] '>
+          <h4 className='font-sat text-[24px] leading-[36px] font-medium text-[#012B1D]'>
             {eventCount} <span>Events</span>
           </h4>
           <div className='flex !transition-none !duration-0 flex-row items-center justify-center gap-3'>
