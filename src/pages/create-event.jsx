@@ -72,8 +72,6 @@ const StepSlide = () => {
     swiper?.slideTo(slides.currentIndex)
   }, [slides.currentIndex])
 
-  console.log(slides)
-
   const JSX = [
     <div key={0}>
       <h1 className='text-creos mb-5 text-[48px] font-extrabold'>
