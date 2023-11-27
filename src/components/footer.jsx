@@ -57,9 +57,10 @@ export default function Footer() {
             <Text
               className={`font-jar w-full max-w-[353px] mt-0 md:max-w-[369px] !text-[14px] font-normal leading-[22px] text-[#011A11]`}
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-              dictum aliquet accumsan porta lectus ridiculus in mattis. Netus
-              sodales in volutpat ullamcorper amet adipiscing fermentum.
+              Creos; the planet's premier opportunity for creators to scale,
+              stay highly relevant, most paid and remain the highest
+              contributors to sustainable solutions shaping the planet's finest
+              change through emerging disruptive technologies.
             </Text>
             {/* social links */}
             <div className='flex flex-row items-center gap-[20px] transition-all duration-500 hover:text-[#00130D]/60'>
