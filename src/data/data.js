@@ -58,7 +58,7 @@ export const company = [
 ];
 
 export const events = [
-  { id: nanoid(), name: 'Creos Events', path: '/events/creos' },
+  { id: nanoid(), name: 'Creos Events', path: '/events/' },
   { id: nanoid(), name: 'Create Events', path: '/events/create' },
   { id: nanoid(), name: 'Browse Events', path: '/events/browse' },
 ];
