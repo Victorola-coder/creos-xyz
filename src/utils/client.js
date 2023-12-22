@@ -13,7 +13,7 @@ export const getClient = (
         baseURL: baseURL,
         timeout: 30000,
     });
-    instance.interceptors.response.use(
+    instance?.interceptors?.response?.use(
         (response) => {
             return response;
         },
