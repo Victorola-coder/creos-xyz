@@ -12,7 +12,7 @@ const ProductCard = forwardRef((props, ref) => {
       return (
         <div
           ref={ref}
-          className={`select-none h-max grid lg:grid-cols-2 gap-[30px] lg:gap-[63px] bg-[#F7CB9C] px-[20px] py-[30px] lg:px-[100px] lg:py-[101px] rounded-[20px] lg:rounded-[100px] ${
+          className={`select-none h-max grid lg:grid-cols-2 gap-[30px] lg:gap-[63px] bg-creos px-[20px] py-[30px] lg:px-[100px] lg:py-[101px] rounded-[20px] lg:rounded-[100px] ${
             className ?? ''
           }`}
         >
@@ -32,7 +32,7 @@ const ProductCard = forwardRef((props, ref) => {
             </p>
             <div>
               <Link to='/waitlist'>
-                <Button className='w-[247px] border-[#DEB78C] bg-[#6F5B46] text-[#F7CB9C]'>
+                <Button className='w-[247px] border-[#DEB78C] bg-[#6F5B46] text-creos'>
                   Join our waitlist
                 </Button>
               </Link>
@@ -53,7 +53,7 @@ const ProductCard = forwardRef((props, ref) => {
       return (
         <div
           ref={ref}
-          className={`select-none grid lg:grid-cols-2 gap-[30px] lg:gap-[63px] bg-[#012B1D] px-[20px] py-[30px] lg:px-[100px] lg:py-[101px] rounded-[20px] lg:rounded-[100px] ${
+          className={`select-none grid lg:grid-cols-2 gap-[30px] lg:gap-[63px] bg-primary px-[20px] py-[30px] lg:px-[100px] lg:py-[101px] rounded-[20px] lg:rounded-[100px] ${
             className ?? ''
           }`}
         >
@@ -62,7 +62,7 @@ const ProductCard = forwardRef((props, ref) => {
               <h2 className='font-sat text-[#FDEFE0] lg:text-[24px] mb-[20px] '>
                 Creos Token
               </h2>
-              <h1 className='text-[28px] lg:text-[48px] leading-[42px] lg:leading-[72px] font-extrabold text-[#E6EAE8] lg:text-[#F7CB9C]'>
+              <h1 className='text-[28px] lg:text-[48px] leading-[42px] lg:leading-[72px] font-extrabold text-[#E6EAE8] lg:text-creos'>
                 Creos Token: Your Gateway to the Future
               </h1>
             </header>
@@ -76,7 +76,7 @@ const ProductCard = forwardRef((props, ref) => {
             </p>
             <div>
               <Link to='/waitlist'>
-                <Button className='w-[247px] border-[#C6A27D] bg-[#F7CB9C] text-[#564737]'>
+                <Button className='w-[247px] border-[#C6A27D] bg-creos text-[#564737]'>
                   Join our waitlist
                 </Button>
               </Link>
@@ -106,7 +106,7 @@ const ProductCard = forwardRef((props, ref) => {
               <h2 className='font-sat text-[#FDEFE0] lg:text-[24px] mb-[20px]'>
                 Creos Lab
               </h2>
-              <h1 className='text-[28px] lg:text-[48px] leading-[42px] lg:leading-[72px] font-extrabold text-[#E6EAE8] lg:text-[#F7CB9C]'>
+              <h1 className='text-[28px] lg:text-[48px] leading-[42px] lg:leading-[72px] font-extrabold text-[#E6EAE8] lg:text-creos'>
                 Bridging the Gap Between Talent and Opportunities
               </h1>
             </header>
@@ -120,7 +120,7 @@ const ProductCard = forwardRef((props, ref) => {
             </p>
             <div>
               <Link to='/waitlist'>
-                <Button className='w-[247px] border-[#C6A27D] bg-[#F7CB9C] text-[#564737]'>
+                <Button className='w-[247px] border-[#C6A27D] bg-creos text-[#564737]'>
                   Join our waitlist
                 </Button>
               </Link>

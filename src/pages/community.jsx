@@ -1,7 +1,11 @@
+import { useRef, useEffect, useState } from 'react';
 import { Button, Container, SEO } from '../components';
 import Input from '../components/input';
 import Revolution from '../components/revolution';
 import { H1 } from '../utils/typography';
+import { linkedInURL } from '../constants/config';
+import { mainClient } from '../utils/client';
+import { toast } from 'react-toastify';
 
 export default function Community() {
   return (
@@ -38,6 +42,40 @@ const Hero = () => {
 };
 
 const Main = () => {
+  const targetRef = useRef(null);
+  const [url, setUrl] = useState('');
+  useEffect(() => {
+    if (window.location.hash) {
+      const targetId = window.location.hash.substring(1);
+      const targetElement = document.getElementById(targetId);
+
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, []);
+
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    if (!url) {
+      warn('All fields are required');
+    } else {
+      mainClient.post(linkedInURL, { url })
+        .then((r => {
+          if (r.status === 200) {
+            toast.success(r.data.message)
+            setUrl('')
+          } else
+            toast.error(r.data.message)
+        }))
+        .catch(e => {
+          toast.error(e.response.data.message)
+        })
+      return;
+    }
+  }
+
   return (
     <section className='bg-[#E6EAE8] py-[30px] lg:py-[100px]'>
       <Container>
@@ -45,7 +83,7 @@ const Main = () => {
           <section className='grid lg:grid-cols-2 gap-[74px]'>
             <div className='flex'>
               <div className='my-auto'>
-                <h1 className='text-[#222222] text-[32px] lg:text-[48px] font-extrabold'>
+                <h1 ref={targetRef} id="connnection" className='text-[#222222] text-[32px] lg:text-[48px] font-extrabold'>
                   We&rsquo;re Watching
                 </h1>
                 <p className='lg:text-[24px] py-[29px] leading-[43px] text-black'>
@@ -59,11 +97,13 @@ const Main = () => {
                 </p>
                 <div className='mb-5'>
                   <Input
-                    className='border-[1px] border-[#012B1D] placeholder-primary'
+                    value={url}
+                    onChange={(e) => setUrl(e?.target?.value)}
+                    className='border-[1px] border-primary placeholder-primary'
                     placeholder='LinkedIn URL'
                   />
                 </div>
-                <Button className='bg-primary text-white !w-[233px] border-[#B0BDB9]'>
+                <Button onClick={handleSubmit} className='bg-primary text-white !w-[233px] border-[#B0BDB9]'>
                   Check me out
                 </Button>
               </div>

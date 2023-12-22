@@ -29,7 +29,7 @@ export default function Navbar() {
 
   return (
     <header>
-      <nav className='transition-all duration-300 fixe flex flex-row rounded-[100px] border-[#F7CB9C] border-solid border-[5px] items-center justify-between mx-5 lg:mx-[100px] my-[20px] px-[20px] py-[18px] md:py-[10px] lg:my-[60px] lg:px-[60px] lg:py-[30px]'>
+      <nav className='transition-all duration-300 fixe flex flex-row rounded-[100px] border-creos border-solid border-[5px] items-center justify-between mx-5 lg:mx-[100px] my-[20px] px-[20px] py-[18px] md:py-[10px] lg:my-[60px] lg:px-[60px] lg:py-[30px]'>
         <Link to='/'>
           <figure className='flex flex-row items-center'>
             <Logo className={`w-[36px] h-[24px] md:w-[80px] md:h-[54px]`} />
@@ -51,8 +51,8 @@ export default function Navbar() {
                 <h5
                   className={`relative transition-all duration-300 lg:text-[24px] lg:leading-[36px] text-xs before:content-['']  font-sat before:absolute before:h-1 before:-bottom-1 before:transition-all before:duration-300 ${
                     isActive
-                      ? 'text-[#F7CB9C] font-bold text-[24px] before:w-full'
-                      : 'text-[#F7CB9C] font-normal text-[20px] before:w-[0px] hover:before:w-full'
+                      ? 'text-creos font-bold text-[24px] before:w-full'
+                      : 'text-creos font-normal text-[20px] before:w-[0px] hover:before:w-full'
                   }`}
                 >
                   {route?.route}
@@ -65,7 +65,7 @@ export default function Navbar() {
           <Link to='/community'>
             <Button
               type='button'
-              className='!border-none bg-[#F7CB9C] hover:bg-[#D9DFDD] '
+              className='!border-none bg-creos hover:bg-[#D9DFDD] '
             >
               Join our community
             </Button>
@@ -103,7 +103,7 @@ export default function Navbar() {
               <div>
                 <div
                   ref={navRef}
-                  className={`z-[100] min-h-[100%] w-full absolute bg-[#012b1d] rounded-[8px] py-[28px] block px-[30px] mt-[90px] md:hidden transition-all duration-300 ${
+                  className={`z-[100] min-h-[100%] w-full absolute bg-primary rounded-[8px] py-[28px] block px-[30px] mt-[90px] md:hidden transition-all duration-300 ${
                     isOpened ? '-translate-y-[50px]' : '-translate-y-[200%]'
                   } pt-4 left-0 right-0`}
                 >

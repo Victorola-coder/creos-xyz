@@ -7,10 +7,10 @@ export default function SecondaryButton(props) {
       disabled={disabled || loading}
       className={`${
         className ?? ''
-      }grid place-items-center h-[62px] w-full disabled:bg-[#B0BDB9]s transition-all duration-200 active:scale-95 bg-[#F7CB9C] rounded-[100px]`}
+      }grid place-items-center h-[62px] w-full disabled:bg-[#B0BDB9]s transition-all duration-200 active:scale-95 bg-creos rounded-[100px]`}
       {...prop}
     >
-      <div className='flex items-center font-medium text-[#012B1D] text-[20px] leading-[30px] font-int'>
+      <div className='flex items-center font-medium text-primary text-[20px] leading-[30px] font-int'>
         {loading && (
           <svg
             className='w-5 h-5 mr-3 -ml-1 text-white animate-spin'

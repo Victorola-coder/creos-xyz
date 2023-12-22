@@ -45,7 +45,7 @@ export default function Footer() {
           </Link>
         </div>
         {/* line */}
-        <div className='bg-[#012B1D] w-full h-[1px] my-[20px] md:my-[30px] lg:my-[50px]'></div>
+        <div className='bg-primary w-full h-[1px] my-[20px] md:my-[30px] lg:my-[50px]'></div>
 
         {/* about AND LINKS section */}
         <section className='flex flex-col lg:flex lg:flex-row lg:flex-nowrap lg:items-start lg:justify-between xxl:justify-center lg:gap-[100px]'>

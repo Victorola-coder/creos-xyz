@@ -3,6 +3,9 @@ import { Container, SEO } from '../components';
 import Input from '../components/input';
 import SecondaryButton from '../components/secondaryButton';
 import TextArea from '../components/textarea';
+import { mainClient } from '../utils/client';
+import { toast } from 'react-toastify';
+import { contactURL } from '../constants/config';
 
 export default function Contact() {
   return (
@@ -42,7 +45,7 @@ const Main = () => {
 
 const Form = () => {
   const [formData, setFormData] = useState({
-    fullname: '',
+    name: '',
     email: '',
     enquiry: '',
     message: '',
@@ -56,14 +59,42 @@ const Form = () => {
   };
 
   const isFormDisabled = !(
-    formData.fullname &&
+    formData.name &&
     formData.email &&
     formData.enquiry &&
     formData.message
   );
 
+  const handleSubmit = e => {
+    e.preventDefault();
+    if (!(formData.name &&
+      formData.email &&
+      formData.enquiry &&
+      formData.message)) {
+      warn('All fields are required');
+    } else {
+      mainClient.post(contactURL, formData)
+        .then((r => {
+          if (r.status === 200) {
+            toast.success(r.data.message)
+            setForm({
+              name: '',
+              email: '',
+              enquiry: '',
+              message: '',
+            })
+          } else
+            toast.error(r.data.message)
+        }))
+        .catch(e => {
+          toast.error(e.response.data.message)
+        })
+      return;
+    }
+  }
+
   return (
-    <form className='flex flex-col gap-[20px]'>
+    <form className='flex flex-col gap-[20px]' onSubmit={handleSubmit}>
       <fieldset>
         <label className='text-white inline-block mb-2 text-[20px] lg:text-[24px]'>
           Full Name
@@ -71,9 +102,9 @@ const Form = () => {
         <Input
           placeholder='Full Name'
           type='text'
-          name='fullname'
+          name='name'
           className='placeholder-primary rounded-[12px] text-[20px] lg:text-[24px]'
-          value={formData.fullname}
+          value={formData.name}
           onChange={formDataHandler}
         />
       </fieldset>

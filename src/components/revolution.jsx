@@ -1,10 +1,12 @@
 import { useState } from 'react';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { subscribeURL } from '../constants/config';
+import { mainClient } from '../utils/client';
 import { P } from '../utils/typography';
 import Button from './button';
 import Container from './container';
 import Input from './input';
-import { Slide, ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 export default function Revolution() {
   const [form, setForm] = useState({
     email: '',
@@ -20,6 +22,17 @@ export default function Revolution() {
     if (form.email === '' || form.firstName === '') {
       warn('All fields are required');
     } else {
+      mainClient.post(subscribeURL, form)
+        .then((r => {
+          if(r.status === 200){
+            toast.success(r.data.message)
+            setForm({email:'', firstName:''})
+          } else 
+          toast.error(r.data.message)
+        }))
+        .catch(e => {
+          toast.error(e.response.data.message)
+        })
       return;
     }
   }
@@ -64,12 +77,11 @@ export default function Revolution() {
               placeholder='Email address'
             />
           </fieldset>
-          <Button className='text-[#012B1D] bg-[#B0BDB9] active:bg-[#FEFAF5] hover:bg-[#FEFAF5]'>
+          <Button className='text-primary bg-[#B0BDB9] active:bg-[#FEFAF5] hover:bg-[#FEFAF5]'>
             Join our newsletter
           </Button>
         </form>
       </div>
-      <ToastContainer />
     </Container>
   );
 }

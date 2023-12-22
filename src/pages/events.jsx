@@ -29,7 +29,7 @@ const Hero = () => {
             competition and innovation sparks to life.
           </h5>
           <Link to='/events/create'>
-            <Button className='bg-[#F7CB9C] hover:bg-[#DEB78C] transition-all duration-200 !border-[#DEB78C] text-black'>
+            <Button className='bg-creos hover:bg-[#DEB78C] transition-all duration-200 !border-[#DEB78C] text-black'>
               Create Events
             </Button>
           </Link>
@@ -39,15 +39,15 @@ const Hero = () => {
         <div className='py-[20px] flex items-center lg:px-[20px] lg:text-[24px] gap-[10px] lg:gap-[20px]'>
           <Link
             to='/events/create'
-            className='text-[#F7CB9C] font-bold'
+            className='text-creos font-bold'
             preventScrollReset={true}
           >
             Creos Events
           </Link>
-          <div className='w-[1px] h-[24px] lg:h-[36px] bg-[#F7CB9C]'></div>
+          <div className='w-[1px] h-[24px] lg:h-[36px] bg-creos'></div>
           <Link
             to='/events/browse'
-            className='text-[#F7CB9C]'
+            className='text-creos'
             preventScrollReset={true}
           >
             Browse Events

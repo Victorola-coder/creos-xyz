@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+import AnimatedCursor from 'react-animated-cursor';
 import {
   createBrowserRouter,
   Outlet,
@@ -5,28 +7,28 @@ import {
   ScrollRestoration,
   useLocation,
 } from 'react-router-dom';
-import AnimatedCursor from 'react-animated-cursor';
+import { ToastContainer } from 'react-toastify';
 import { Footer, Navbar } from './components';
-import { useEffect } from 'react';
+import Dashboard from './layouts/dashboard';
 import {
-  Home,
+  BrowseEvents,
   Community,
   Contact,
-  Events,
-  Team,
-  Waitlist,
-  Products,
-  ErrorPage,
-  Test,
-  BrowseEvents,
-  EventDetails,
   CreateEvent,
+  ErrorPage,
+  EventDetails,
+  Events,
+  Home,
+  Products,
+  Team,
+  Test,
+  Waitlist,
+  CreosToken
 } from './pages';
 import { Login, Register } from './pages/auth';
-import Dashboard from './layouts/dashboard';
-import DashboardEvents from './pages/dashboard/events';
 import DashboardContacts from './pages/dashboard/contact';
 import DashboardCreateEvent from './pages/dashboard/create-event';
+import DashboardEvents from './pages/dashboard/events';
 const Root = () => {
   const { pathname } = useLocation();
 
@@ -125,6 +127,10 @@ const router = createBrowserRouter([
         element: <Team />,
       },
       {
+        path: '/creos-token',
+        element: <CreosToken />,
+      },
+      {
         path: '/dashboard/events',
         element: <Dashboard />,
         children: [
@@ -193,6 +199,7 @@ function App() {
       />
 
       <RouterProvider router={router} />
+      <ToastContainer />
     </>
   );
 }

@@ -4,6 +4,10 @@ import Input from '../components/input';
 import SecondaryButton from '../components/secondaryButton';
 import Select from '../components/select';
 import { nanoid } from 'nanoid';
+import { waitlistURL } from '../constants/config';
+import { mainClient } from '../utils/client';
+
+import { toast } from 'react-toastify';
 
 export default function Waitlist() {
   return (
@@ -45,7 +49,7 @@ const Main = () => {
 
 const Form = () => {
   const [formData, setFormData] = useState({
-    fullname: '',
+    name: '',
     email: '',
     enquiry: '',
     message: '',
@@ -61,7 +65,7 @@ const Form = () => {
   };
 
   const isFormDisabled = !(
-    formData.fullname &&
+    formData.name &&
     formData.email &&
     selectedProduct
   );
@@ -89,9 +93,36 @@ const Form = () => {
     { id: nanoid(), name: '20' },
   ];
 
+  const handleSubmit = e => {
+    e.preventDefault();
+    if (!(formData.name &&
+      formData.email &&
+      selectedProduct)) {
+      warn('All fields are required');
+    } else {
+      mainClient.post(waitlistURL, {
+        name: formData.name,
+        email:formData.email,
+        product:selectedProduct.name
+      })
+        .then((r => {
+          if (r.status === 200) {
+            toast.success(r.data.message)
+            setForm({ email: '', name: '' })
+            setSelectedProduct(null)
+          } else
+            toast.error(r.data.message)
+        }))
+        .catch(e => {
+          toast.error(e.response.data.message)
+        })
+      return;
+    }
+  }
+
   return (
     <form
-      onSubmit={(e) => e.preventDefault()}
+      onSubmit={handleSubmit}
       className='flex flex-col mb-[180px] gap-[20px]'
     >
       <fieldset>
@@ -101,9 +132,9 @@ const Form = () => {
         <Input
           placeholder='Full Name'
           type='text'
-          name='fullname'
+          name='name'
           className='placeholder-primary rounded-[12px] text-[20px] lg:text-[24px]'
-          value={formData.fullname}
+          value={formData.name}
           onChange={formDataHandler}
         />
       </fieldset>

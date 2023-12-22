@@ -4,6 +4,7 @@ import { Logo, LogoName } from '../assets/svgs/svg';
 import { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css/effect-flip';
+import { useNavigate } from "react-router-dom";
 // import required modules
 import { EffectFlip } from 'swiper/modules';
 import CheckBox from '../components/checkbox';
@@ -39,6 +40,7 @@ const StepSlide = () => {
   const [slides, setSlides] = useState({
     currentIndex: 0,
   });
+  const navigate = useNavigate();
 
   const [checked, setChecked] = useState(false);
 
@@ -63,7 +65,9 @@ const StepSlide = () => {
           currentIndex: nextActiveIndex
         };
       }
-
+      if(checked){
+        navigate("/register"); 
+      }
       return prev
     })
   };
@@ -131,14 +135,14 @@ const StepSlide = () => {
                     {index !== 0 && (
                       <div
                         className={`w-[48px] h-[4px] ${index === 0
-                          ? 'bg-[#F7CB9C]'
+                          ? 'bg-creos'
                           : 'bg-[#E6EAE8]'
                           }`}
                       />
                     )}
                     <div
                       className={`${index === 0
-                        ? 'text-primary bg-[#F7CB9C]'
+                        ? 'text-primary bg-creos'
                         : 'bg-primary text-white'
                         } w-[32px] h-[32px] border-[#E6EAE8] border-[1px] rounded-full grid place-items-center`}
                       onClick={() => handleSlides(index)}

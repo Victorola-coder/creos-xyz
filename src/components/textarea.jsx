@@ -6,7 +6,7 @@ export default function TextArea(props){
 
     return (
         <textarea
-            className={`${className} h-[200px] py-2 w-full rounded-[8px] h-[64px] bg-[#E6EAE8] px-[20px] text-[#012B1D]`}
+            className={`${className} h-[200px] py-2 w-full rounded-[8px] h-[64px] bg-[#E6EAE8] px-[20px] text-primary`}
             rows={row ?? 5}
             {...prop} 
         />

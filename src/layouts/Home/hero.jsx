@@ -24,7 +24,7 @@ export default function Hero() {
         </h5>
         <Link to='/community'>
           <Button
-            className={`text-[#012B1D] !border-[4px] !border-[#DEB78C] lg:!w-[286px]  !bg-[#F7CB9C] `}
+            className={`text-primary !border-[4px] !border-[#DEB78C] lg:!w-[286px]  !bg-creos `}
           >
             Join our community
           </Button>
