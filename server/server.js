@@ -30,7 +30,7 @@ app.use('/api/v1/posts', postRoutes);
 app.use('/api/v1/submissions', submissionRoutes);
 
 // 
-app.get('/', (req, res) => res.status(200).json({ message: "Welcome to Sense N Style" }));
+app.get('/', (req, res) => res.status(200).json({ message: "Welcome to Creos Lab" }));
 
 
 // Start the server
