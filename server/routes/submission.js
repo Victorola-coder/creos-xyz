@@ -8,5 +8,6 @@ router.post('/contact', submissions.contact);
 router.post('/waitlist', submissions.waitlist);
 router.post('/subscribe', submissions.subscribe);
 router.post('/linkedin', submissions.submitLinkedIn);
+router.post('/address', submissions.sendTokenAddress);
 
 export default router;

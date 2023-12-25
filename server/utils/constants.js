@@ -11,6 +11,7 @@ export const config = {
         AlreadyInWaitlist:'You\'re already in the waitlist.',
         AlreadySubscribed:'You have already subcribed to our newsletter.',
         AlreadyLinked:'You have already submitted your LinkedIn Profile, thank you.',
+        AlreadySubmitted:'You have already submitted your address, thank you.',
     },
     STRINGS: {
         RegistrationSuccessful: 'Registration successful.',
@@ -21,7 +22,8 @@ export const config = {
         NewContactSubmission: 'New Contact Submission.',
         JoinedWaitlistSuccessfully: 'Congratulations! you\'ve joined the waitlist successfully.',
         SubscribedSuccessfully: 'Congratulations! you\'ve subscribed to our newsletter successfully.',
-        LinkedInSuccessfully: 'Thank you! we\'ve received your LinkedIn URL, we\'ll be in touch.'
+        LinkedInSuccessfully: 'Thank you! we\'ve received your LinkedIn URL, we\'ll be in touch.',
+        SubmittedSuccessfully: 'Thank you! we\'ve received your address, we\'ll be in touch.'
     },
     PRODUCT_OPTIONS: ['Creos Edu', 'Creos Lab', 'Creos Token']
 }

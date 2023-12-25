@@ -33,6 +33,7 @@ export const contactURL = `${BASE_API_ENDPOINT}/submissions/contact`
 export const waitlistURL = `${BASE_API_ENDPOINT}/submissions/waitlist`
 export const subscribeURL = `${BASE_API_ENDPOINT}/submissions/subscribe`
 export const linkedInURL = `${BASE_API_ENDPOINT}/submissions/linkedin`
+export const addressURL = `${BASE_API_ENDPOINT}/submissions/address`
 
 export const profileURL = `${BASE_API_ENDPOINT}/users/profile`
 
