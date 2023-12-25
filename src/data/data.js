@@ -29,7 +29,7 @@ export const navLinks = [
   },
   {
     id: nanoid(),
-    route: 'Events',
+    route: 'eVents',
     path: '/events',
   },
   {
@@ -69,15 +69,19 @@ export const events = [
 ];
 
 export const products = [
-  { id: nanoid(), name: 'Creos Edu', path: '/creos-edu' },
   {
     id: nanoid(),
-    name: 'Creos Lab',
+    name: 'Alphie',
+    path: '/creos-edu'
+  },
+  {
+    id: nanoid(),
+    name: 'BuildL',
     path: '/creos-lab',
   },
   {
     id: nanoid(),
-    name: 'Creos Token',
+    name: 'Hillock',
     path: '/creos-token',
   },
 ];

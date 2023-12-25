@@ -8,6 +8,7 @@ import { waitlistURL } from '../constants/config';
 import { mainClient } from '../utils/client';
 
 import { toast } from 'react-toastify';
+import { products } from '../data/data';
 
 export default function Waitlist() {
   return (
@@ -69,29 +70,6 @@ const Form = () => {
     formData.email &&
     selectedProduct
   );
-
-  const productOptions = [
-    { id: nanoid(), name: 'Creos Edu' },
-    { id: nanoid(), name: '2' },
-    { id: nanoid(), name: '3' },
-    { id: nanoid(), name: '4' },
-    { id: nanoid(), name: '5' },
-    { id: nanoid(), name: '6' },
-    { id: nanoid(), name: '7' },
-    { id: nanoid(), name: '8' },
-    { id: nanoid(), name: '9' },
-    { id: nanoid(), name: '10' },
-    { id: nanoid(), name: '11' },
-    { id: nanoid(), name: '12' },
-    { id: nanoid(), name: '13' },
-    { id: nanoid(), name: '14' },
-    { id: nanoid(), name: '15' },
-    { id: nanoid(), name: '16' },
-    { id: nanoid(), name: '17' },
-    { id: nanoid(), name: '18' },
-    { id: nanoid(), name: '19' },
-    { id: nanoid(), name: '20' },
-  ];
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -158,7 +136,7 @@ const Form = () => {
         <Select
           value={selectedProduct}
           onChange={setSelectedProduct}
-          options={productOptions}
+          options={products}
           selectedOption={selectedProduct}
         />
       </fieldset>

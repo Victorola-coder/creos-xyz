@@ -165,7 +165,7 @@ export default function Footer() {
                 {products?.map((route) => (
                   <ul key={route?.id}>
                     <li className='font-sat whitespace-nowrap capitalize leading-[24px] text-base text-[#00130D] transition-all duration-500 hover:text-[#00130D]/60'>
-                      <Link to={route?.path}>{route?.name}</Link>
+                      <Link to={"#"}>{route?.name}</Link>
                     </li>
                   </ul>
                 ))}

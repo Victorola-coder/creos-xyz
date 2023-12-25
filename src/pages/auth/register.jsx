@@ -101,7 +101,7 @@ export default function register() {
 
       <form
         onSubmit={handleSubmit}
-        className='overflow-y-scroll overflow-x-hidden for|"m max-w-[800px] h-[740px] p-[40px] mx-auto'
+        className='max-w-[800px] mb-5 p-[40px] mx-auto -mt-10'
       >
         {currentIndex === 0 ? (
           <div className='flex flex-col items-center gap-[32px]'>

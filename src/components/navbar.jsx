@@ -95,9 +95,9 @@ export default function Navbar() {
         </div>
       </nav>
 
-      <nav className={`absolute bg-primary p-5 z-50 w-screen h-screen top-0 left-0 ${isOpened ? 'translate-x-[0] ' : 'translate-x-[-100vw]'}`}>
+      <nav className={`fixed bg-primary p-5 z-50 w-screen h-screen top-0 left-0 ${isOpened ? 'translate-x-[0] ' : 'translate-x-[-100vw]'}`}>
         <div className="flex justify-end w-full items-end px-10 mb-10">
-          <div className="p-2 mt-10 -mr-2 border cursor-pointer" onClick={() => setIsOpened(false)}>
+          <div className="p-2 mt-10 -mr-2 cursor-pointer" onClick={() => setIsOpened(false)}>
             <CloseIcon />
           </div>
         </div>

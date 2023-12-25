@@ -65,8 +65,8 @@ const StepSlide = () => {
           currentIndex: nextActiveIndex
         };
       }
-      if(checked){
-        navigate("/register"); 
+      if (checked) {
+        navigate("/register");
       }
       return prev
     })
@@ -76,129 +76,105 @@ const StepSlide = () => {
     swiper?.slideTo(slides.currentIndex)
   }, [slides.currentIndex])
 
-  const JSX = [
-    <div key={0}>
-      <h1 className='text-creos mb-5 text-[48px] font-extrabold'>
-        Welcome to Creos
-      </h1>
-      <p className='text-[#B0BDB9] text-[28px]'>
-        The future workforce. Creating an event would mean having these three
-        eligibility checked
-      </p>
-    </div>,
-    <div key={1}>
-      <h1 className='text-creos mb-5 text-[48px] font-extrabold'>
-        Long term partnership
-      </h1>
-      <p className='text-[#B0BDB9] text-[28px]'>
-        By creating an event with Creos, this mean you&rsquo;re accessing the
-        private Community of the planets highest paid creators and by doing this
-        becoming one of our global partners.{' '}
-      </p>
-    </div>,
-    <div key={2}>
-      <h1 className='text-creos mb-5 text-[48px] font-extrabold'>
-        Ensuring you maintain our events guidelines and criterias
-      </h1>
-      <p className='text-[#B0BDB9] text-[28px]'>
-        To keep the purpose of events focused within our community, our events
-        are meant to be conceptualized within the idea of exposition to new
-        emerging technologies, and limitless networking opportunities
-      </p>
-    </div>,
-    <div key={4}>
-      <h1 className='text-creos mb-5 text-[48px] font-extrabold'>
-        Creos License criteria
-      </h1>
-      <p className='text-[#B0BDB9] text-[28px]'>
-        To be one of our global event conveners, the Creos license is required
-        and available to interested applicants above the age of 18.
-      </p>
-      <div className='flex items-center gap-4 pt-5'>
-        <CheckBox checked={checked} setChecked={toggleCheck} />
-        <p className='text-creos text-[28px]'>
-          I&rsquo;m fully eligible and ready to apply for the Creos License.
-        </p>
-      </div>
-    </div>,
-  ];
+  const slideContents = [
+    {
+      title: 'Welcome to Creos',
+      img: '/images/create-event-img-1.svg',
+      body: `The future workforce. Creating an event would mean having these three eligibility checked`,
+    },
+    {
+      title: 'Long term partnership',
+      img: '/images/create-event-img-2.svg',
+      body: `By creating an event with Creos, this mean you&rsquo;re accessing the
+      private Community of the planets highest paid creators and by doing this
+      becoming one of our global partners.`,
+    },
+    {
+      title: 'Ensuring you maintain our events guidelines and criterias',
+      img: '/images/create-event-img-3.svg',
+      body: `To keep the purpose of events focused within our community, our events
+      are meant to be conceptualized within the idea of exposition to new
+      emerging technologies, and limitless networking opportunities`,
+    },
+    {
+      title: 'Creos License criteria',
+      img: '/images/create-event-img-4.svg',
+      body: `To be one of our global event conveners, the Creos license is required
+      and available to interested applicants above the age of 18.`,
+    },
+  ]
+
 
   return (
     <>
       <div className='py-[80px]'>
-        <div className='grid grid-cols-2 gap-[80px]'>
-          <div className='flex'>
-            <div className='flex flex-col gap-10 my-auto'>
-              <div className='flex'>
-                {[...Array(4)].map((_, index) => (
-                  <div key={index} className='flex items-center'>
-                    {index !== 0 && (
-                      <div
-                        className={`w-[48px] h-[4px] ${index === 0
-                          ? 'bg-creos'
-                          : 'bg-[#E6EAE8]'
-                          }`}
-                      />
-                    )}
-                    <div
-                      className={`${index === 0
-                        ? 'text-primary bg-creos'
-                        : 'bg-primary text-white'
-                        } w-[32px] h-[32px] border-[#E6EAE8] border-[1px] rounded-full grid place-items-center`}
-                      onClick={() => handleSlides(index)}
-                    >
-                      {index + 1}
-                    </div>
-                  </div>
-                ))}
+        <div className='flex justify-center lg:justify-start mb-10'>
+          {[...Array(4)].map((_, index) => (
+            <div key={index} className='flex items-center'>
+              {index !== 0 && (
+                <div
+                  className={`w-[48px] h-[4px] ${index === 0
+                    ? 'bg-creos'
+                    : 'bg-[#E6EAE8]'
+                    }`}
+                />
+              )}
+              <div
+                className={`${index === slides.currentIndex
+                  ? 'text-primary bg-creos'
+                  : 'bg-primary text-white'
+                  } w-[32px] h-[32px] border-[#E6EAE8] border-[1px] rounded-full grid place-items-center`}
+                onClick={() => handleSlides(index)}
+              >
+                {index + 1}
               </div>
-              <div>{JSX[slides.currentIndex]}</div>
             </div>
+          ))}
+        </div>
+
+        <div className="flex lg:flex-row flex-col gap-20 jusftify-between items-center min-h-[480px]">
+
+          {/* slide contents */}
+          <div className='lg:w-1/2'>
+            <h1 className='text-creos mb-5 text-3xl lg:text-5xl font-extrabold'>
+              {slideContents[slides.currentIndex].title}
+            </h1>
+            <p className='text-[#B0BDB9] text-xl lg:text-2xl'>
+              {slideContents[slides.currentIndex].body}
+            </p>
+            {slides.currentIndex === 3 ?
+              <div className='flex items-center gap-4 pt-5'>
+                <CheckBox checked={checked} setChecked={toggleCheck} />
+                <p className='text-creos text-[28px]'>
+                  I&rsquo;m fully eligible and ready to apply for the Creos License.
+                </p>
+              </div> : null}
           </div>
-          <div>
+          <div className='lg:w-[500px] lg:block hidden'>
             <Swiper
               effect={'flip'}
+              s
               grabCursor={false}
               modules={[EffectFlip]}
               onSwiper={setSwiper}
               allowTouchMove={false}
             >
-              <SwiperSlide>
-                <img
-                  className='transition-all duration-300'
-                  draggable={false}
-                  src="/images/create-event-img-1.svg"
-                  alt='Creos'
-                />
-              </SwiperSlide>
-              <SwiperSlide>
-                <img
-                  className='transition-all duration-300'
-                  draggable={false}
-                  src="/images/create-event-img-2.svg"
-                  alt='Creos'
-                />
-              </SwiperSlide>
-              <SwiperSlide>
-                <img
-                  className='transition-all duration-300'
-                  draggable={false}
-                  src="/images/create-event-img-3.svg"
-                  alt='Creos'
-                />
-              </SwiperSlide>
-              <SwiperSlide>
-                <img
-                  className='transition-all duration-300'
-                  draggable={false}
-                  src="/images/create-event-img-4.svg"
-                  alt='Creos'
-                />
-              </SwiperSlide>
+              {slideContents.map((slide, i) => (
+                <SwiperSlide key={i}>
+                  <img
+                    className='transition-all duration-300'
+                    src={slide.img}
+                    alt='Creos'
+                  />
+                </SwiperSlide>
+              ))}
             </Swiper>
           </div>
         </div>
+
+
       </div>
+
       <div className='border-t-[#E6EAE8] border-t-[1px] pt-[40px] flex justify-between'>
         <Link to='/login'>
           <button className='border-[1px] rounded-[100px] border-creos w-[169px] h-[62px] grid place-items-center text-creos text-[20px]'>

@@ -3,6 +3,7 @@ import Box from '../components/box';
 import Revolution from '../components/revolution';
 import { Hero, Slider, Partner, Haven } from '../layouts';
 
+
 export default function Home() {
   return (
     <>
