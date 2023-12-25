@@ -5,11 +5,11 @@ import { Container } from '../../components';
 
 export default function SlidingImages() {
   return (
-    <>
+    <div className='w-full overflow-hidden'>
       <Container>
         <Marquee className='space-x-3' speed={100} pauseOnHover>
           <section className='my-5'>
-            <div className='flex  flex-row  gap-[28px] mx-4'>
+            <div className='flex flex-row gap-[28px] mx-4'>
               {imgSlider.map((img, index) => (
                 <figure
                   key={index}
@@ -32,6 +32,6 @@ export default function SlidingImages() {
           </section>
         </Marquee>
       </Container>
-    </>
+    </div>
   );
 }

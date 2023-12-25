@@ -15,7 +15,7 @@ function CreosToken() {
             <SEO title='Creos Token' />
             <main className='flex justify-center items-center flex-col'>
                 <p className='lg:text-2xl'>Coming on Ethereum Blockchain.</p>
-                <H1 className='text-[#D9DFDD] font-black text-center !text-[32px] leading-[48px] w-full lg:!text-[72px] lg:leading-[108px]'>
+                <H1 className='text-light font-black text-center !text-[32px] leading-[48px] w-full lg:!text-[72px] lg:leading-[108px]'>
                     Creos Xyz Token <br /> {'($CXYZ)'}
                 </H1>
                 <div className="flex justify-center flex-col items-center">
@@ -69,7 +69,7 @@ function CreosToken() {
                         <Link target='_blank' rel="noopener noreferrer" to={companyData.TWITTER}><button className={'!border-none bg-creos hover:opacity-90 font-medium text-xl w-[300px] overflow-hidden xl:w-[500px] p-5 rounded-full'}>Join</button></Link>
                     </div>
 
-                    {/* <Button className={'!border-none bg-creos hover:bg-[#D9DFDD] w-full'}>Send</Button> */}
+                    {/* <Button className={'!border-none bg-creos hover:bg-light w-full'}>Send</Button> */}
                 </div>
             </main>
         </>

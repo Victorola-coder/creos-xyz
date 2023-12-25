@@ -72,15 +72,14 @@ const Purpose = () => {
 
 const Innovation = () => {
   return (
-    <section className='bg-[#E6EAE8]'>
+    <section className='bg-[#E6EAE8] text-center md:text-left'>
       <Box>
-        <section className='flex flex-row items-start justify-center gap-[143px]'>
-          <div className='flex'>
-            <div className='my-auto'>
+        <section className='flex items-center lg:flex-row flex-col justify-center gap-10'>
+            <div className=''>
               <h1 className='text-[#222222] lg:max-w-[570px] text-[32px] lg:text-[48px] font-extrabold'>
                 Where Innovation Finds Its Voice
               </h1>
-              <p className='lg:text-[24px] max-w-[728px] py-[29px] leading-[28px] lg:leading-[43px] text-black'>
+              <p className='lg:text-[24px] lg:max-w-[728px] py-[29px] leading-[28px] lg:leading-[43px] text-black'>
                 In the heart of Creos, innovation finds its voice. Our
                 collaborative ecosystem fosters an environment where ideas are
                 shared, refined, and transformed into disruptive technologies.
@@ -94,7 +93,6 @@ const Innovation = () => {
                 Join our community
               </Button>
             </div>
-          </div>
           <figure className='flex gap-[25px] items-center row-start-1 lg:col-start-2'>
             <div className='flex flex-col gap-[25px]'>
               <img

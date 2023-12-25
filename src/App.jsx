@@ -54,7 +54,9 @@ const Root = () => {
     <div>
       <Navbar />
       <ScrollRestoration />
-      <Outlet />
+      <div className="mt-40 lg:mt-60">
+        <Outlet />
+      </div>
       <Footer />
     </div>
   );

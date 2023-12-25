@@ -46,3 +46,25 @@ export function Text({ children, className, ...props }) {
     </span>
   );
 }
+
+export function Title({ children, className, leading, small }) {
+  return (
+    <span className={`
+    ${leading ? 'lg:text-5xl text-3xl' : small ? ' text-xl lg:text-2xl' : 'text-2xl lg:text-3xl'} 
+    ${small ? 'font-normal' : 'font-black'}
+    text-light text-center 
+      ${className}`}>
+      {children}
+    </span>
+  );
+}
+
+export function SubTitle({ children, className, leading, small }) {
+  return (
+    <span className={`
+    text-xl lg:text-3xl text-[#B0BDB9]  text-center lg:w-11/12
+      ${className}`}>
+      {children}
+    </span>
+  );
+}

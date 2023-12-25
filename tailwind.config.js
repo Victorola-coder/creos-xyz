@@ -6,6 +6,7 @@ export default {
       colors: {
         creos: '#F7CB9C',
         primary: '#012B1D',
+        light: '#D9DFDD'
       },
       fontFamily: {
         sat: ['Satoshi', 'sans-serif'],

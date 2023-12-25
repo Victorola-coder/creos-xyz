@@ -25,7 +25,7 @@ const TopNavigation = () => {
       <figure className='flex flex-row items-center'>
         <BrandLogo />
       </figure>
-      <div className="w-[234px] h-[68px] p-[10px] rounded-[100px] flex items-center gap-4 bg-[#D9DFDD]">
+      <div className="w-[234px] h-[68px] p-[10px] rounded-[100px] flex items-center gap-4 bg-light">
         <div className="bg-primary grid place-items-center text-white h-[48px] w-[48px] rounded-[100%]">
           SE
         </div>
@@ -51,14 +51,14 @@ const links = [
 const SideNavigation = () => {
 
   return (
-    <nav className="w-[300px] py-[40px] px-[20px] bg-[#D9DFDD] flex flex-col gap-[22px]">
+    <nav className="w-[300px] py-[40px] px-[20px] bg-light flex flex-col gap-[22px]">
       {
         links.map((link, i) => (
           <NavLink key={i} to={link.to} >
             {
               (({ isActive }) => (
                 <button
-                  className={`${isActive ? "bg-[#E6EAE8]" : "bg-[#D9DFDD]"} rounded-[12px] py-[16px] px-[20px] w-full`}>
+                  className={`${isActive ? "bg-[#E6EAE8]" : "bg-light"} rounded-[12px] py-[16px] px-[20px] w-full`}>
                   <div className="flex gap-5 items-center text-primary text-[20px] font-bold">
                     <div className={`${isActive ? "bg-primary" : ""} rounded-[12px] p-[12px]`}>
                       <link.leading className={`${isActive ? 'fill-[#E6EAE8] stroke-[#E6EAE8]' : 'fill-primary stroke-primary'}`} />

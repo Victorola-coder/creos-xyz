@@ -47,7 +47,7 @@ export default function Revolution() {
   return (
     <Container>
       <div className='w-full max-w-[1030px] mx-auto grid place-items-center'>
-        <P className='text-[#D9DFDD] !text-base leading-[24px] lg:!text-[20px] font-medium lg:leading-[48px]'>
+        <P className='text-light !text-base leading-[24px] lg:!text-[20px] font-medium lg:leading-[48px]'>
           Join the Revolution
         </P>
         <h5 className='text-white text-center text-[20px] font-medium leading-[36px] lg:leading-[57.6px] lg:-tracking-[0.2px] lg:text-[36px] my-[28px] lg:max-w-[1030px]'>
