@@ -8,7 +8,7 @@ import { useState } from 'react';
 import Input from '../../components/input';
 import { toast } from 'react-toastify';
 import { mainClient } from '../../utils/client';
-import { loginURL, registerURL } from '../../utils/config';
+import { loginURL, registerURL, validationText } from '../../utils/config';
 
 export default function register() {
   const navigate = useNavigate();
@@ -49,7 +49,7 @@ export default function register() {
       formData.email &&
       formData.password
     )) {
-      warn('All fields are required');
+      toast.error(validationText);
     } else {
       mainClient.post(loginURL, formData)
         .then((r => {
@@ -64,7 +64,7 @@ export default function register() {
             toast.error(r.data.message)
         }))
         .catch(e => {
-          e.response?.data?.message && toast.error(e.response.data.message)
+          handleAxiosError(e)
         })
       return;
     }

@@ -8,7 +8,7 @@ import { useState } from 'react';
 import Input from '../../components/input';
 import { toast } from 'react-toastify';
 import { mainClient } from '../../utils/client';
-import { registerURL } from '../../utils/config';
+import { registerURL, validationText } from '../../utils/config';
 
 export default function register() {
   const navigate = useNavigate();
@@ -63,7 +63,7 @@ export default function register() {
       formData.password &&
       formData.confirmPassword
     )) {
-      warn('All fields are required');
+      toast.error(validationText);
     } else {
       mainClient.post(registerURL, formData)
         .then((r => {
@@ -74,7 +74,7 @@ export default function register() {
             toast.error(r.data.message)
         }))
         .catch(e => {
-          e.response?.data?.message && toast.error(e.response.data.message)
+          handleAxiosError(e)
         })
       return;
     }
@@ -139,7 +139,7 @@ export default function register() {
                 Gender
               </label>
               <select
-                className='placeholder:text-[#B0BDB9] capitalize text-primary lg:px-[20px] lg:py-[24px] w-full lg:w-[720px] rounded-[12px] text-[20px] lg:text-[24px]'
+                className='placeholder:text-[#B0BDB9] capitalize text-primary w-full min-w-[300px] lg:w-[720px] py-[17px] pl-[20px]  pr-[16px] px-[20px] rounded-[12px] font-sat font-medium'
                 onChange={formDataHandler}
                 name='gender'
                 id='gender'

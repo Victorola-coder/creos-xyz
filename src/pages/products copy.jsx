@@ -32,12 +32,12 @@ const Hero = () => {
             Shaping Futures, Empowering Innovators
           </H1>
           <h5 className='text-[#B0BDB9] text-center text-[20px] leading-[36px] lg:leading-[57.6px] lg:text-[32px] my-5'>
-            At Creos, innovation is not just a concept; it&rsquo;s a way of
+            At Creos, innovation is not just a concept; it's a way of
             life. We are excited to introduce our suite of products designed to
             nurture talent, foster collaboration, and drive disruptive
             innovation. <br />
-            With Creos, you&rsquo;re not just exploring possibilities;
-            you&rsquo;re shaping the future.
+            With Creos, you're not just exploring possibilities;
+            you're shaping the future.
           </h5>
         </div>
       </Container>

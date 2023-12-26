@@ -30,7 +30,7 @@ const Community = () => {
           A Community of Fearless Disruptors
         </h1>
         <p className='text-[#B0BDB9] lg:text-[28px] leading-[28px] lg:leading-[50px]'>
-          Creos is more than a network; it&rsquo;s a community of fearless
+          Creos is more than a network; it's a community of fearless
           disruptors. We are pioneers, risk-takers, and forward-thinkers.
           Together, we dismantle traditional boundaries, pushing the envelope of
           what is possible.
@@ -59,7 +59,7 @@ const Purpose = () => {
           <div className='grid place-items-center gap-[20px] w-full max-w-[915px] mx-auto text-center'>
             <h1 className='text-[20px] lg:text-[24px] leading-[30px] lg:leading-[43px] text-[#000F0A]'>
               We challenge our members to consider not just the
-              &rsquo;what&rsquo; but also the &rsquo;why.&rsquo; How does your
+              'what' but also the 'why.' How does your
               innovation make the world safer? How does it contribute to
               sustainability? These questions fuel our creativity, ensuring that
               every disruption we create serves a purpose greater than itself.
@@ -85,7 +85,7 @@ const Innovation = () => {
                 collaborative ecosystem fosters an environment where ideas are
                 shared, refined, and transformed into disruptive technologies.
                 <br /> <br />
-                It&rsquo;s a place where passionate discussions echo through the
+                It's a place where passionate discussions echo through the
                 halls, where expertise is respected, and where diverse
                 perspectives converge to create solutions that challenge the
                 norms.

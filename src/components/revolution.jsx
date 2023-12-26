@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { subscribeURL } from '../utils/config';
+import { subscribeURL, validationText } from '../utils/config';
 import { mainClient } from '../utils/client';
 import { P } from '../utils/typography';
 import Button from './button';
@@ -20,7 +20,7 @@ export default function Revolution() {
     e.preventDefault();
 
     if (form.email === '' || form.firstName === '') {
-      warn('All fields are required');
+      toast.error(validationText)
     } else {
       mainClient.post(subscribeURL, form)
         .then((r => {
@@ -31,7 +31,7 @@ export default function Revolution() {
           toast.error(r.data.message)
         }))
         .catch(e => {
-          toast.error(e.response.data.message)
+          handleAxiosError(e)
         })
       return;
     }

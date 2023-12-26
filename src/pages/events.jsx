@@ -76,7 +76,7 @@ const CreosEvents = () => {
                   Join us for the groundbreaking event of the year, Creos
                   Hackathon, where creators, innovators, and visionaries unite
                   to shape a sustainable future aligned with the United
-                  Nations&rsquo; Sustainable Development Goals.
+                  Nations' Sustainable Development Goals.
                   <br /> <br />
                   Prepare to be immersed in a whirlwind of cutting-edge
                   technologies, collaborative problem-solving, and the thrill of
@@ -119,7 +119,7 @@ const CreosEvents = () => {
                   together to have a blast, enjoy immersive experiences, and
                   expand their networks. <br /> <br />
                   At Creos Geek Out, we believe that your network holds the key
-                  to unlocking endless opportunities and success. It&rsquo;s the
+                  to unlocking endless opportunities and success. It's the
                   perfect platform to foster collaboration, meet potential
                   partners, connect with customers, and so much more.
                 </p>

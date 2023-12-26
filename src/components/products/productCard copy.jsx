@@ -67,11 +67,11 @@ const ProductCard = forwardRef((props, ref) => {
               </h1>
             </header>
             <p className='text-[#D8D8D8] leading-[28px] lg:leading-[43px] lg:text-[24px]'>
-              Creos Token is the currency of innovation. It&rsquo;s not just a
-              digital asset; it&rsquo;s a symbol of your commitment to the
+              Creos Token is the currency of innovation. It's not just a
+              digital asset; it's a symbol of your commitment to the
               future. With Creos Token, you gain access to exclusive events,
               premium educational content, and unique opportunities within the
-              Creos community. It&rsquo;s your passport to a world where
+              Creos community. It's your passport to a world where
               innovation knows no bounds.
             </p>
             <div>
@@ -112,7 +112,7 @@ const ProductCard = forwardRef((props, ref) => {
             </header>
             <p className='text-[#D8D8D8] leading-[28px] lg:leading-[43px] lg:text-[24px]'>
               Creos Lab opens doors to a world of highly paid gigs and AI jobs.
-              Whether you&rsquo;re an AI expert, a data scientist, or a tech
+              Whether you're an AI expert, a data scientist, or a tech
               enthusiast, Creos Lab connects you with businesses and projects
               that value your skills. Find meaningful, high-paying gigs that not
               only challenge your expertise but also contribute to
@@ -134,9 +134,9 @@ const ProductCard = forwardRef((props, ref) => {
               className='w-full'
             />
             <figcaption className='bg-white rounded-[20px] p-[20px] text-[20px] leading-[30px] text-[#564737]'>
-              At Creos, we don&rsquo;t just innovate; we inspire. Join us on
+              At Creos, we don't just innovate; we inspire. Join us on
               this journey of creativity, collaboration, and disruption.
-              Together, let&rsquo;s shape a future where innovation knows no
+              Together, let's shape a future where innovation knows no
               limits. Welcome to Creos, where your ideas find their wings and
               innovation becomes a legacy.
             </figcaption>

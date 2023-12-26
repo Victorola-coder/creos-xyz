@@ -36,6 +36,8 @@ export const linkedInURL = `${BASE_API_ENDPOINT}/submissions/linkedin`
 export const addressURL = `${BASE_API_ENDPOINT}/submissions/address`
 
 export const profileURL = `${BASE_API_ENDPOINT}/users/profile`
+export const serverError = 'Unable to process request. Please try again later.'
+export const validationText = 'All fields are required'
 
 
 export const companyData = {

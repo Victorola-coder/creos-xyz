@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 import BgToken from '../assets/images/bg-token.png';
 import ClockIcon from '../assets/svgs/clock';
 import { SEO } from '../components';
-import { addressURL, companyData } from '../utils/config';
+import { addressURL, companyData, validationText } from '../utils/config';
 import { H1 } from '../utils/typography';
 import { mainClient } from '../utils/client';
 
@@ -17,7 +17,7 @@ function CreosToken() {
     const handleSubmit = e => {
         e.preventDefault();
         if (!address) {
-            warn('All fields are required');
+            toast.error(validationText);
         } else {
             mainClient.post(addressURL, {
                 address

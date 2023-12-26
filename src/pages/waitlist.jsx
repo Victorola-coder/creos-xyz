@@ -4,7 +4,7 @@ import Input from '../components/input';
 import SecondaryButton from '../components/secondaryButton';
 import Select from '../components/select';
 import { nanoid } from 'nanoid';
-import { waitlistURL } from '../utils/config';
+import { validationText, waitlistURL } from '../utils/config';
 import { mainClient } from '../utils/client';
 
 import { toast } from 'react-toastify';
@@ -31,10 +31,10 @@ const Main = () => {
               Join our waitlist
             </h1>
             <p className='text-[#E6EAE8] text-[20px] lg:text-[32px]'>
-              Exciting things are happening at Creos, and we can&rsquo;t wait
+              Exciting things are happening at Creos, and we can't wait
               for you to be a part of it.
               <br /> <br />
-              By signing up for our waitlist, you&rsquo;re taking the first step
+              By signing up for our waitlist, you're taking the first step
               towards unlocking a world of innovation, collaboration, and
               endless possibilities.
             </p>
@@ -76,7 +76,7 @@ const Form = () => {
     if (!(formData.name &&
       formData.email &&
       selectedProduct)) {
-      warn('All fields are required');
+        toast.error(validationText);
     } else {
       mainClient.post(waitlistURL, {
         name: formData.name,
@@ -92,7 +92,7 @@ const Form = () => {
             toast.error(r.data.message)
         }))
         .catch(e => {
-          toast.error(e.response.data.message)
+          handleAxiosError(e)
         })
       return;
     }

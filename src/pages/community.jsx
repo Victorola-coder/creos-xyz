@@ -4,8 +4,10 @@ import { Button, Container, SEO } from '../components';
 import Input from '../components/input';
 import Revolution from '../components/revolution';
 import { mainClient } from '../utils/client';
-import { linkedInURL } from '../utils/config';
+import { linkedInURL, validationText } from '../utils/config';
 import { H1 } from '../utils/typography';
+import { handleAxiosError } from '../utils/common';
+import { Link } from 'react-router-dom';
 
 export default function Community() {
   return (
@@ -30,9 +32,9 @@ const Hero = () => {
             Join the Creos Community: Where Innovators Thrive
           </H1>
           <h5 className='text-[#B0BDB9] text-center text-[20px] leading-[36px] lg:leading-[57.6px] lg:text-[32px] my-5'>
-            At Creos, we&rsquo;re on the lookout for revolutionary creators,
+            At Creos, we're on the lookout for revolutionary creators,
             visionaries who are reshaping the world as we know it. If
-            you&rsquo;ve got what it takes to be part of our vibrant community,
+            you've got what it takes to be part of our vibrant community,
             there are three pathways to join us:
           </h5>
         </div>
@@ -59,7 +61,7 @@ const Main = () => {
   const handleSubmit = e => {
     e.preventDefault();
     if (!url) {
-      warn('All fields are required');
+      toast.error(validationText)
     } else {
       mainClient.post(linkedInURL, { url })
         .then((r => {
@@ -70,7 +72,7 @@ const Main = () => {
             toast.error(r.data.message)
         }))
         .catch(e => {
-          toast.error(e.response.data.message)
+          handleAxiosError(e)
         })
       return;
     }
@@ -84,7 +86,7 @@ const Main = () => {
             <div className='flex'>
               <div className='my-auto'>
                 <h1 ref={targetRef} id="connnection" className='text-[#222222] text-[32px] lg:text-[48px] font-extrabold'>
-                  We&rsquo;re Watching
+                  We're Watching
                 </h1>
                 <p className='lg:text-[24px] py-[29px] leading-[43px] text-black'>
                   Creos scouts the globe for groundbreaking innovators
@@ -127,9 +129,9 @@ const Main = () => {
                   Pay for Membership
                 </h1>
                 <p className='lg:text-[24px] py-[29px] leading-[43px] text-black'>
-                  Already confident you&rsquo;re a perfect fit for Creos? You
+                  Already confident you're a perfect fit for Creos? You
                   can expedite your entry by opting for our paid membership. For
-                  a fee of $2,000, here&rsquo;s what you get:
+                  a fee of $2,000, here's what you get:
                 </p>
                 <ul className='lg:text-[24px] py-[32px] leading-[43px] text-black flex flex-col gap-2'>
                   <li className='pl-6 relative before:absolute before:left-0 before:top-[10px]s before:h-2 before:w-2 before:rounded-[100%] before:bg-black before:top-[18px]'>
@@ -150,9 +152,11 @@ const Main = () => {
                     networking opportunities.
                   </li>
                 </ul>
-                <Button className='bg-primary text-white !w-[176px] border-[#B0BDB9]'>
-                  Let&rsquo;s go
-                </Button>
+                <Link to="/register">
+                  <Button className='bg-primary text-white !w-[176px] border-[#B0BDB9]'>
+                    Let's go
+                  </Button>
+                </Link>
               </div>
             </div>
           </section>
@@ -173,12 +177,12 @@ const WhyJoinCreos = () => {
             Why Join Creos?
           </H1>
           <h5 className='text-[#E6EAE8] text-center text-[20px] leading-[36px] lg:leading-[43px] lg:text-[24px] my-5'>
-            At Creos, we&rsquo;re more than a community; we&rsquo;re a movement
+            At Creos, we're more than a community; we're a movement
             driving change. Here, innovation meets recognition, and creativity
-            finds its stage. When you join Creos, you&rsquo;re not just joining
-            a network; you&rsquo;re becoming part of a family of disruptors,
+            finds its stage. When you join Creos, you're not just joining
+            a network; you're becoming part of a family of disruptors,
             inventors, and pioneers shaping the future. <br /> <br />
-            Your journey to innovation begins here. Let&rsquo;s build a better
+            Your journey to innovation begins here. Let's build a better
             future together. Join Creos, where your ideas transform into
             realities.
           </h5>

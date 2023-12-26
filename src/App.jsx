@@ -29,6 +29,8 @@ import { Login, Register } from './pages/auth';
 import DashboardContacts from './pages/dashboard/contact';
 import DashboardCreateEvent from './pages/dashboard/create-event';
 import DashboardEvents from './pages/dashboard/events';
+import { mainClient } from './utils/client';
+import { BASE_API_ENDPOINT } from './utils/config';
 const Root = () => {
   const { pathname } = useLocation();
 
@@ -162,6 +164,8 @@ const router = createBrowserRouter([
 
 function App() {
   useEffect(() => {
+    mainClient.get(BASE_API_ENDPOINT)
+    .catch(()=>{})
     scroll();
   }, []);
 

@@ -5,7 +5,7 @@ import SecondaryButton from '../components/secondaryButton';
 import TextArea from '../components/textarea';
 import { mainClient } from '../utils/client';
 import { toast } from 'react-toastify';
-import { contactURL } from '../utils/config';
+import { contactURL, validationText } from '../utils/config';
 
 export default function Contact() {
   return (
@@ -31,7 +31,7 @@ const Main = () => {
               Get in touch
             </h1>
             <p className='text-[#E6EAE8] text-[20px] lg:text-[32px]'>
-              We&rsquo;d love to hear from you. Please fill out this form.
+              We'd love to hear from you. Please fill out this form.
             </p>
           </div>
         </div>
@@ -71,7 +71,7 @@ const Form = () => {
       formData.email &&
       formData.enquiry &&
       formData.message)) {
-      warn('All fields are required');
+        toast.error(validationText);
     } else {
       mainClient.post(contactURL, formData)
         .then((r => {
@@ -87,7 +87,7 @@ const Form = () => {
             toast.error(r.data.message)
         }))
         .catch(e => {
-          toast.error(e.response.data.message)
+          handleAxiosError(e)
         })
       return;
     }

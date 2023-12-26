@@ -85,7 +85,7 @@ const StepSlide = () => {
     {
       title: 'Long term partnership',
       img: '/images/create-event-img-2.svg',
-      body: `By creating an event with Creos, this mean you&rsquo;re accessing the
+      body: `By creating an event with Creos, this mean you're accessing the
       private Community of the planets highest paid creators and by doing this
       becoming one of our global partners.`,
     },
@@ -146,7 +146,7 @@ const StepSlide = () => {
               <div className='flex items-center gap-4 pt-5'>
                 <CheckBox checked={checked} setChecked={toggleCheck} />
                 <p className='text-creos text-[28px]'>
-                  I&rsquo;m fully eligible and ready to apply for the Creos License.
+                  I'm fully eligible and ready to apply for the Creos License.
                 </p>
               </div> : null}
           </div>
