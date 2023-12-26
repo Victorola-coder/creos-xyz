@@ -1,11 +1,11 @@
-import { useRef, useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { toast } from 'react-toastify';
 import { Button, Container, SEO } from '../components';
 import Input from '../components/input';
 import Revolution from '../components/revolution';
-import { H1 } from '../utils/typography';
-import { linkedInURL } from '../constants/config';
 import { mainClient } from '../utils/client';
-import { toast } from 'react-toastify';
+import { linkedInURL } from '../utils/config';
+import { H1 } from '../utils/typography';
 
 export default function Community() {
   return (

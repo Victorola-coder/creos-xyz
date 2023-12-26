@@ -10,7 +10,7 @@ import {
   META_PUBLISHER,
   META_TYPE,
   META_URL,
-} from '../constants/config';
+} from '../utils/config';
 
 export default function SEO({
   title,

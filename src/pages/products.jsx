@@ -7,6 +7,8 @@ import 'swiper/css/effect-creative';
 import { useEffect, useRef } from 'react';
 import Box from '../components/box';
 import { useInView } from 'framer-motion';
+import { products } from '../utils/data';
+import { motion } from "framer-motion"
 
 export default function Products() {
   return (
@@ -53,56 +55,101 @@ const JoinWaitlist = () => {
   const secondCardInView = useInView(secondCardRef);
   const thirdCardInView = useInView(thirdCardRef);
 
-  useEffect(() => {
-    console.log('Hi');
-    if (containerInView) {
-      if (!thirdCardInView) {
-        console.log(secondCardRef.current);
-        const height = secondCardRef.current.clientHeight;
-        secondCardRef.current.style.transform = `translateY(${
-          height * 1.2 + 200
-        }px)`;
-      } else {
-        secondCardRef.current.style.transform = `translateY(0px)`;
-        firstCardRef.current.style.transform = `translateY(0px)`;
-      }
+  // useEffect(() => {
+  //   console.log('Hi');
+  //   if (containerInView) {
+  //     if (!thirdCardInView) {
+  //       console.log(secondCardRef.current);
+  //       const height = secondCardRef.current.clientHeight;
+  //       secondCardRef.current.style.transform = `translateY(${height * 1.2
+  //         }px)`;
+  //     } else {
+  //       secondCardRef.current.style.transform = `translateY(0px)`;
+  //       firstCardRef.current.style.transform = `translateY(0px)`;
+  //     }
 
-      if (!secondCardInView && !thirdCardInView) {
-        const height = firstCardRef.current.clientHeight;
-        firstCardRef.current.style.transform = `translateY(${
-          height * 3 + 200
-        }px)`;
-      } else {
-        firstCardRef.current.style.transform = `translateY(0px)`;
+  //     if (!secondCardInView && !thirdCardInView) {
+  //       const height = firstCardRef.current.clientHeight;
+  //       firstCardRef.current.style.transform = `translateY(${height * 3 + 200
+  //         }px)`;
+  //     } else {
+  //       firstCardRef.current.style.transform = `translateY(0px)`;
+  //     }
+  //   }
+  // }, [thirdCardInView, secondCardInView]);
+
+
+  const cardVariants = {
+    offscreen: {
+      y: -100,
+      opacity: 0
+    },
+    onscreen: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        bounce: 0.4,
+        duration: 0.8
       }
     }
-  }, [thirdCardInView, secondCardInView]);
+  };
+
 
   return (
     <section
-      className='bg-[#E6EAE8] py-[30px] lg:py-[100px]'
+      className='bg-[#E6EAE8]'
       ref={containerRef}
     >
       <Box className=''>
-        <div className='w-full max-w-[1550px] mx-auto relative pb-[500px]'>
-          <ProductCard
-            index={0}
-            ref={firstCardRef}
-            className='absolute top-0 z-[10]'
-          />
-          <ProductCard
-            index={1}
-            ref={secondCardRef}
-            className='left-0 top-[70px] lg:top-[150px] absolute z-[20]'
-          />
-          <ProductCard
-            index={2}
-            ref={thirdCardRef}
-            className='left-0 top-[140px] lg:top-[300px] absolute z-[30]'
-          />
-          <ProductCard index={0} className='mb-[200px] invisible' />
-          <ProductCard index={1} className='invisible' />
-          <ProductCard index={2} className='invisible' />
+        <div className='w-full max-w-[1550px mx-auto relative'>
+          <motion.div
+            className="card-container mb-10"
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: true, amount: 0.8 }}
+          >
+            {/* <div className="splash" style={{ background }} /> */}
+            <motion.div className="card" variants={cardVariants}>
+              <ProductCard
+                index={0}
+                product={products[0]}
+                showButton
+                ref={firstCardRef}
+              />
+            </motion.div>
+          </motion.div>
+          <motion.div
+            className="card-container mb-10"
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: true, amount: 0.8 }}
+          >
+            {/* <div className="splash" style={{ background }} /> */}
+            <motion.div className="card" variants={cardVariants}>
+            <ProductCard
+                index={1}
+                product={products[1]}
+                showButton
+                ref={secondCardRef}
+              />
+            </motion.div>
+          </motion.div>
+          <motion.div
+            className="card-container mb-10"
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: true, amount: 0.8 }}
+          >
+            {/* <div className="splash" style={{ background }} /> */}
+            <motion.div className="card" variants={cardVariants}>
+            <ProductCard
+                index={2}
+                product={products[2]}
+                ref={thirdCardRef}
+              />
+            </motion.div>
+          </motion.div>
         </div>
       </Box>
     </section>

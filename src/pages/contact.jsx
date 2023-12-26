@@ -5,7 +5,7 @@ import SecondaryButton from '../components/secondaryButton';
 import TextArea from '../components/textarea';
 import { mainClient } from '../utils/client';
 import { toast } from 'react-toastify';
-import { contactURL } from '../constants/config';
+import { contactURL } from '../utils/config';
 
 export default function Contact() {
   return (

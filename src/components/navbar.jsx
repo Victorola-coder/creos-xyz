@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Logo, LogoName } from '../assets/svgs/svg';
-import { navLinks } from '../data/data';
+import { navLinks } from '../utils/data';
 import { Link, NavLink } from 'react-router-dom';
 import { Button } from './';
 

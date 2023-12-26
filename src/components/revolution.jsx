@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { subscribeURL } from '../constants/config';
+import { subscribeURL } from '../utils/config';
 import { mainClient } from '../utils/client';
 import { P } from '../utils/typography';
 import Button from './button';

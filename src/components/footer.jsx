@@ -10,7 +10,7 @@ import {
   ThreadIcon,
   TwLogo,
 } from '../assets/svgs/svg';
-import { company, events, legal, products, resources } from '../data/data';
+import { company, events, legal, products, resources } from '../utils/data';
 
 export default function Footer() {
   return (

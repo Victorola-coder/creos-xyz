@@ -8,7 +8,7 @@ import { useState } from 'react';
 import Input from '../../components/input';
 import { toast } from 'react-toastify';
 import { mainClient } from '../../utils/client';
-import { registerURL } from '../../constants/config';
+import { registerURL } from '../../utils/config';
 
 export default function register() {
   const navigate = useNavigate();

@@ -1,7 +1,7 @@
 import { Container, SEO } from '../components';
 import Revolution from '../components/revolution';
 import { InstagramIcon, LinkedInIcon, XIcon } from '../components/svgs';
-import { teamMembersData } from '../data/team';
+import { teamMembersData } from '../utils/data';
 import { H1 } from '../utils/typography';
 
 export default function Team() {

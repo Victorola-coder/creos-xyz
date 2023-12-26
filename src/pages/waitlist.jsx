@@ -4,11 +4,11 @@ import Input from '../components/input';
 import SecondaryButton from '../components/secondaryButton';
 import Select from '../components/select';
 import { nanoid } from 'nanoid';
-import { waitlistURL } from '../constants/config';
+import { waitlistURL } from '../utils/config';
 import { mainClient } from '../utils/client';
 
 import { toast } from 'react-toastify';
-import { products } from '../data/data';
+import { products } from '../utils/data';
 
 export default function Waitlist() {
   return (

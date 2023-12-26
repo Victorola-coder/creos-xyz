@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unknown-property */
-import { imgSlider } from '../../data/data';
+import { imgSlider } from '../../utils/data';
 import Marquee from 'react-fast-marquee';
 import { Container } from '../../components';
 

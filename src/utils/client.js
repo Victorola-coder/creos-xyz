@@ -1,5 +1,5 @@
 import axios from "redaxios";
-import { BASE_API_ENDPOINT } from "../constants/config";
+import { BASE_API_ENDPOINT } from "./config";
 
 export const getClient = (
     baseURL = BASE_API_ENDPOINT,
