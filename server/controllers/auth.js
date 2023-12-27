@@ -1,6 +1,7 @@
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
 import crypto from 'crypto'
+import cookie from 'cookie'
 import { Token, User } from '../mongodb/models/index.js';
 import Joi from 'joi';
 import sendEmail from "../services/email.js";
@@ -48,6 +49,7 @@ const register = async (req, res) => {
 // TODO: Use cookies for tokens
 // Login with an existing user
 const login = async (req, res, next) => {
+    console.log("mnvhg")
     const { email, password } = req.body;
     try {
         const user = await User.findOne({ email });
@@ -60,22 +62,22 @@ const login = async (req, res, next) => {
         if (!isPasswordCorrect) {
             return res.status(401).json({ message: config.ERROR_MESSAGES.InvalidCredentialsProvided });
         }
-        // res.setHeader(
-        //     "Set-Cookie",
-        //     cookie.serialize("token", "Bearer " + accessToken, {
-        //         httpOnly: true,
-        //         secure: process.env.NODE_ENV === "local" ? false : true,
-        //         sameSite: "lax",
-        //         domain:
-        //             process.env.NODE_ENV === "local" ? "localhost" : "rdland.io",
-        //         path: "/",
-        //         maxAge: 360000,
-        //     })
-        // );
 
         const accessToken = generateAccessToken(user);
         const refreshToken = generateRefreshToken(user);
 
+        res.setHeader(
+            "Set-Cookie",
+            cookie.serialize("token", "Bearer " + accessToken, {
+                httpOnly: true,
+                secure: process.env.NODE_ENV === "development" ? false : true,
+                sameSite: "lax",
+                domain:
+                    process.env.NODE_ENV === "development" ? "localhost" : "creosxyz.com",
+                path: "/",
+                maxAge: 360000,
+            })
+        );
 
         return res.status(200).json({ user, accessToken, refreshToken });
     } catch (error) {

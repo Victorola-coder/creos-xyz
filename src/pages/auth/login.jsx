@@ -1,14 +1,15 @@
-import { Link } from 'react-router-dom';
-import { Button, SEO } from '../../components';
-import { Logo, LogoName } from '../../assets/svgs/svg';
-import 'swiper/css/effect-flip';
-import { Close } from '../../components/svgs';
-import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import Input from '../../components/input';
+import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import 'swiper/css/effect-flip';
+import { Logo, LogoName } from '../../assets/svgs/svg';
+import { Button, SEO } from '../../components';
+import Input from '../../components/input';
+import { Close } from '../../components/svgs';
 import { mainClient } from '../../utils/client';
-import { loginURL, registerURL, validationText } from '../../utils/config';
+import { handleAxiosError } from '../../utils/common';
+import { loginURL, validationText } from '../../utils/config';
+import Cookies from 'cookies';
 
 export default function register() {
   const navigate = useNavigate();
@@ -27,20 +28,13 @@ export default function register() {
   };
 
 
-  const genders = ['Male', 'Female'];
-
-
   const handleClick = () => {
     navigate('/');
   };
 
 
   const handleClickForm = (e) => {
-    if (currentIndex !== 0) {
-      handleSubmit(e)
-    } else {
-      setCurrentIndex(1)
-    }
+    handleSubmit(e)
   };
 
   const handleSubmit = (e) => {
@@ -53,18 +47,30 @@ export default function register() {
     } else {
       mainClient.post(loginURL, formData)
         .then((r => {
+          console.log(r)
           if (r.status === 200) {
-            toast.success(r.data.message)
-            setForm({
+            toast.success("Login successful!")
+            const token = r.data.accessToken
+            // const cookies = new Cookies();
+            // cookies.set('token', token, {
+            //   expires: 7, 
+            //   path: '/',
+            //   httpOnly: true,
+            //   sameSite: "lax",
+            //   domain: process.env.NODE_ENV === "development" ? "localhost" : "creosxyz.com",
+            // });
+            document.cookie = `exampleCookie=${token}; expires=7; path=/; secure; HttpOnly`;
+            navigate("/dashboard/events")
+            setFormData({
               email: '',
               password: '',
             })
-            navigate('/login')
           } else
-            toast.error(r.data.message)
+            handleAxiosError(e)
         }))
         .catch(e => {
-          handleAxiosError(e)
+          console.log(e)
+          // handleAxiosError(e)
         })
       return;
     }
@@ -121,9 +127,9 @@ export default function register() {
               className='placeholder:text-[#B0BDB9] lg:px-[20px] lg:py-[24px] w-full lg:w-[720px] rounded-[12px] text-[20px] lg:text-[24px]'
             />
           </fieldset>
-          
+
         </div>
-        <div className="">
+        <div className="flex justify-center">
           <Button
             onClick={handleClickForm}
             className={`text-primary !border-[4px] !border-[#DEB78C] lg:!w-[286px]  !bg-creos my-10 `}>
