@@ -2,6 +2,7 @@ import React from 'react';
 import { H3, SubTitle, Title } from '../../utils/typography';
 import { Button, Container } from '../../components';
 import BgToken from '../../assets/images/bg-token.png';
+import { Link } from 'react-router-dom';
 
 export default function CreatorsHaven() {
   return (
@@ -42,7 +43,9 @@ export default function CreatorsHaven() {
                 </SubTitle>
 
               </div>
+              <Link to={'/creos-token'}>
               <Button className={'bg-creos border-none mb-10'}>Learn more</Button>
+              </Link>
             </div>
           </div>
         </section>

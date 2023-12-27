@@ -22,11 +22,11 @@ const Hero = () => {
       <Container>
         <div className='w-full max-w-[1188px] mx-auto grid place-items-center'>
           <H1 className='text-light font-black text-center !text-[32px] leading-[48px] w-full lg:!text-[72px] lg:leading-[108px] max-w-[869px]'>
-            Discover the Future at Creos Events
+          Web3 Events Ticketing System for Creator's.
           </H1>
           <h5 className='text-[#B0BDB9] text-center text-[20px] leading-[36px] lg:leading-[57.6px] lg:text-[32px] my-5'>
-            Join us in the dynamic world of Creos Events, where creativity meets
-            competition and innovation sparks to life.
+          While the world evolves with Web3 events to scale Web2 users into Web3 and aid growth in the space. 
+          Vents as one of Creos ecosystem is built to enhance events ticketing. 
           </h5>
           <Link to='/events/create'>
             <Button className='bg-creos hover:bg-[#DEB78C] transition-all duration-200 !border-[#DEB78C] text-black'>
@@ -134,3 +134,4 @@ const CreosEvents = () => {
     </section>
   );
 };
+
