@@ -5,9 +5,10 @@ export default {
     extend: {
       colors: {
         creos: '#F7CB9C',
-        primary: '#012B1D',
+        primary: { DEFAULT: '#012B1D', faded: '#B0BDB9' },
         light: '#D9DFDD',
         brown: '#564737',
+        dark: '#222222' 
       },
       fontFamily: {
         sat: ['Satoshi', 'sans-serif'],

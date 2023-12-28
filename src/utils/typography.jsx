@@ -62,7 +62,7 @@ export function Title({ children, className, leading, small }) {
 export function SubTitle({ children, className, leading, small }) {
   return (
     <span className={`
-    text-xl lg:text-3xl text-[#B0BDB9]  text-center lg:w-11/12
+    text-xl lg:text-3xl text-primary-faded  text-center lg:w-11/12
       ${className}`}>
       {children}
     </span>

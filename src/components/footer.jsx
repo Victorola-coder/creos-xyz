@@ -20,7 +20,7 @@ export default function Footer() {
       >
         <div className='flex flex-col justify-center lg:gap-[350px] lg:flex lg:flex-row lg:items-center'>
           <H3
-            className={`text-base text-[#000F0A] text-[24px] max-w-[353px] md:text-[30px] md:leading-[40px] lg:text-[32px] md:max-w-[784px] lg:tracking-[-0.2px] lg:leading-[48px]`}
+            className={`text-base text-[#000F0A] text-2xl max-w-[353px] md:text-[30px] md:leading-[40px] lg:text-[32px] md:max-w-[784px] lg:tracking-[-0.2px] lg:leading-[48px]`}
           >
             Welcome to Creos, where dreams meet disruption, and together, we
             build a better world.
@@ -31,7 +31,7 @@ export default function Footer() {
             rel='noopener noreferrer'
           >
             <Button
-              className={`!bg-[#00130D] justify-center !text-[#FEFAF5] flex flex-row gap-[10px] max-w-full !w-[330px] lg:!w-[393px] items-center border-solid border-[4px] border-[#B0BDB9]`}
+              className={`!bg-[#00130D] justify-center !text-[#FEFAF5] flex flex-row gap-[10px] max-w-full !w-[330px] lg:!w-[393px] items-center border-solid border-[4px] border-primary-faded`}
             >
               <span>
                 <figure>
@@ -208,7 +208,7 @@ export default function Footer() {
           </div>
         </section>
         <div>
-          <P className='text-[#000F0A] !text-base !leading-[24px] lg:!text-[20px] lg:!leading-[30px] font-normal mx-auto text-center mt-[20px] lg:mt-[100px] '>
+          <P className='text-[#000F0A] !text-base !leading-[24px] lg:!text-xl lg:!leading-[30px] font-normal mx-auto text-center mt-[20px] lg:mt-[100px] '>
             Ⓒ creos | All rights reserved 2021 -
             <span>{new Date().getFullYear()}</span>
           </P>

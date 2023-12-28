@@ -25,7 +25,7 @@ const Hero = () => {
           <H1 className='text-light font-black text-center !text-[32px] leading-[48px] w-full lg:!text-[72px] lg:leading-[108px]'>
             We're building the future workforce
           </H1>
-          <h5 className='text-[#B0BDB9] text-center text-[20px] leading-[36px] lg:leading-[57.6px] lg:text-[32px] my-5'>
+          <h5 className='text-primary-faded text-center text-xl leading-[36px] lg:leading-[57.6px] lg:text-[32px] my-5'>
             Creos “a Spanish word” mean Creators “in English” and our story
             began a minute in the year 2418 when we realized the future demand
             of the workforce.
@@ -56,7 +56,7 @@ const Content = () => {
               <h1 className='text-[28px] lg:text-[32px] font-extrabold text-[#E6EAE8]'>
                 {team.name}
               </h1>
-              <h2 className='lg:text-[24px]'>{team.role}</h2>
+              <h2 className='lg:text-2xl'>{team.role}</h2>
               <div className='flex items-center gap-4'>
                 <XIcon />
                 <LinkedInIcon />

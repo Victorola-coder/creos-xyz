@@ -43,9 +43,9 @@ export default function Navbar() {
             >
               {({ isActive }) => (
                 <h5
-                  className={`relative transition-all duration-300 lg:text-[24px] lg:leading-[36px] text-xs before:content-['']  font-sat before:absolute before:h-1 before:-bottom-1 before:transition-all before:duration-300 ${isActive
-                    ? 'text-creos font-bold text-[24px] before:w-full'
-                    : 'text-creos font-normal text-[20px] before:w-[0px] hover:before:w-full'
+                  className={`relative transition-all duration-300 lg:text-2xl lg:leading-[36px] text-xs before:content-['']  font-sat before:absolute before:h-1 before:-bottom-1 before:transition-all before:duration-300 ${isActive
+                    ? 'text-creos font-bold text-2xl before:w-full'
+                    : 'text-creos font-normal text-xl before:w-[0px] hover:before:w-full'
                     }`}
                 >
                   {route?.route}

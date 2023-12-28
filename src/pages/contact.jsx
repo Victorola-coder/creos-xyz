@@ -24,13 +24,13 @@ const Main = () => {
       <div className='grid lg:grid-cols-2 mb-[182px] gap-[20px] pt-5'>
         <div>
           <div className='max-w-[487px]'>
-            <h2 className='text-[#E6EAE8] text-[20px] lg:text-[40px]'>
+            <h2 className='text-[#E6EAE8] text-xl lg:text-[40px]'>
               Contact us
             </h2>
             <h1 className='font-extrabold text-[32px] lg:text-[72px] text-white'>
               Get in touch
             </h1>
-            <p className='text-[#E6EAE8] text-[20px] lg:text-[32px]'>
+            <p className='text-[#E6EAE8] text-xl lg:text-[32px]'>
               We'd love to hear from you. Please fill out this form.
             </p>
           </div>
@@ -96,52 +96,52 @@ const Form = () => {
   return (
     <form className='flex flex-col gap-[20px]' onSubmit={handleSubmit}>
       <fieldset>
-        <label className='text-white inline-block mb-2 text-[20px] lg:text-[24px]'>
+        <label className='text-white inline-block mb-2 text-xl lg:text-2xl'>
           Full Name
         </label>
         <Input
           placeholder='Full Name'
           type='text'
           name='name'
-          className='placeholder-primary rounded-[12px] text-[20px] lg:text-[24px]'
+          className='placeholder-primary rounded-[12px] text-xl lg:text-2xl'
           value={formData.name}
           onChange={formDataHandler}
         />
       </fieldset>
       <fieldset>
-        <label className='text-white inline-block mb-2 text-[20px] lg:text-[24px]'>
+        <label className='text-white inline-block mb-2 text-xl lg:text-2xl'>
           Email
         </label>
         <Input
           placeholder='you@company.com'
           type='email'
           name='email'
-          className='placeholder-primary rounded-[12px] text-[20px] lg:text-[24px]'
+          className='placeholder-primary rounded-[12px] text-xl lg:text-2xl'
           value={formData.email}
           onChange={formDataHandler}
         />
       </fieldset>
       <fieldset>
-        <label className='text-white inline-block mb-2 text-[20px] lg:text-[24px]'>
+        <label className='text-white inline-block mb-2 text-xl lg:text-2xl'>
           What is your enquiry about?
         </label>
         <Input
           placeholder='your enquiry'
           type='text'
           name='enquiry'
-          className='placeholder-primary rounded-[12px] text-[20px] lg:text-[24px]'
+          className='placeholder-primary rounded-[12px] text-xl lg:text-2xl'
           value={formData.enquiry}
           onChange={formDataHandler}
         />
       </fieldset>
       <fieldset>
-        <label className='text-white inline-block mb-2 text-[20px] lg:text-[24px]'>
+        <label className='text-white inline-block mb-2 text-xl lg:text-2xl'>
           Message
         </label>
         <TextArea
           type='text'
           name='message'
-          className='rounded-[12px] outline text-[20px] lg:text-[24px]'
+          className='rounded-[12px] outline text-xl lg:text-2xl'
           value={formData.message}
           onChange={formDataHandler}
         />

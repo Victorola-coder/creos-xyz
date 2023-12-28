@@ -21,7 +21,7 @@ export default function Dashboard() {
 const TopNavigation = () => {
 
   return (
-    <nav className="px-[60px] py-[26px] flex justify-between border-b-[#B0BDB9] border-b-[1px]">
+    <nav className="px-[60px] py-[26px] flex justify-between border-b-primary-faded border-b-[1px]">
       <figure className='flex flex-row items-center'>
         <BrandLogo />
       </figure>
@@ -29,7 +29,7 @@ const TopNavigation = () => {
         <div className="bg-primary grid place-items-center text-white h-[48px] w-[48px] rounded-[100%]">
           SE
         </div>
-        <p className="text-primary text-[20px] font-medium">Stephen Elufisan</p>
+        <p className="text-primary text-xl font-medium">Stephen Elufisan</p>
       </div>
     </nav>
   )
@@ -59,7 +59,7 @@ const SideNavigation = () => {
               (({ isActive }) => (
                 <button
                   className={`${isActive ? "bg-[#E6EAE8]" : "bg-light"} rounded-[12px] py-[16px] px-[20px] w-full`}>
-                  <div className="flex gap-5 items-center text-primary text-[20px] font-bold">
+                  <div className="flex gap-5 items-center text-primary text-xl font-bold">
                     <div className={`${isActive ? "bg-primary" : ""} rounded-[12px] p-[12px]`}>
                       <link.leading className={`${isActive ? 'fill-[#E6EAE8] stroke-[#E6EAE8]' : 'fill-primary stroke-primary'}`} />
                     </div>

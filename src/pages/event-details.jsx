@@ -20,15 +20,15 @@ const Hero = () => {
       <div className='grid grid-cols-2 gap-[124px] px-5'>
         <div className='flex flex-col gap-8'>
           <header>
-            <h2 className='text-[#B0BDB9] text-[24px]'>November 15-17, 2023</h2>
+            <h2 className='text-primary-faded text-2xl'>November 15-17, 2023</h2>
             <h1 className='text-[48px] font-bold py-2'>
               Digital Innovation Summit
             </h1>
-            <h3 className='text-creos text-[24px]'>
+            <h3 className='text-creos text-2xl'>
               The Innovation Hub, San Francisco, CA
             </h3>
           </header>
-          <p className='text-[24px] text-[#B0BDB9] leading-[43px]'>
+          <p className='text-2xl text-primary-faded leading-[43px]'>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
             maximus efficitur imperdiet. Mauris consequat vulputate sagittis.
             <br /> <br />
@@ -52,7 +52,7 @@ const GetTickets = () => {
   return (
     <section className='bg-[#E6EAE8]'>
       <Box className='grid place-items-center'>
-        <Button className='bg-primary text-white !w-[300px] border-[#B0BDB9]'>
+        <Button className='bg-primary text-white !w-[300px] border-primary-faded'>
           Get event tickets now
         </Button>
       </Box>
@@ -64,7 +64,7 @@ const SimilarEvents = () => {
   return (
     <Container>
       <header className='pb-[24px]'>
-        <h1 className='text-[32px] text-[#B0BDB9] leading-[57px] font-bold'>
+        <h1 className='text-[32px] text-primary-faded leading-[57px] font-bold'>
           Similar Events
         </h1>
       </header>
@@ -85,7 +85,7 @@ const SimilarEvents = () => {
               <h2 className='text-primary group-hover:text-[#E6EAE8] leading-[24px]'>
                 November 15-17, 2023
               </h2>
-              <h1 className='text-[24px] font-bold text-primary group-hover:text-[#E6EAE8] py-[4px]'>
+              <h1 className='text-2xl font-bold text-primary group-hover:text-[#E6EAE8] py-[4px]'>
                 Digital Innovation Summit
               </h1>
               <h3 className='text-primary group-hover:text-[#E6EAE8]'>
@@ -97,7 +97,7 @@ const SimilarEvents = () => {
               </p>
             </div>
             <div>
-              <p className='text-primary group-hover:text-[#E6EAE8] text-[20px] font-bold'>
+              <p className='text-primary group-hover:text-[#E6EAE8] text-xl font-bold'>
                 £ 2,000
               </p>
             </div>

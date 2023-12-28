@@ -16,7 +16,7 @@ const ProductCard = forwardRef(({ className, index, product, showButton }, ref) 
         <header className={`mb-10 ${index > 0? 'text-white' : 'text-brown'}`}>
           <h2 className={`font-sat 
 
-          lg:text-[24px] mb-[20px]`}>
+          lg:text-2xl mb-[20px]`}>
             {product?.name}
           </h2>
           <h1 className='text-3xl lg:text-6xl font-bold'>

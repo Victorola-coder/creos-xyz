@@ -107,7 +107,7 @@ export default function register() {
           <div className='flex flex-col items-center gap-[32px]'>
             {/* name */}
             <fieldset className='flex flex-col gap-4'>
-              <label className='text-white inline-block text-[20px] lg:text-[24px]'>
+              <label className='text-white inline-block text-xl lg:text-2xl'>
                 Full Name
               </label>
               <Input
@@ -116,12 +116,12 @@ export default function register() {
                 name='name'
                 value={formData.name}
                 onChange={formDataHandler}
-                className='placeholder:text-[#B0BDB9] w-full lg:w-[720px] rounded-[12px] text-[20px] lg:text-[24px]'
+                className='placeholder:text-primary-faded w-full lg:w-[720px] rounded-[12px] text-xl lg:text-2xl'
               />
             </fieldset>
             {/*profession  */}
             <fieldset className='flex flex-col gap-4'>
-              <label className='text-white inline-block text-[20px] lg:text-[24px]'>
+              <label className='text-white inline-block text-xl lg:text-2xl'>
                 Profession
               </label>
               <Input
@@ -130,16 +130,16 @@ export default function register() {
                 name='profession'
                 value={formData.profession}
                 onChange={formDataHandler}
-                className='placeholder:text-[#B0BDB9] lg:px-[20px] lg:py-[24px] w-full lg:w-[720px] rounded-[12px] text-[20px] lg:text-[24px]'
+                className='placeholder:text-primary-faded lg:px-[20px] lg:py-[24px] w-full lg:w-[720px] rounded-[12px] text-xl lg:text-2xl'
               />
             </fieldset>
             {/*Gender  */}
             <fieldset className='flex flex-col gap-4'>
-              <label className='text-white inline-block text-[20px] lg:text-[24px]'>
+              <label className='text-white inline-block text-xl lg:text-2xl'>
                 Gender
               </label>
               <select
-                className='placeholder:text-[#B0BDB9] capitalize text-primary w-full min-w-[300px] lg:w-[720px] py-[17px] pl-[20px]  pr-[16px] px-[20px] rounded-[12px] font-sat font-medium'
+                className='placeholder:text-primary-faded capitalize text-primary w-full min-w-[300px] lg:w-[720px] py-[17px] pl-[20px]  pr-[16px] px-[20px] rounded-[12px] font-sat font-medium'
                 onChange={formDataHandler}
                 name='gender'
                 id='gender'
@@ -156,7 +156,7 @@ export default function register() {
             </fieldset>
             {/* linkedin */}
             <fieldset className='flex flex-col gap-4'>
-              <label className='text-white inline-block text-[20px] lg:text-[24px]'>
+              <label className='text-white inline-block text-xl lg:text-2xl'>
                 LinkedIn Profile
               </label>
               <Input
@@ -165,12 +165,12 @@ export default function register() {
                 name='linkedInUrl'
                 value={formData.linkedInUrl}
                 onChange={formDataHandler}
-                className='placeholder:text-[#B0BDB9] w-full lg:w-[720px] rounded-[12px] text-[20px] lg:text-[24px]'
+                className='placeholder:text-primary-faded w-full lg:w-[720px] rounded-[12px] text-xl lg:text-2xl'
               />
             </fieldset>
             {/* distinvtion */}
             <fieldset className='flex flex-col gap-4'>
-              <label className='text-white inline-block text-[20px] lg:text-[24px]'>
+              <label className='text-white inline-block text-xl lg:text-2xl'>
                 Distinction
               </label>
               <Input
@@ -179,7 +179,7 @@ export default function register() {
                 name='distinction'
                 value={formData.distinction}
                 onChange={formDataHandler}
-                className='placeholder:text-[#B0BDB9] text-primary max w-full lg:w-[720px] rounded-[12px] text-[20px] lg:text-[24px]'
+                className='placeholder:text-primary-faded text-primary max w-full lg:w-[720px] rounded-[12px] text-xl lg:text-2xl'
               />
             </fieldset>
           </div>
@@ -189,7 +189,7 @@ export default function register() {
           <div className='flex flex-col items-center gap-[32px]'>
             {/* Work Email */}
             <fieldset className='flex flex-col gap-4'>
-              <label className='text-white inline-block text-[20px] lg:text-[24px]'>
+              <label className='text-white inline-block text-xl lg:text-2xl'>
                 Work Email
               </label>
               <Input
@@ -198,12 +198,12 @@ export default function register() {
                 name='email'
                 value={formData.email}
                 onChange={formDataHandler}
-                className='placeholder:text-[#B0BDB9] w-full lg:w-[720px] rounded-[12px] text-[20px] lg:text-[24px]'
+                className='placeholder:text-primary-faded w-full lg:w-[720px] rounded-[12px] text-xl lg:text-2xl'
               />
             </fieldset>
             {/* Password  */}
             <fieldset className='flex flex-col gap-4'>
-              <label className='text-white inline-block text-[20px] lg:text-[24px]'>
+              <label className='text-white inline-block text-xl lg:text-2xl'>
                 Password
               </label>
               <Input
@@ -212,12 +212,12 @@ export default function register() {
                 name='password'
                 value={formData.password}
                 onChange={formDataHandler}
-                className='placeholder:text-[#B0BDB9] lg:px-[20px] lg:py-[24px] w-full lg:w-[720px] rounded-[12px] text-[20px] lg:text-[24px]'
+                className='placeholder:text-primary-faded lg:px-[20px] lg:py-[24px] w-full lg:w-[720px] rounded-[12px] text-xl lg:text-2xl'
               />
             </fieldset>
             {/* Change Password */}
             <fieldset className='flex flex-col gap-4'>
-              <label className='text-white inline-block text-[20px] lg:text-[24px]'>
+              <label className='text-white inline-block text-xl lg:text-2xl'>
                 Confirm Password
               </label>
               <Input
@@ -226,7 +226,7 @@ export default function register() {
                 name='confirmPassword'
                 value={formData.confirmPassword}
                 onChange={formDataHandler}
-                className='placeholder:text-[#B0BDB9] w-full lg:w-[720px] rounded-[12px] text-[20px] lg:text-[24px]'
+                className='placeholder:text-primary-faded w-full lg:w-[720px] rounded-[12px] text-xl lg:text-2xl'
               />
             </fieldset>
           </div>

@@ -31,7 +31,7 @@ const Hero = () => {
           <H1 className='text-light font-black text-center !text-[32px] leading-[48px] w-full lg:!text-[72px] lg:leading-[108px]'>
             Join the Creos Community: Where Innovators Thrive
           </H1>
-          <h5 className='text-[#B0BDB9] text-center text-[20px] leading-[36px] lg:leading-[57.6px] lg:text-[32px] my-5'>
+          <h5 className='text-primary-faded text-center text-xl leading-[36px] lg:leading-[57.6px] lg:text-[32px] my-5'>
             At Creos, we're on the lookout for revolutionary creators,
             visionaries who are reshaping the world as we know it. If
             you've got what it takes to be part of our vibrant community,
@@ -85,10 +85,10 @@ const Main = () => {
           <section className='grid lg:grid-cols-2 gap-[74px]'>
             <div className='flex'>
               <div className='my-auto'>
-                <h1 ref={targetRef} id="connnection" className='text-[#222222] text-[32px] lg:text-[48px] font-extrabold'>
+                <h1 ref={targetRef} id="connnection" className='text-dark text-[32px] lg:text-[48px] font-extrabold'>
                   We're Watching
                 </h1>
-                <p className='lg:text-[24px] py-[29px] leading-[43px] text-black'>
+                <p className='lg:text-2xl py-[29px] leading-[43px] text-black'>
                   Creos scouts the globe for groundbreaking innovators
                   challenging the status quo. When we discover your exceptional
                   work, we extend a personal invitation to join our
@@ -105,7 +105,7 @@ const Main = () => {
                     placeholder='LinkedIn URL'
                   />
                 </div>
-                <Button onClick={handleSubmit} className='bg-primary text-white !w-[233px] border-[#B0BDB9]'>
+                <Button onClick={handleSubmit} className='bg-primary text-white !w-[233px] border-primary-faded'>
                   Check me out
                 </Button>
               </div>
@@ -125,15 +125,15 @@ const Main = () => {
             </figure>
             <div className='flex'>
               <div className='my-auto'>
-                <h1 className='text-[#222222] text-[32px] lg:text-[48px] font-extrabold'>
+                <h1 className='text-dark text-[32px] lg:text-[48px] font-extrabold'>
                   Pay for Membership
                 </h1>
-                <p className='lg:text-[24px] py-[29px] leading-[43px] text-black'>
+                <p className='lg:text-2xl py-[29px] leading-[43px] text-black'>
                   Already confident you're a perfect fit for Creos? You
                   can expedite your entry by opting for our paid membership. For
                   a fee of $2,000, here's what you get:
                 </p>
-                <ul className='lg:text-[24px] py-[32px] leading-[43px] text-black flex flex-col gap-2'>
+                <ul className='lg:text-2xl py-[32px] leading-[43px] text-black flex flex-col gap-2'>
                   <li className='pl-6 relative before:absolute before:left-0 before:top-[10px]s before:h-2 before:w-2 before:rounded-[100%] before:bg-black before:top-[18px]'>
                     Instant Global Recognition: Your unique story will be
                     featured in press releases across 12+ international
@@ -153,7 +153,7 @@ const Main = () => {
                   </li>
                 </ul>
                 <Link to="/register">
-                  <Button className='bg-primary text-white !w-[176px] border-[#B0BDB9]'>
+                  <Button className='bg-primary text-white !w-[176px] border-primary-faded'>
                     Let's go
                   </Button>
                 </Link>
@@ -176,7 +176,7 @@ const WhyJoinCreos = () => {
           >
             Why Join Creos?
           </H1>
-          <h5 className='text-[#E6EAE8] text-center text-[20px] leading-[36px] lg:leading-[43px] lg:text-[24px] my-5'>
+          <h5 className='text-[#E6EAE8] text-center text-xl leading-[36px] lg:leading-[43px] lg:text-2xl my-5'>
             At Creos, we're more than a community; we're a movement
             driving change. Here, innovation meets recognition, and creativity
             finds its stage. When you join Creos, you're not just joining

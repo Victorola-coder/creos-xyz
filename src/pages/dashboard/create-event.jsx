@@ -21,7 +21,7 @@ export default function DashboardCreateEvent() {
   return (
     <div className='flex flex-col gap-[63px]'>
       <section>
-        <button className='grid place-items-center text-[20px] font-bold text-primary'>
+        <button className='grid place-items-center text-xl font-bold text-primary'>
           <div onClick={handleBackClick} className='flex items-center gap-3'>
             <ChevronLeftIcon /> Back
           </div>
@@ -29,48 +29,48 @@ export default function DashboardCreateEvent() {
       </section>
       <section className='flex flex-col gap-[32px] lg:px-[80px]'>
         <fieldset>
-          <label className='inline-block mb-3 text-primary text-[20px] leading-[30px] font-bold'>
+          <label className='inline-block mb-3 text-primary text-xl leading-[30px] font-bold'>
             Title
           </label>
           <Input
-            className='border-[#B0BDB9] border-[1px] !placeholder-[#B0BDB9] font-normal'
+            className='border-primary-faded border-[1px] !placeholder-primary-faded font-normal'
             placeholder='Event title'
           />
         </fieldset>
         <fieldset>
-          <label className='inline-block mb-3 text-primary text-[20px] leading-[30px] font-bold'>
+          <label className='inline-block mb-3 text-primary text-xl leading-[30px] font-bold'>
             Short Description
           </label>
           <Input
-            className='border-[#B0BDB9] border-[1px] !placeholder-[#B0BDB9] font-normal'
+            className='border-primary-faded border-[1px] !placeholder-primary-faded font-normal'
             placeholder='About Event'
           />
         </fieldset>
         <fieldset>
-          <label className='inline-block mb-3 text-primary text-[20px] leading-[30px] font-bold'>
+          <label className='inline-block mb-3 text-primary text-xl leading-[30px] font-bold'>
             Event Description
           </label>
           <Input
-            className='border-[#B0BDB9] border-[1px] !placeholder-[#B0BDB9] font-normal'
+            className='border-primary-faded border-[1px] !placeholder-primary-faded font-normal'
             placeholder='About Event'
           />
         </fieldset>
         <fieldset>
-          <label className='inline-block mb-3 text-primary text-[20px] leading-[30px] font-bold'>
+          <label className='inline-block mb-3 text-primary text-xl leading-[30px] font-bold'>
             Event Image
           </label>
           <Input
-            className='border-[#B0BDB9] border-[1px] !placeholder-[#B0BDB9] font-normal'
+            className='border-primary-faded border-[1px] !placeholder-primary-faded font-normal'
             placeholder='Upload image here'
           />
         </fieldset>
         <fieldset>
-          <label className='inline-block mb-3 text-primary text-[20px] leading-[30px] font-bold'>
+          <label className='inline-block mb-3 text-primary text-xl leading-[30px] font-bold'>
             Location
           </label>
           <div className='flex items-center gap-2 max-w-max'>
             <RadioInput checked={isOnlineEvent} onChecked={toggleOnlineEvent} />
-            <span className='text-primary text-[24px]'>Online Event</span>
+            <span className='text-primary text-2xl'>Online Event</span>
           </div>
         </fieldset>
       </section>

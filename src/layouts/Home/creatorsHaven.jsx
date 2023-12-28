@@ -13,7 +13,7 @@ export default function CreatorsHaven() {
             Creators' Haven
           </h2>
           <h1
-            className={`text-[#222222] mb-6 text-[24px] lg:text-[48px] leading-[36px] lg:leading-[72px] font-bold lg:max-w-[1288px]`}
+            className={`text-dark mb-6 text-2xl lg:text-[48px] leading-[36px] lg:leading-[72px] font-bold lg:max-w-[1288px]`}
           >
             At Creos, we believe in the extraordinary power of dreams. They are
             the seeds from which innovations sprout, and at Creos, we provide
@@ -53,3 +53,5 @@ export default function CreatorsHaven() {
     </>
   );
 }
+
+

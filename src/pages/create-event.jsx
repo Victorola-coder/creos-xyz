@@ -139,7 +139,7 @@ const StepSlide = () => {
             <h1 className='text-creos mb-5 text-3xl lg:text-5xl font-extrabold'>
               {slideContents[slides.currentIndex].title}
             </h1>
-            <p className='text-[#B0BDB9] text-xl lg:text-2xl'>
+            <p className='text-primary-faded text-xl lg:text-2xl'>
               {slideContents[slides.currentIndex].body}
             </p>
             {slides.currentIndex === 3 ?
@@ -177,7 +177,7 @@ const StepSlide = () => {
 
       <div className='border-t-[#E6EAE8] border-t-[1px] pt-[40px] flex justify-between'>
         <Link to='/login'>
-          <button className='border-[1px] rounded-[100px] border-creos w-[169px] h-[62px] grid place-items-center text-creos text-[20px]'>
+          <button className='border-[1px] rounded-[100px] border-creos w-[169px] h-[62px] grid place-items-center text-creos text-xl'>
             <div className='flex items-center gap-2'>
               Skip <ArrowRightIcon />
             </div>
@@ -185,7 +185,7 @@ const StepSlide = () => {
         </Link>
         <button
           onClick={nextSlide}
-          className='border-[1px] rounded-[100px] bg-creos w-[169px] h-[62px] grid place-items-center text-black text-[20px]'
+          className='border-[1px] rounded-[100px] bg-creos w-[169px] h-[62px] grid place-items-center text-black text-xl'
         >
           <div className='flex items-center gap-2'>
             Next <ArrowRightIcon fill='#000000' />

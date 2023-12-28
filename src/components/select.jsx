@@ -16,7 +16,7 @@ export default function Select(props) {
       {({ open }) => (
         <>
           <div className='flex justify-between gap-2 pr-2 h-[62px] w-full bg-[#E6EAE8] border-[1px] border-white rounded-md'>
-            <Listbox.Button className='pl-3 lg:pl-6 text-[20px] lg:text-[24px] h-full text-left text-primary font-medium flex-1'>
+            <Listbox.Button className='pl-3 lg:pl-6 text-xl lg:text-2xl h-full text-left text-primary font-medium flex-1'>
               {selectedOption?.name ? selectedOption.name : 'Select Product'}
             </Listbox.Button>
             <div className='w-[24px] h-full grid place-items-center'>

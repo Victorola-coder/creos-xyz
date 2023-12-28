@@ -16,7 +16,9 @@ export default function Input({
       type={type}
       name={name}
       onChange={onChange}
-      className={`${className} outline-none w-full placeholder:text-primary min-w-[300px] text-primary text-[20px] leading-[30px] font-medium rounded-[8px]  bg-[#E6EAE8] py-[17px] pl-[20px]  pr-[16px] px-[20px] font-sat`}
+      className={`bg-white w-full p-3 rounded-full outline-none
+          min-w-[300px] font-medium bgg-[#E6EAE8] font-sat ${className} 
+        placeholder:text-primary-faded text-ellipsis text-black text-xl lg:text-2xl`}
     />
   );
 }

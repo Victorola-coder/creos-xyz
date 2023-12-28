@@ -24,7 +24,7 @@ const Hero = () => {
           <H1 className='text-light font-black text-center !text-[32px] leading-[48px] w-full lg:!text-[72px] lg:leading-[108px] max-w-[869px]'>
           Web3 Events Ticketing System for Creator's.
           </H1>
-          <h5 className='text-[#B0BDB9] text-center text-[20px] leading-[36px] lg:leading-[57.6px] lg:text-[32px] my-5'>
+          <h5 className='text-primary-faded text-center text-xl leading-[36px] lg:leading-[57.6px] lg:text-[32px] my-5'>
           While the world evolves with Web3 events to scale Web2 users into Web3 and aid growth in the space. 
           Vents as one of Creos ecosystem is built to enhance events ticketing. 
           </h5>
@@ -36,7 +36,7 @@ const Hero = () => {
         </div>
       </Container>
       <div className='mx-5 lg:mx-[100px]'>
-        <div className='py-[20px] flex items-center lg:px-[20px] lg:text-[24px] gap-[10px] lg:gap-[20px]'>
+        <div className='py-[20px] flex items-center lg:px-[20px] lg:text-2xl gap-[10px] lg:gap-[20px]'>
           <Link
             to='/events/create'
             className='text-creos font-bold'
@@ -66,13 +66,13 @@ const CreosEvents = () => {
           <section className='xl:flex xl:items-center xl:flex-row xl:justify-center grid lg:grid-cols-2 gap-[200px]'>
             <div>
               <div>
-                <h2 className='text-primary text-base leading-[24px] font-normal lg:text-[24px]'>
+                <h2 className='text-primary text-base leading-[24px] font-normal lg:text-2xl'>
                   Creos Hackathon
                 </h2>
-                <h1 className='text-[#222222] font-black leading-[48px] max-w-[353px] text-[32px] lg:leading-[72px] lg:text-[40px] lg:max-w-[659px]'>
+                <h1 className='text-dark font-black leading-[48px] max-w-[353px] text-[32px] lg:leading-[72px] lg:text-[40px] lg:max-w-[659px]'>
                   Pioneering Sustainable Solutions for a Better Future
                 </h1>
-                <p className='max-w-[353px] leading-[36px] text-[20px] lg:max-w-[645px] font-normal lg:text-[24px] py-[29px] lg:leading-[43.2px] text-black'>
+                <p className='max-w-[353px] leading-[36px] text-xl lg:max-w-[645px] font-normal lg:text-2xl py-[29px] lg:leading-[43.2px] text-black'>
                   Join us for the groundbreaking event of the year, Creos
                   Hackathon, where creators, innovators, and visionaries unite
                   to shape a sustainable future aligned with the United
@@ -82,7 +82,7 @@ const CreosEvents = () => {
                   technologies, collaborative problem-solving, and the thrill of
                   bringing game-changing ideas to life.
                 </p>
-                <Button className='bg-[#00130D] active:bg-[#B0BDB9] text-[#E6EAE8] !w-[312px] border-[#B0BDB9]'>
+                <Button className='bg-[#00130D] active:bg-primary-faded text-[#E6EAE8] !w-[312px] border-primary-faded'>
                   Get event tickets today
                 </Button>
               </div>
@@ -108,13 +108,13 @@ const CreosEvents = () => {
             </figure>
             <div>
               <div>
-                <h2 className='text-primary lg:text-[24px]'>
+                <h2 className='text-primary lg:text-2xl'>
                   Creos Greeks Out
                 </h2>
-                <h1 className='text-[#222222] text-[32px] lg:text-[48px] font-extrabold'>
+                <h1 className='text-dark text-[32px] lg:text-[48px] font-extrabold'>
                   Your Inner Geek with the Future!
                 </h1>
-                <p className='lg:text-[24px] py-[29px] leading-[43px] text-black'>
+                <p className='lg:text-2xl py-[29px] leading-[43px] text-black'>
                   Join us for a one-of-a-kind gathering where creators come
                   together to have a blast, enjoy immersive experiences, and
                   expand their networks. <br /> <br />
@@ -123,7 +123,7 @@ const CreosEvents = () => {
                   perfect platform to foster collaboration, meet potential
                   partners, connect with customers, and so much more.
                 </p>
-                <Button className='bg-primary text-white !w-[312px] border-[#B0BDB9]'>
+                <Button className='bg-primary text-white !w-[312px] border-primary-faded'>
                   Get event tickets today
                 </Button>
               </div>

@@ -47,10 +47,10 @@ export default function Revolution() {
   return (
     <Container>
       <div className='w-full max-w-[1030px] mx-auto grid place-items-center'>
-        <P className='text-light !text-base leading-[24px] lg:!text-[20px] font-medium lg:leading-[48px]'>
+        <P className='text-light !text-base leading-[24px] lg:!text-xl font-medium lg:leading-[48px]'>
           Join the Revolution
         </P>
-        <h5 className='text-white text-center text-[20px] font-medium leading-[36px] lg:leading-[57.6px] lg:-tracking-[0.2px] lg:text-[36px] my-[28px] lg:max-w-[1030px]'>
+        <h5 className='text-white text-center text-xl font-medium leading-[36px] lg:leading-[57.6px] lg:-tracking-[0.2px] lg:text-[36px] my-[28px] lg:max-w-[1030px]'>
           Are you ready to turn your dreams into disruptions? To be part of a
           community where your ideas are not just valued but vital? Creos
           invites you to join the revolution.
@@ -77,7 +77,7 @@ export default function Revolution() {
               placeholder='Email address'
             />
           </fieldset>
-          <Button className='text-primary bg-[#B0BDB9] active:bg-[#FEFAF5] hover:bg-[#FEFAF5]'>
+          <Button className='text-primary bg-primary-faded active:bg-[#FEFAF5] hover:bg-[#FEFAF5]'>
             Join our newsletter
           </Button>
         </form>

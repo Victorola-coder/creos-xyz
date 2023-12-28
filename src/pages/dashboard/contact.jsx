@@ -15,7 +15,7 @@ export default function DashboardContacts() {
           </h1>
           <div className='w-full px-[20px] max-w-[576px] h-[62px] rounded-[100px] border-[1px] border-primary flex gap-2 items-center'>
             <input
-              className='outline-none flex-1 placeholder-primary text-primary bg-transparent text-[20px] font-medium caret-primary'
+              className='outline-none flex-1 placeholder-primary text-primary bg-transparent text-xl font-medium caret-primary'
               placeholder='Search Events'
             />
             <SearchIcon />
@@ -37,7 +37,7 @@ const ListView = () => {
 
   return (
     <div className='border-[1px] border-black'>
-      <header className='px-[20px] grid grid-cols-[50px_1fr_1fr_1fr_1fr] gap-[40px] text-[24px] font-bold text-primary py-[25px]'>
+      <header className='px-[20px] grid grid-cols-[50px_1fr_1fr_1fr_1fr] gap-[40px] text-2xl font-bold text-primary py-[25px]'>
         <div className='grid place-items-center'>
           <CheckBox
             className='border-primary'
@@ -53,7 +53,7 @@ const ListView = () => {
       {[...Array(3)].map((_, i) => (
         <div
           key={i}
-          className='border-t-[1px] border-black px-[20px] grid grid-cols-[50px_1fr_1fr_1fr_1fr] gap-[40px] items-center text-[24px] text-primary py-[25px]'
+          className='border-t-[1px] border-black px-[20px] grid grid-cols-[50px_1fr_1fr_1fr_1fr] gap-[40px] items-center text-2xl text-primary py-[25px]'
         >
           <div className='grid place-items-center'>
             <CheckBox

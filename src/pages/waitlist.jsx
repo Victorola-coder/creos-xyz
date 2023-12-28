@@ -30,7 +30,7 @@ const Main = () => {
             <h1 className='font-extrabold text-[32px] lg:text-[72px] text-white'>
               Join our waitlist
             </h1>
-            <p className='text-[#E6EAE8] text-[20px] lg:text-[32px]'>
+            <p className='text-[#E6EAE8] text-xl lg:text-[32px]'>
               Exciting things are happening at Creos, and we can't wait
               for you to be a part of it.
               <br /> <br />
@@ -104,33 +104,33 @@ const Form = () => {
       className='flex flex-col mb-[180px] gap-[20px]'
     >
       <fieldset>
-        <label className='text-white inline-block mb-2 text-[20px] lg:text-[24px]'>
+        <label className='text-white inline-block mb-2 text-xl lg:text-2xl'>
           Full Name
         </label>
         <Input
           placeholder='Full Name'
           type='text'
           name='name'
-          className='placeholder-primary rounded-[12px] text-[20px] lg:text-[24px]'
+          className='placeholder-primary rounded-[12px] text-xl lg:text-2xl'
           value={formData.name}
           onChange={formDataHandler}
         />
       </fieldset>
       <fieldset>
-        <label className='text-white inline-block mb-2 text-[20px] lg:text-[24px]'>
+        <label className='text-white inline-block mb-2 text-xl lg:text-2xl'>
           Email
         </label>
         <Input
           placeholder='you@company.com'
           type='email'
           name='email'
-          className='placeholder-primary rounded-[12px] text-[20px] lg:text-[24px]'
+          className='placeholder-primary rounded-[12px] text-xl lg:text-2xl'
           value={formData.email}
           onChange={formDataHandler}
         />
       </fieldset>
       <fieldset>
-        <label className='text-white inline-block mb-2 text-[20px] lg:text-[24px]'>
+        <label className='text-white inline-block mb-2 text-xl lg:text-2xl'>
           Product
         </label>
         <Select

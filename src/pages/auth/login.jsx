@@ -101,7 +101,7 @@ export default function register() {
         <div className='flex flex-col items-center gap-[32px]'>
           {/* Work Email */}
           <fieldset className='flex flex-col gap-4'>
-            <label className='text-white inline-block text-[20px] lg:text-[24px]'>
+            <label className='text-white inline-block text-xl lg:text-2xl'>
               Work Email
             </label>
             <Input
@@ -110,12 +110,12 @@ export default function register() {
               name='email'
               value={formData.email}
               onChange={formDataHandler}
-              className='placeholder:text-[#B0BDB9] w-full lg:w-[720px] rounded-[12px] text-[20px] lg:text-[24px]'
+              className='placeholder:text-primary-faded w-full lg:w-[720px] rounded-[12px] text-xl lg:text-2xl'
             />
           </fieldset>
           {/* Password  */}
           <fieldset className='flex flex-col gap-4'>
-            <label className='text-white inline-block text-[20px] lg:text-[24px]'>
+            <label className='text-white inline-block text-xl lg:text-2xl'>
               Password
             </label>
             <Input
@@ -124,7 +124,7 @@ export default function register() {
               name='password'
               value={formData.password}
               onChange={formDataHandler}
-              className='placeholder:text-[#B0BDB9] lg:px-[20px] lg:py-[24px] w-full lg:w-[720px] rounded-[12px] text-[20px] lg:text-[24px]'
+              className='placeholder:text-primary-faded lg:px-[20px] lg:py-[24px] w-full lg:w-[720px] rounded-[12px] text-xl lg:text-2xl'
             />
           </fieldset>
 

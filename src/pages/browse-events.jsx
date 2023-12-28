@@ -26,7 +26,7 @@ const Hero = () => {
           <H1 className='text-light font-black text-center !text-[32px] leading-[48px] w-full lg:!text-[72px] lg:leading-[108px] max-w-[869px]'>
             Discover the Future at Creos Events
           </H1>
-          <h5 className='text-[#B0BDB9] text-center text-[20px] leading-[36px] lg:leading-[57.6px] lg:text-[32px] my-5'>
+          <h5 className='text-primary-faded text-center text-xl leading-[36px] lg:leading-[57.6px] lg:text-[32px] my-5'>
             Join us in the dynamic world of Creos Events, where creativity meets
             competition and innovation sparks to life.
           </h5>
@@ -36,7 +36,7 @@ const Hero = () => {
         </div>
       </Container>
       <div className='mx-5 lg:mx-[100px]'>
-        <div className='py-[20px] flex items-center lg:px-[20px] lg:text-[24px] gap-[10px] lg:gap-[20px]'>
+        <div className='py-[20px] flex items-center lg:px-[20px] lg:text-2xl gap-[10px] lg:gap-[20px]'>
           <NavLink
             className={({ isActive }) =>
               `text-creos ${isActive ? 'font-bold' : 'font-normal'}`
@@ -88,7 +88,7 @@ const Events = () => {
                 <h2 className='text-primary group-hover:text-[#E6EAE8] leading-[24px]'>
                   November 15-17, 2023
                 </h2>
-                <h1 className='text-[24px] t font-bold text-primary group-hover:text-[#E6EAE8] py-[4px]'>
+                <h1 className='text-2xl t font-bold text-primary group-hover:text-[#E6EAE8] py-[4px]'>
                   Digital Innovation Summit
                 </h1>
                 <h3 className='text-primary group-hover:text-[#E6EAE8]'>
@@ -100,7 +100,7 @@ const Events = () => {
                 </p>
               </div>
               <div>
-                <p className='text-primary group-hover:text-[#E6EAE8] text-[20px] font-bold'>
+                <p className='text-primary group-hover:text-[#E6EAE8] text-xl font-bold'>
                   £ 2,000
                 </p>
               </div>
@@ -117,7 +117,7 @@ const Search = () => {
     <div className='w-full max-w-[650px] px-[32px] lg:px-[53px] border-[1px] border-primary h-[56px] lg:h-[76px] rounded-[100px] flex gap-3 items-center'>
       <SearchIcon />
       <input
-        className='lg:text-[24px] text-black text-base bg-transparent placeholder-primary flex-1 outline-none'
+        className='lg:text-2xl text-black text-base bg-transparent placeholder-primary flex-1 outline-none'
         placeholder='Search events'
       />
     </div>
