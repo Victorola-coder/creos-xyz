@@ -1,7 +1,7 @@
 import React from 'react';
+import Marquee from 'react-fast-marquee';
 import { Link } from 'react-router-dom';
 import BgToken from '../assets/images/bg-token.png';
-import Marquee from 'react-fast-marquee';
 import {
   Bloomberg,
   BussinessInsode,
@@ -15,25 +15,42 @@ import {
 import { Button, Container, SEO } from '../components';
 import Box from '../components/box';
 import Revolution from '../components/revolution';
-import { Hero } from '../layouts';
 import { imgSlider } from '../utils/data';
-import { H2, SubTitle } from '../utils/typography';
+import { H2, SubTitle, Title } from '../utils/typography';
 
 export default function Home() {
   return (
     <>
       <SEO title='Welcome to CreosXYZ' />
       <main>
-        <Hero />
+        {/* <Hero /> */}
+        <div className='lg:mx-20 mx-10'>
+          <section className='flex flex-col items-center mx-auto'>
+            <Title small>The Future WorkForce</Title>
+            <Title leading className={'lg:w-3/5'}>Where dreams intersect disruptive innovations</Title>
+            <SubTitle className='mt-8 mb-4'>
+              At Creos we embrace and foster the combined power of creativity in
+              disruptive technologies. At Creos, dreams transcend boundaries and
+              innovation redefine realities.
+            </SubTitle>
+            <Link to='/community'>
+              <Button
+                className={`text-primary !border-[4px] !border-[#DEB78C] lg:!w-[286px]  !bg-creos `}
+              >
+                Join our community
+              </Button>
+            </Link>
+          </section>
+        </div>
         {/* <Slider /> */}
-        <Container>
+        <div className='m-5 lg:m-[70px]'>
           <Marquee className='space-x-3' speed={100} pauseOnHover>
             <section className='my-5'>
               <div className='flex flex-row gap-[28px] mx-4'>
                 {imgSlider.map((img, index) => (
                   <figure
                     key={index}
-                    className='outline-[#E6EAE8] w-[52px] lg:w-[120px] outline-[4px] lg:outline-[8px] outline rounded-[12px] lg:rounded-[26px] hover:scale-105'
+                    className='outline-[#E6EAE8] w-[52px] lg:w-[100px] outline-[4px] lg:outline-[8px] outline rounded-[12px] lg:rounded-[26px] hover:scale-105'
                   >
                     <img
                       key={img.id}
@@ -51,29 +68,29 @@ export default function Home() {
               </div>
             </section>
           </Marquee>
-        </Container>
+        </div>
         {/* <Partner /> */}
         <section className='bg-[#E6EAE8] px-5 py-[32px] lg:py-[100px] lg:px-[100px] lg:mb-[100px] flex flex-col items-center gap-4 lg:gap-10'>
           <H2 className={`text-dark `}>Media Partners</H2>
           <div className='hidden md:flex flex-row flex-wrap lg:flex-nowrap items-start justify-around md:gap-[40px] lg:gap-[60px]'>
             <figure>
-              <Bloomberg />
+              <Bloomberg className={'w-40'}/>
             </figure>
             <figure>
-              <BussinessInsode />
+              <BussinessInsode className={'w-40'}/>
             </figure>
             <figure>
-              <TechCrunch />
+              <TechCrunch className={'w-40'}/>
             </figure>
             <figure>
-              <Forbes />
+              <Forbes className={'w-40'}/>
             </figure>
             <figure>
-              <TheGuardian />
+              <TheGuardian className={'w-40'}/>
             </figure>
 
             <figure>
-              <Engadget />
+              <Engadget className={'w-40'}/>
             </figure>
           </div>
           {/* mobile screen */}
@@ -128,13 +145,13 @@ export default function Home() {
             />
           </section>
 
-          <section className='mt-10 mx-10'>
-            <div className="flex flex-col lg:flex-row items-center justify-start lg:justify-center">
-              <img src={BgToken} className='lg:h-[500px]' alt="" />
-              <div>
-                <div className={'text-creos text-3xl lg:text-5xl mb-10 font-bold'} >Explore the Future with Creos XYZ Token ($CXYZ)</div>
-                <div className=" mb-10">
-                  <SubTitle>
+          <section className='mt-20 mx-10'>
+            <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-center">
+              <img src={BgToken} className='lg:w-[600px]' alt="" />
+              <div className='lg:mt-20'>
+                <div className={'text-creos text-3xl lg:text-4xl mb-10 font-bold'}>Explore the Future with Creos XYZ Token ($CXYZ)</div>
+                <div className="mb-10">
+                  <SubTitle className={'text-xl'}>
                     Anticipation is building as we prepare to introduce the Creos XYZ Token ($CXYZ) to the crypto community! As we gear up for the grand launch,
                     we invite you to join us on this exciting journey into the next era of decentralized finance.
                   </SubTitle>

@@ -23,7 +23,7 @@ export default function Navbar() {
   return (
     <header className=''>
 
-      <nav className='fixed top-10 lg:left-20 lg:right-20 left-8 right-8 z-50 flex rounded-[100px] bg-primary border-creos border-[5px] items-center justify-between p-5 '>
+      <nav className='fixed top-10 lg:left-20 lg:right-20 left-8 right-8 z-50 flex rounded-[100px] bg-primary border-creos border-[5px] items-center justify-between p-3 '>
         <Link to='/'>
           <figure className='flex flex-row items-center'>
             <Logo className={`w-[36px] h-[24px] md:w-[80px] md:h-[54px]`} />
@@ -43,9 +43,10 @@ export default function Navbar() {
             >
               {({ isActive }) => (
                 <h5
-                  className={`relative transition-all duration-300 lg:text-2xl lg:leading-[36px] text-xs before:content-['']  font-sat before:absolute before:h-1 before:-bottom-1 before:transition-all before:duration-300 ${isActive
-                    ? 'text-creos font-bold text-2xl before:w-full'
-                    : 'text-creos font-normal text-xl before:w-[0px] hover:before:w-full'
+                  className={`relative transition-all duration-300 lg:text-lg lg:leading-[36px] text-xs before:content-['']  
+                  font-sat before:absolute before:h-1 before:-bottom-1 before:transition-all before:duration-300 
+                  ${isActive ? 'text-creos font-bold before:w-full'
+                    : 'text-creos font-normal before:w-[0px] hover:before:w-full'
                     }`}
                 >
                   {route?.route}
@@ -58,7 +59,7 @@ export default function Navbar() {
           <Link to='/community'>
             <Button
               type='button'
-              className='!border-none bg-creos hover:bg-light '
+              className='border-none bg-creos hover:bg-light'
             >
               Join our community
             </Button>
