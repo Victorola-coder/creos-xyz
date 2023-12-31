@@ -26,7 +26,6 @@ function CreosToken() {
                     if (r.status === 200) {
                         toast.success(r.data.message)
                         setAddress('')
-                        setSelectedProduct(null)
                     } else
                         toast.error(r.data.message)
                 }))
@@ -81,7 +80,7 @@ function CreosToken() {
                     ) : null}
 
                     {linkMapping.map((x, i) => (
-                        <div className="flex flex-col items-center w-full">
+                        <div className="flex flex-col items-center w-full" key={i}>
                             <label className='text-white inline-block text-center text-xl lg:text-2xl mb-5'>
                                 {x.name}
                             </label>

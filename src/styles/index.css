@@ -18,27 +18,27 @@ body {
   font-family: 'Satoshi', sans-serif;
 }
 
-body::-webkit-scrollbar {
+*::-webkit-scrollbar {
   @apply w-1 bg-transparent;
 }
 
-body::-webkit-scrollbar-corner {
+*::-webkit-scrollbar-corner {
   @apply bg-transparent;
 }
 
-body::-webkit-scrollbar-track {
+*::-webkit-scrollbar-track {
   @apply bg-white;
 }
 
-body::-webkit-scrollbar-track-piece {
+*::-webkit-scrollbar-track-piece {
   @apply bg-transparent;
 }
 
-body::-webkit-scrollbar-thumb {
+*::-webkit-scrollbar-thumb {
   @apply transition-all duration-500 rounded-full bg-black/60 hover:bg-black/40;
 }
 
-html {
+* {
   scrollbar-color: rgb(0, 0, 0, 0.4) rgb(0, 0, 0, 0);
   scrollbar-width: thin;
 }

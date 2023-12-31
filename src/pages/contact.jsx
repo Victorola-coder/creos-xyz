@@ -30,7 +30,7 @@ const Main = () => {
             <h1 className='font-extrabold text-[32px] lg:text-[72px] text-white'>
               Get in touch
             </h1>
-            <p className='text-[#E6EAE8] text-xl lg:text-[32px]'>
+            <p className='text-[#E6EAE8] text-xl lg:text-3xl'>
               We'd love to hear from you. Please fill out this form.
             </p>
           </div>
@@ -126,7 +126,7 @@ const Form = () => {
           What is your enquiry about?
         </label>
         <Input
-          placeholder='your enquiry'
+          placeholder='Your enquiry'
           type='text'
           name='enquiry'
           className='placeholder-primary rounded-[12px] text-xl lg:text-2xl'

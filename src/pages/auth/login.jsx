@@ -59,7 +59,7 @@ export default function register() {
             //   sameSite: "lax",
             //   domain: process.env.NODE_ENV === "development" ? "localhost" : "creosxyz.com",
             // });
-            document.cookie = `exampleCookie=${token}; expires=7; path=/; secure; HttpOnly`;
+            document.cookie = `token=${token}; expires=7; path=/; secure; HttpOnly`;
             navigate("/dashboard/events")
             setFormData({
               email: '',
@@ -95,44 +95,39 @@ export default function register() {
         </nav>
       </div>
 
-      <form
-        onSubmit={handleSubmit}
-        className=' max-w-[800px] p-[40px] mx-auto'>
-        <div className='flex flex-col items-center gap-[32px]'>
+      <form onSubmit={handleSubmit} className='p-10 max-w-[500px] mx-auto'>
+        <div className='flex flex-col items-start gap-10  text-left'>
+
           {/* Work Email */}
-          <fieldset className='flex flex-col gap-4'>
-            <label className='text-white inline-block text-xl lg:text-2xl'>
-              Work Email
-            </label>
-            <Input
-              placeholder='Work Email'
-              type={`text`}
-              name='email'
-              value={formData.email}
-              onChange={formDataHandler}
-              className='placeholder:text-primary-faded w-full lg:w-[720px] rounded-[12px] text-xl lg:text-2xl'
-            />
-          </fieldset>
+
+          <label className='text-white text-xl lg:text-2xl'>
+            Work Email
+          </label>
+          <Input
+            placeholder='Work Email'
+            type={`text`}
+            name='email'
+            value={formData.email}
+            onChange={formDataHandler}
+            className='w-full' />
+
           {/* Password  */}
-          <fieldset className='flex flex-col gap-4'>
-            <label className='text-white inline-block text-xl lg:text-2xl'>
-              Password
-            </label>
-            <Input
-              placeholder='Password'
-              type='password'
-              name='password'
-              value={formData.password}
-              onChange={formDataHandler}
-              className='placeholder:text-primary-faded lg:px-[20px] lg:py-[24px] w-full lg:w-[720px] rounded-[12px] text-xl lg:text-2xl'
-            />
-          </fieldset>
+          <label className='text-white text-xl lg:text-2xl'>
+            Password
+          </label>
+          <Input
+            placeholder='Password'
+            type='password'
+            name='password'
+            value={formData.password}
+            onChange={formDataHandler}
+            className='' />
+
 
         </div>
-        <div className="flex justify-center">
+        <div className="flex mt-10 justify-center">
           <Button
-            onClick={handleClickForm}
-            className={`text-primary !border-[4px] !border-[#DEB78C] lg:!w-[286px]  !bg-creos my-10 `}>
+            onClick={handleClickForm} className={'bg-creos border-none'}>
             Login
           </Button>
         </div>

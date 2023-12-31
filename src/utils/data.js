@@ -22,16 +22,16 @@ export const navLinks = [
     route: 'Products',
     path: '/products',
   },
-  {
-    id: nanoid(),
-    route: 'Creos Token',
-    path: '/creos-token',
-  },
-  {
-    id: nanoid(),
-    route: 'eVents',
-    path: '/events',
-  },
+  // {
+  //   id: nanoid(),
+  //   route: 'Creos Token',
+  //   path: '/creos-token',
+  // },
+  // {
+  //   id: nanoid(),
+  //   route: 'eVents',
+  //   path: '/events',
+  // },
   {
     id: nanoid(),
     route: 'Team',

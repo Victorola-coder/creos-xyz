@@ -73,14 +73,14 @@ const router = createBrowserRouter([
         index: true,
         element: <Home />,
       },
-      {
-        path: '/login',
-        element: <Login />,
-      },
-      {
-        path: '/register',
-        element: <Register />,
-      },
+      // {
+      //   path: '/login',
+      //   element: <Login />,
+      // },
+      // {
+      //   path: '/register',
+      //   element: <Register />,
+      // },
       {
         path: '*',
         element: <ErrorPage />,
@@ -93,27 +93,27 @@ const router = createBrowserRouter([
         path: '/products',
         element: <Products />,
       },
-      {
-        path: '/events',
-        children: [
-          {
-            index: true,
-            element: <Events />,
-          },
-          {
-            path: 'details',
-            element: <EventDetails />,
-          },
-          {
-            path: 'browse',
-            element: <BrowseEvents />,
-          },
-          {
-            path: 'create',
-            element: <CreateEvent />,
-          },
-        ],
-      },
+      // {
+      //   path: '/events',
+      //   children: [
+      //     {
+      //       index: true,
+      //       element: <Events />,
+      //     },
+      //     {
+      //       path: 'details',
+      //       element: <EventDetails />,
+      //     },
+      //     {
+      //       path: 'browse',
+      //       element: <BrowseEvents />,
+      //     },
+      //     {
+      //       path: 'create',
+      //       element: <CreateEvent />,
+      //     },
+      //   ],
+      // },
       {
         path: '/community',
         element: <Community />,
@@ -130,34 +130,34 @@ const router = createBrowserRouter([
         path: '/team',
         element: <Team />,
       },
-      {
-        path: '/creos-token',
-        element: <CreosToken />,
-      },
-      {
-        path: '/dashboard/events',
-        element: <Dashboard />,
-        children: [
-          {
-            index: true,
-            element: <DashboardEvents />,
-          },
-          {
-            path: 'create-event',
-            element: <DashboardCreateEvent />,
-          },
-        ],
-      },
-      {
-        path: '/dashboard/contacts',
-        element: <Dashboard />,
-        children: [
-          {
-            index: true,
-            element: <DashboardContacts />,
-          },
-        ],
-      },
+      // {
+      //   path: '/creos-token',
+      //   element: <CreosToken />,
+      // },
+      // {
+      //   path: '/dashboard/events',
+      //   element: <Dashboard />,
+      //   children: [
+      //     {
+      //       index: true,
+      //       element: <DashboardEvents />,
+      //     },
+      //     {
+      //       path: 'create-event',
+      //       element: <DashboardCreateEvent />,
+      //     },
+      //   ],
+      // },
+      // {
+      //   path: '/dashboard/contacts',
+      //   element: <Dashboard />,
+      //   children: [
+      //     {
+      //       index: true,
+      //       element: <DashboardContacts />,
+      //     },
+      //   ],
+      // },
     ],
   },
 ]);

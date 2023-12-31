@@ -1,4 +1,4 @@
-import mongoose,{ Schema, model } from 'mongoose';
+import { Schema, model } from 'mongoose';
 import bcrypt, { genSalt, hash, compare } from 'bcrypt';
 
 const User = new Schema(
@@ -11,7 +11,7 @@ const User = new Schema(
             type: String,
             required: true,
         },
-        avatar: {
+        headshot: {
             type: String,
             required: false,
         },
@@ -27,15 +27,6 @@ const User = new Schema(
             type: String,
             required: true,
             unique: true
-        },
-        password: {
-            type: String,
-            required: true
-        },
-        role: {
-            type: String,
-            enum: ['user', 'admin'],
-            default: 'user'
         },
         gender: {
             type: String,
@@ -72,6 +63,6 @@ User.methods.comparePassword = async function (password) {
     return bcrypt.compare(password, this.password)
 };
 
-const UserSchema = mongoose.models.User || model('User', User);
+const UserSchema = model('User', User);
 
 export default UserSchema;

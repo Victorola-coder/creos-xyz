@@ -1,5 +1,6 @@
-import { Address, LinkedInConnection, Subscriber, Waiter } from "../mongodb/models/index.js";
+import { Address, LinkedInConnection, Member, Subscriber, Transaction, Waiter } from "../mongodb/models/index.js";
 import sendEmail from "../services/email.js";
+import mainClient from "../utils/client.js";
 import { config } from '../utils/constants.js';
 import Joi from 'joi';
 
@@ -57,6 +58,60 @@ const waitlist = async (req, res) => {
         return res.status(500).json({ message: config.ERROR_MESSAGES.InternalServerError });
     }
 }
+
+const membership = async (req, res) => {
+
+    const schema = Joi.object({
+        name: Joi.string().required(),
+        email: Joi.string().email().required(),
+        gender: Joi.string().valid(['M', 'F']).required(),
+        profession: Joi.string().required(),
+        distinction: Joi.string().required(),
+        linkedInUrl: Joi.string().uri().required(),
+    });
+    const { error } = schema.validate(req.body);
+    if (error) return res.status(400).json({ message: error.details[0].message });
+    const { name, email, product } = req.body;
+    try {
+
+        const existing = await Member.findOne({ email });
+
+        if (existing) {
+            return res.status(404).json({ message: config.ERROR_MESSAGES.AlreadySubmitted });
+        }
+        const member = new Member({ name, email, product });
+        await member.save();
+        const amount = 50000
+        const payment = await mainClient.post('https://api.paystack.co/transaction/initialize',
+            { email, currency: 'NGN', amount, metadata: { entity: 'MEMBERSHIP', entity_id: member._id } },
+            {
+                headers: {
+                    Authorization: `Bearer ${process.env.PAYSTACK_SECRET_KEY}`
+                }
+            })
+        if (payment.status === 200) {
+            const details = payment.data
+            const txn = new Transaction({
+                status: 'initiated',
+                amount,
+                reference: details.reference,
+                description: 'MEMBERSHIP_FEE',
+                entity: 'MEMBERSHIP',
+                entity_id: member._id,
+            });
+            await txn.save();
+            return res.json({ message: config.STRINGS.SubmittedSuccessfully, data: { ...req.body, checkout_url: details.authorization_url } });
+        }
+        throw new Error();
+    } catch (error) {
+        console.log("e", error)
+        return res.status(500).json({ message: config.ERROR_MESSAGES.InternalServerError });
+    }
+}
+
+// const webhook = async (req, res, next) => {
+
+// }
 
 const subscribe = async (req, res, next) => {
 
@@ -141,5 +196,6 @@ export default {
     waitlist,
     subscribe,
     submitLinkedIn,
-    sendTokenAddress
+    sendTokenAddress,
+    membership
 };
