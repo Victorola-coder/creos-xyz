@@ -1,7 +1,7 @@
 import { Schema, model } from 'mongoose';
 import bcrypt, { genSalt, hash, compare } from 'bcrypt';
 
-const User = new Schema(
+const Member = new Schema(
     {
         name: {
             type: String,
@@ -46,12 +46,12 @@ const User = new Schema(
 );
 
 // Hash the password before saving it to the database
-// User.pre('save', async function (next) {
-//     const user = this;
-//     if (!user.isModified('password')) return next();
+// Member.pre('save', async function (next) {
+//     const Member = this;
+//     if (!Member.isModified('password')) return next();
 
 //     try {
-//         user.password = await hash(user.password, 10);
+//         Member.password = await hash(Member.password, 10);
 //         next();
 //     } catch (error) {
 //         return next(error);
@@ -59,10 +59,10 @@ const User = new Schema(
 // });
 
 // Compare the given password with the hashed password in the database
-User.methods.comparePassword = async function (password) {
+Member.methods.comparePassword = async function (password) {
     return bcrypt.compare(password, this.password)
 };
 
-const UserSchema = model('User', User);
+const MemberSchema = model('Member', Member);
 
-export default UserSchema;
+export default MemberSchema;
