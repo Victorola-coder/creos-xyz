@@ -8,6 +8,7 @@ import { mainClient } from '../utils/client';
 import { handleAxiosError } from '../utils/common';
 import { linkedInURL, validationText } from '../utils/config';
 import { H1 } from '../utils/typography';
+import { genders } from '../utils/data';
 
 export default function Community() {
 
@@ -61,6 +62,10 @@ export default function Community() {
 
   const handleSubmitMembership = e => {
     e.preventDefault();
+    if (!selectedFile) {
+      toast.error(validationText)
+      return;
+    }
     const form = { ...data, headhsot }
     if (!headhsot) {
       toast.error(validationText)
@@ -100,7 +105,6 @@ export default function Community() {
     setSelectedFile(file);
   }
 
-
   useEffect(() => {
     if (!selectedFile) {
       setHeadshot("");
@@ -126,13 +130,29 @@ export default function Community() {
             <div>Profession</div>
             <Input rounded={false} value={data.profession} placeholder='Profession' type='text' required id="profession" onChange={handleChange} />
             <div>Gender</div>
-            <Input rounded={false} value={data.gender} placeholder='Gender' type='text' required id="gender" onChange={handleChange} />
+            {/* <Input rounded={false} value={data.gender} placeholder='Gender' type='text' required id="gender" onChange={handleChange} /> */}
+
+            <select
+                className='placeholder:text-primary-faded capitalize text-primary w-full p-4 px-5 rounded-lg font-sat font-medium'
+                onChange={handleChange}
+                name='gender'
+                id='gender'
+              >
+              <option className=''>Gender</option>
+              {genders.map((option, index) => {
+                return (
+                  <option className='capitalize' key={index} value={option[0]}>
+                    {option}
+                  </option>
+                );
+              })}
+            </select>
             <div>LinkedIn Profile</div>
-            <Input rounded={false} value={data.linkedInUrl} placeholder='LinkedIn Profile' type='text' required id="linkedInProfile" onChange={handleChange} />
+            <Input rounded={false} value={data.linkedInUrl} placeholder='LinkedIn Profile' type='text' required id="linkedInUrl" onChange={handleChange} />
             <div>Distinction</div>
             <textarea placeholder='Distinction' id="distinction" cols="40" rows="5"
               onChange={handleChange} value={data.distinction}
-              className='rounded-lg p-3 text-xl outline-none min-h-[100px]'></textarea>
+              className='rounded-lg p-3 text-xl outline-none min-h-[100px] text-black'></textarea>
             <div>Email</div>
             <Input rounded={false} value={data.email} placeholder='Work Email' type='email' required id="email" onChange={handleChange} />
             <div>Headshot</div>

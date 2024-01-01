@@ -72,9 +72,9 @@ export const products = [
   {
     id: nanoid(),
     name: 'Alphie',
-    background:'bg-creos',
-    subtitle:'AI powered learning for Web3 tech talents.',
-    description:`A social network built and driven through Artificial General Intelligence to 
+    background: 'bg-creos',
+    subtitle: 'AI powered learning for Web3 tech talents.',
+    description: `A social network built and driven through Artificial General Intelligence to 
     control relative content on users preferences for useful and more relevant educative 
     information and aid users evolution on prefered disruptive technologies skill while on a subsequent rewarding system.`,
     path: '/creos-edu'
@@ -82,23 +82,25 @@ export const products = [
   {
     id: nanoid(),
     name: 'BuildL',
-    background:'bg-primary',
-    subtitle:'AI powered freelancing for Web3 Job hunters.',
-    description:`Freelancing powered by AI. Access gigs with your own choices, and comforts. 
+    background: 'bg-primary',
+    subtitle: 'AI powered freelancing for Web3 Job hunters.',
+    description: `Freelancing powered by AI. Access gigs with your own choices, and comforts. 
     Creos Buidl enables creators to source gigs in thier preferences while getting rewards.`,
     path: '/creos-lab',
   },
   {
     id: nanoid(),
     name: 'Hillock',
-    background:'bg-brown',
-    subtitle:'Save, Invest & Staking System powered by AI.',
-    description:`Transforming the conventional banking system. The need for a wallet consistently 
+    background: 'bg-brown',
+    subtitle: 'Save, Invest & Staking System powered by AI.',
+    description: `Transforming the conventional banking system. The need for a wallet consistently 
     inflating a long and short term saving yet periodically creating a multi rewarding system regardless market dynamics. 
     Hillock is built to power the future of banking to enable savings.`,
     path: '/creos-token',
   },
 ];
+
+export const genders = ['Male', 'Female'];
 
 export const resources = [
   {
@@ -222,33 +224,33 @@ export const imgSlider = [
 
 export const teamMembersData = [
   {
-      id: nanoid(),
-      name: 'Daniel O. Lumiere',
-      role: 'Chief Executive Officer',
-      img: '/images/team-1.svg'
+    id: nanoid(),
+    name: 'Daniel O. Lumiere',
+    role: 'Chief Executive Officer',
+    img: '/images/team-1.svg'
   },
   {
-      id: nanoid(),
-      name: 'Stephen O. Elufisan',
-      role: 'Head of Products Design',
-      img: '/images/team-2.svg'
+    id: nanoid(),
+    name: 'Stephen O. Elufisan',
+    role: 'Head of Products Design',
+    img: '/images/team-2.svg'
   },
   {
-      id: nanoid(),
-      name: 'Joy Ngwolo',
-      role: 'Public Relations Officer',
-      img: '/images/team-3.svg'
+    id: nanoid(),
+    name: 'Joy Ngwolo',
+    role: 'Public Relations Officer',
+    img: '/images/team-3.svg'
   },
   {
-      id: nanoid(),
-      name: 'Opeyemi Oshinibosi',
-      role: 'Head of Events Management',
-      img: '/images/team-4.svg'
+    id: nanoid(),
+    name: 'Opeyemi Oshinibosi',
+    role: 'Head of Events Management',
+    img: '/images/team-4.svg'
   },
   {
-      id: nanoid(),
-      name: 'Deborah Ojengbede',
-      role: 'Special advisory',
-      img: '/images/team-4.svg'
+    id: nanoid(),
+    name: 'Deborah Ojengbede',
+    role: 'Special advisory',
+    img: '/images/team-4.svg'
   },
 ]

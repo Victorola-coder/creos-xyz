@@ -9,6 +9,7 @@ import Input from '../../components/input';
 import { toast } from 'react-toastify';
 import { mainClient } from '../../utils/client';
 import { registerURL, validationText } from '../../utils/config';
+import { genders } from '../../utils/data';
 
 export default function register() {
   const navigate = useNavigate();
@@ -33,9 +34,6 @@ export default function register() {
       [e.target.name]: e.target.value,
     }));
   };
-
-
-  const genders = ['Male', 'Female'];
 
 
   const handleClick = () => {

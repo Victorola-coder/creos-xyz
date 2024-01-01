@@ -157,7 +157,7 @@ export default function Home() {
                   </SubTitle>
 
                 </div>
-                <Link to={'/creos-token'}>
+                <Link to={'https://airdrop.creosxyz.com/'}>
                   <Button className={'bg-creos border-none mb-10'}>Learn more</Button>
                 </Link>
               </div>
