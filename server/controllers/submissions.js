@@ -64,14 +64,15 @@ const membership = async (req, res) => {
     const schema = Joi.object({
         name: Joi.string().required(),
         email: Joi.string().email().required(),
-        gender: Joi.string().valid(['M', 'F']).required(),
+        gender: Joi.string().valid(...config.GENDERS).required(),
         profession: Joi.string().required(),
         distinction: Joi.string().required(),
         linkedInUrl: Joi.string().uri().required(),
+        headshot: Joi.string(),
     });
     const { error } = schema.validate(req.body);
     if (error) return res.status(400).json({ message: error.details[0].message });
-    const { name, email, product } = req.body;
+    const { name, email, gender, profession, distinction, linkedInUrl, headshot } = req.body;
     try {
 
         const existing = await Member.findOne({ email });
@@ -79,28 +80,28 @@ const membership = async (req, res) => {
         if (existing) {
             return res.status(404).json({ message: config.ERROR_MESSAGES.AlreadySubmitted });
         }
-        const member = new Member({ name, email, product });
+        const member = new Member({ name, email, gender, profession, distinction, linkedInUrl, headshot });
         await member.save();
-        const amount = 50000
+        const amount = config.MEMBERSHIP_FEE
         const payment = await mainClient.post('https://api.paystack.co/transaction/initialize',
-            { email, currency: 'NGN', amount, metadata: { entity: 'MEMBERSHIP', entity_id: member._id } },
+            { email, currency: 'NGN', amount, metadata: { entity: 'MEMBERSHIP', entityId: member._id } },
             {
                 headers: {
                     Authorization: `Bearer ${process.env.PAYSTACK_SECRET_KEY}`
                 }
             })
         if (payment.status === 200) {
-            const details = payment.data
+            const details = payment.data.data
             const txn = new Transaction({
                 status: 'initiated',
                 amount,
                 reference: details.reference,
                 description: 'MEMBERSHIP_FEE',
-                entity: 'MEMBERSHIP',
-                entity_id: member._id,
+                entity: 'MEMBER',
+                entityId: member._id,
             });
             await txn.save();
-            return res.json({ message: config.STRINGS.SubmittedSuccessfully, data: { ...req.body, checkout_url: details.authorization_url } });
+            return res.json({ message: config.STRINGS.SubmittedSuccessfully, data: { ...req.body, checkoutURL: details.authorization_url } });
         }
         throw new Error();
     } catch (error) {
@@ -109,9 +110,22 @@ const membership = async (req, res) => {
     }
 }
 
-// const webhook = async (req, res, next) => {
+const webhook = async (req, res) => {
+    const eventData = req.body;
+    const signature = req.headers['x-paystack-signature'];
 
-// }
+    if (!verify(eventData, signature)) {
+        return res.sendStatus(400);
+    }
+
+    if (eventData.event === 'charge.success') {
+        const transactionId = eventData.data.id;
+        // Process the successful transaction to maybe fund wallet and update your WalletModel
+        console.log(`Transaction ${transactionId} was successful`);
+    }
+
+    return res.sendStatus(200);
+}
 
 const subscribe = async (req, res, next) => {
 
@@ -197,5 +211,6 @@ export default {
     subscribe,
     submitLinkedIn,
     sendTokenAddress,
-    membership
+    membership,
+    webhook
 };

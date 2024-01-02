@@ -1,5 +1,6 @@
-import mongoose,{ Schema, model } from 'mongoose';
-import bcrypt, { genSalt, hash, compare } from 'bcrypt';
+import bcrypt from 'bcrypt';
+import mongoose, { Schema, model } from 'mongoose';
+import { config } from '../../utils/constants.js';
 
 const User = new Schema(
     {
@@ -34,12 +35,12 @@ const User = new Schema(
         },
         role: {
             type: String,
-            enum: ['user', 'admin'],
+            enum: config.ROLES,
             default: 'user'
         },
         gender: {
             type: String,
-            enum: ['M', 'F']
+            enum: config.GENDERS
         },
     },
     {

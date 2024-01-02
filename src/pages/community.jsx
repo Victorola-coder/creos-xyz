@@ -6,7 +6,7 @@ import Input from '../components/input';
 import Revolution from '../components/revolution';
 import { mainClient } from '../utils/client';
 import { handleAxiosError } from '../utils/common';
-import { linkedInURL, validationText } from '../utils/config';
+import { linkedInURL, membershipURL, validationText } from '../utils/config';
 import { H1 } from '../utils/typography';
 import { genders } from '../utils/data';
 
@@ -15,7 +15,7 @@ export default function Community() {
   const targetRef = useRef(null);
   const [url, setUrl] = useState('');
   const [isOpen, setIsOpen] = useState(false)
-  const [headhsot, setHeadshot] = useState('')
+  const [headshot, setHeadshot] = useState('')
   const [selectedFile, setSelectedFile] = useState();
   const fileRef = useRef()
   const [data, setData] = useState({
@@ -25,7 +25,7 @@ export default function Community() {
     linkedInUrl: '',
     distinction: '',
     email: '',
-    headhsot:''
+    headshot: ''
   });
 
   useEffect(() => {
@@ -66,15 +66,24 @@ export default function Community() {
       toast.error(validationText)
       return;
     }
-    const form = { ...data, headhsot }
-    if (!headhsot) {
+    const form = { ...data, headshot }
+    if (!headshot) {
       toast.error(validationText)
     } else {
       mainClient.post(membershipURL, form)
         .then((r => {
           if (r.status === 200) {
             toast.success(r.data.message)
-            setData('')
+            // setData({
+            //   name: '',
+            //   profession: '',
+            //   gender: '',
+            //   linkedInUrl: '',
+            //   distinction: '',
+            //   email: '',
+            //   headshot: ''
+            // })
+            window.open(r.data.data.checkoutURL)
           } else
             toast.error(r.data.message)
         }))
@@ -133,11 +142,11 @@ export default function Community() {
             {/* <Input rounded={false} value={data.gender} placeholder='Gender' type='text' required id="gender" onChange={handleChange} /> */}
 
             <select
-                className='placeholder:text-primary-faded capitalize text-primary w-full p-4 px-5 rounded-lg font-sat font-medium'
-                onChange={handleChange}
-                name='gender'
-                id='gender'
-              >
+              className='placeholder:text-primary-faded capitalize text-primary w-full p-4 px-5 rounded-lg font-sat font-medium'
+              onChange={handleChange}
+              name='gender'
+              id='gender'
+            >
               <option className=''>Gender</option>
               {genders.map((option, index) => {
                 return (
@@ -159,7 +168,7 @@ export default function Community() {
             <div
               className='p-3 bg-white text-primary-faded text-xl mb-5 rounded-lg flex gap-2'
               onClick={() => { console.log("jns"); fileRef.current.click() }}
-              id="headshot" value={headhsot} >
+              id="headshot" value={headshot} >
               <div>{selectedFile ? selectedFile.name : 'Upload Headshot'}</div>
               {selectedFile ? <div> | Change</div> : null}
             </div>

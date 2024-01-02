@@ -8,7 +8,7 @@ const Transaction = new mongoose.Schema({
   external_id: { type: String, required: false },
   description: { type: String, required: true, enum: ['MEMBERSHIP_FEE'] },
   entity: { type: String, required: true, enum: ['MEMBER'] },
-  entity_id: { type: String, required: true }
+  entityId: { type: String, required: true }
 }, {
   toJSON: {
     transform: (_, rec) => {

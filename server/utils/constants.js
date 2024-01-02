@@ -8,10 +8,10 @@ export const config = {
         UserAlreadyExists: 'This email address provided is associated with an existing account.',
         InvalidLinkProvided: 'The link provided is either invalid or has expired.',
         ResourceNotFound: 'Unable to process. Resource not found.',
-        AlreadyInWaitlist:'You\'re already in the waitlist.',
-        AlreadySubscribed:'You have already subcribed to our newsletter.',
-        AlreadyLinked:'You have already submitted your LinkedIn Profile, thank you.',
-        AlreadySubmitted:'You have already submitted this form, thank you.',
+        AlreadyInWaitlist: 'You\'re already in the waitlist.',
+        AlreadySubscribed: 'You have already subcribed to our newsletter.',
+        AlreadyLinked: 'You have already submitted your LinkedIn Profile, thank you.',
+        AlreadySubmitted: 'You have already submitted this form, thank you.',
     },
     STRINGS: {
         RegistrationSuccessful: 'Registration successful.',
@@ -25,5 +25,8 @@ export const config = {
         LinkedInSuccessfully: 'Thank you! we\'ve received your LinkedIn URL, we\'ll be in touch.',
         SubmittedSuccessfully: 'Thank you! we\'ve received your submission, we\'ll be in touch.'
     },
-    PRODUCT_OPTIONS: ['Creos Edu', 'Creos Lab', 'Creos Token']
+    PRODUCT_OPTIONS: ['Creos Edu', 'Creos Lab', 'Creos Token'],
+    GENDERS: ['M', 'F'],
+    ROLES: ['user', 'admin'],
+    MEMBERSHIP_FEE: 50000
 }
