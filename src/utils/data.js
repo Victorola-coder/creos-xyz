@@ -243,9 +243,9 @@ export const teamMembersData = [
   },
   {
     id: nanoid(),
-    name: 'Opeyemi Oshinibosi',
-    role: 'Head of Events Management',
-    img: '/images/team-4.svg'
+    name: 'Okoye Chinelo',
+    role: 'Chief of Private Membership',
+    img: '/images/cpm.jpg'
   },
   {
     id: nanoid(),
