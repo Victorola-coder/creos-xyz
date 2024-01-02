@@ -227,30 +227,45 @@ export const teamMembersData = [
     id: nanoid(),
     name: 'Daniel O. Lumiere',
     role: 'Chief Executive Officer',
-    img: '/images/team-1.svg'
+    img: '/images/team-1.svg',
+    linkedInURL: 'https://www.linkedin.com/in/daniellumiere',
+    instagramURL: 'https://www.instagram.com/web3creo',
+    twitterURL: 'https://x.com/web3creo'
   },
   {
     id: nanoid(),
     name: 'Stephen O. Elufisan',
     role: 'Head of Products Design',
-    img: '/images/team-2.svg'
+    img: '/images/team-2.svg',
+    linkedInURL: 'https://www.linkedin.com/in/stephenelufisan',
+    instagramURL: 'https://www.instagram.com/stephenelufisan',
+    twitterURL: 'https://x.com/se_theuxboss'
   },
   {
     id: nanoid(),
     name: 'Joy Ngwolo',
     role: 'Public Relations Officer',
-    img: '/images/team-3.svg'
+    img: '/images/team-3.svg',
+    linkedInURL: 'https://www.instagram.com/ngwolojoy',
+    instagramURL: 'https://www.linkedin.com/in/joy-ngwolo-anipr-53671679',
+    twitterURL: 'https://x.com/joyngwolo'
   },
   {
     id: nanoid(),
     name: 'Okoye Chinelo',
     role: 'Chief of Private Membership',
-    img: '/images/cpm.jpg'
+    img: '/images/cpm.jpg',
+    linkedInURL: 'https://www.linkedin.com/in/okoye-chinelo',
+    instagramURL: 'https://www.instagram.com/jessyfabulous',
+    twitterURL: 'https://x.com/queen_of_dealss'
   },
   {
     id: nanoid(),
     name: 'Deborah Ojengbede',
     role: 'Special advisory',
-    img: '/images/team-4.svg'
+    img: '/images/team-4.svg',
+    linkedInURL: 'https://www.linkedin.com/in/deborah-ojengbede',
+    instagramURL: 'https://www.instagram.com/debb.i.e',
+    twitterURL: 'https://x.com/deborahofafen'
   },
 ]

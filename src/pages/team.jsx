@@ -58,9 +58,9 @@ const Content = () => {
               </h1>
               <h2 className='lg:text-2xl'>{team.role}</h2>
               <div className='flex items-center gap-4'>
-                <XIcon />
-                <LinkedInIcon />
-                <InstagramIcon />
+                <a href={team.twitterURL} target='_blank' rel='noreferrer'><XIcon /></a>
+                <a href={team.linkedInURL} target='_blank' rel='noreferrer'><LinkedInIcon /></a>
+                <a href={team.instagramURL} target='_blank' rel='noreferrer'><InstagramIcon /></a>
               </div>
             </div>
           </div>
