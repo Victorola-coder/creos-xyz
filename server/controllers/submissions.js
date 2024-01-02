@@ -1,6 +1,7 @@
 import { Address, LinkedInConnection, Member, Subscriber, Transaction, Waiter } from "../mongodb/models/index.js";
 import sendEmail from "../services/email.js";
 import mainClient from "../utils/client.js";
+import { verifyTransaction } from "../utils/common.js";
 import { config } from '../utils/constants.js';
 import Joi from 'joi';
 
@@ -114,7 +115,7 @@ const webhook = async (req, res) => {
     const eventData = req.body;
     const signature = req.headers['x-paystack-signature'];
 
-    if (!verify(eventData, signature)) {
+    if (!verifyTransaction(eventData, signature)) {
         return res.sendStatus(400);
     }
 
