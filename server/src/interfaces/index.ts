@@ -1,0 +1,1 @@
+export { IPaystackPayment } from './paystack'
