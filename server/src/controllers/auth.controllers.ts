@@ -73,6 +73,16 @@ export const loginController: RequestHandler = async (req, res, next) => {
             path: '/',
         });
 
+        // Dev
+        res.cookie('creosToken', accessToken, {
+            httpOnly: true,
+            maxAge: 24 * 60 * 60 * 1000, // Output: 86400000
+            sameSite: 'lax',
+            secure: process.env.NODE_ENV === 'development' ? false : true,
+            domain: process.env.NODE_ENV === 'development' ? 'localhost' : 'creos-events.vercel.app',
+            path: '/',
+        });
+
         return res.status(200).json({ data: { user, accessToken, refreshToken } });
     } catch (error) {
         console.error(error);
