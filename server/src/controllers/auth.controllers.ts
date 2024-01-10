@@ -58,28 +58,22 @@ export const loginController: RequestHandler = async (req, res, next) => {
             return res.status(401).json({ message: appConfig.ERROR_MESSAGES.InvalidCredentialsProvided });
         }
         const isPasswordCorrect = await bcrypt.compare(password, user.password);
-        console.log('passs')
         if (!isPasswordCorrect) {
             return res.status(401).json({ message: appConfig.ERROR_MESSAGES.InvalidCredentialsProvided });
         }
 
         const accessToken = generateAccessToken(user);
         const refreshToken = generateRefreshToken(user);
+        res.cookie('creosToken', accessToken, {
+            httpOnly: true,
+            maxAge: 24 * 60 * 60 * 1000, // Output: 86400000
+            sameSite: 'lax',
+            secure: process.env.NODE_ENV === 'development' ? false : true,
+            domain:  process.env.NODE_ENV === 'development' ? 'localhost' : '.creosxyz.com',
+            path: '/',
+        });
 
-        res.setHeader(
-            'Set-Cookie',
-            cookie.serialize('token', 'Bearer ' + accessToken, {
-                httpOnly: true,
-                secure: process.env.NODE_ENV === 'development' ? false : true,
-                sameSite: 'lax',
-                domain:
-                    process.env.NODE_ENV === 'development' ? 'localhost' : 'creosxyz.com',
-                path: '/',
-                maxAge: 360000,
-            })
-        );
-
-        return res.status(200).json({ user, accessToken, refreshToken });
+        return res.status(200).json({ data: { user, accessToken, refreshToken } });
     } catch (error) {
         console.error(error);
         return res.status(500).json({ message: appConfig.ERROR_MESSAGES.InternalServerError });

@@ -9,26 +9,16 @@ import {
 } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import { Footer, Navbar } from './components';
-import Dashboard from './layouts/dashboard';
 import {
-  BrowseEvents,
   Community,
   Contact,
-  CreateEvent,
   ErrorPage,
-  EventDetails,
-  Events,
   Home,
   Products,
   Team,
   Test,
-  Waitlist,
-  CreosToken
+  Waitlist
 } from './pages';
-import { Login, Register } from './pages/auth';
-import DashboardContacts from './pages/dashboard/contact';
-import DashboardCreateEvent from './pages/dashboard/create-event';
-import DashboardEvents from './pages/dashboard/events';
 import { mainClient } from './utils/client';
 import { BASE_API_ENDPOINT } from './utils/config';
 const Root = () => {

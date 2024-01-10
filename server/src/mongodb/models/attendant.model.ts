@@ -5,9 +5,15 @@ const attendantSchema = new mongoose.Schema({
     profession: { type: String, required: true },
     linkedInProfile: { type: String, required: true },
     email: { type: String, required: false },
-    createdBy: {
+    txn: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'User',
+        required: true,
+        ref: 'Transaction',
+    },
+    event: {
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
+        ref: 'Event',
     },
 });
 

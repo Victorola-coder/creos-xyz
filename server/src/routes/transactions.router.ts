@@ -3,6 +3,6 @@ import { verifyTransactionController } from '../controllers';
 
 const router = Router();
 
-router.get('/verify/:reference', verifyTransactionController);
+router.get('/verify/:description/:reference', verifyTransactionController);
 
 export default router;

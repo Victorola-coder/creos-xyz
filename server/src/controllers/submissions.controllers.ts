@@ -79,7 +79,7 @@ export const membershipController: RequestHandler = async (req, res) => {
         if (existing) {
             return res.status(404).json({ message: appConfig.ERROR_MESSAGES.AlreadySubmitted });
         }
-        const member = new Member({ name, email, gender, profession, distinction, linkedInUrl, headshot, txnId });
+        const member = new Member({ name, email, gender, profession, distinction, linkedInUrl, headshot, txn:txnId });
         await member.save();
 
         // const txn = await Transaction.findById(txnId)

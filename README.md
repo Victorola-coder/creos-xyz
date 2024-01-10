@@ -3,7 +3,8 @@
 Built with NodeJS, React and Typescript.
 
 ### Starting up the Backend Server
-Make a copy of `server/.env.example` and rename as `server/.env` and fill in the required secrets.
+Make a copy of `server/.env.example` and rename as `server/.env` and fill in the required secrets. <br/>
+The `ALLOWED_ORIGINS` is in this format: `key=value1,value2,...`
 
 Move into the `/server` directory and simply run the following commands on your terminal
 

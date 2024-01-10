@@ -22,3 +22,14 @@ export const checkFileSize = (file) => {
 export const getExtension = (fileName) => {
     return fileName.substring(fileName.lastIndexOf(".") + 1);
 };
+
+export const payWithPaystack = ({ email, amount, onSuccess, onClose }) => {
+    const handler = PaystackPop.setup({
+        key: `${import.meta.env.VITE_APP_PAYSTACK_API_PUBLIC_KEY}`,
+        email,
+        amount: amount * 100,
+        onSuccess,
+        onClose
+    });
+    handler.openIframe();
+}

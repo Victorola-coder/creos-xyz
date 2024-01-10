@@ -1,18 +1,15 @@
 import { useEffect, useRef, useState } from 'react';
-import { PaystackConsumer } from 'react-paystack';
 import { toast } from 'react-toastify';
 import { Button, Container, Modal, SEO } from '../components';
 import Input from '../components/input';
 import Revolution from '../components/revolution';
 import { mainClient } from '../utils/client';
-import { handleAxiosError } from '../utils/common';
+import { handleAxiosError, payWithPaystack } from '../utils/common';
 import { linkedInURL, membershipURL, validationText, verifyTransactionURL } from '../utils/config';
 import { genders } from '../utils/data';
 import { H1 } from '../utils/typography';
 
 export default function Community() {
-
-  const paystackBtn = useRef(null)
   const targetRef = useRef(null);
   const [url, setUrl] = useState('');
   const [isOpen, setIsOpen] = useState(false)
@@ -28,31 +25,14 @@ export default function Community() {
     email: '',
     headshot: ''
   });
-  // const initializePayment = usePaystackPayment();
-
-  const config = {
-    email: data.email,
-    amount: 20000, //Amount is in the country's lowest currency. E.g Kobo, so 20000 kobo = N200
-    publicKey: `${import.meta.env.VITE_APP_PAYSTACK_API_PUBLIC_KEY}`
-  };
-
 
   const handlePaystackSuccessAction = (reference) => {
     // Implementation for whatever you want to do with reference and after success call.
     console.log(reference);
-    // interface RootObject {
-    //   reference: string;
-    //   trans: string;
-    //   status: string;
-    //   message: string;
-    //   transaction: string;
-    //   trxref: string;
-    //   redirecturl: string;
-    // }
     if (reference.status !== "success") {
       toast.error("Payment failed")
     }
-    mainClient.get(`${verifyTransactionURL}/${reference.reference}`)
+    mainClient.get(`${verifyTransactionURL}/MEMBERSHIP_FEE/${reference.reference}`)
       .then(r => {
         if (r.status === 200) {
           const data = r.data.data;
@@ -71,14 +51,6 @@ export default function Community() {
     // implementation for  whatever you want to do when the Paystack dialog closed.
     console.log('closed')
   }
-
-
-  const componentProps = {
-    ...config,
-    text: 'Paystack Button Implementation',
-    onSuccess: (reference) => handlePaystackSuccessAction(reference),
-    onClose: handlePaystackCloseAction,
-  };
 
 
 
@@ -115,16 +87,15 @@ export default function Community() {
         .then((r => {
           if (r.status === 200) {
             toast.success(r.data.message)
-            // setData({
-            //   name: '',
-            //   profession: '',
-            //   gender: '',
-            //   linkedInUrl: '',
-            //   distinction: '',
-            //   email: '',
-            //   headshot: ''
-            // })
-            window.open(r.data.data.checkoutURL)
+            setData({
+              name: '',
+              profession: '',
+              gender: '',
+              linkedInUrl: '',
+              distinction: '',
+              email: '',
+              headshot: ''
+            })
           } else
             toast.error(r.data.message)
         }))
@@ -154,7 +125,12 @@ export default function Community() {
   }
 
   const handlePayment = () => {
-    paystackBtn.current?.click()
+    payWithPaystack({
+      email: data.email,
+      amount: 20000,
+      onSuccess: handlePaystackSuccessAction,
+      onClose: handlePaystackCloseAction
+    })
   }
 
 
@@ -194,8 +170,6 @@ export default function Community() {
             <div>Profession</div>
             <Input rounded={false} value={data.profession} placeholder='Profession' type='text' required id="profession" onChange={handleChange} />
             <div>Gender</div>
-            {/* <Input rounded={false} value={data.gender} placeholder='Gender' type='text' required id="gender" onChange={handleChange} /> */}
-
             <select
               className='placeholder:text-primary-faded capitalize text-primary w-full p-4 px-5 rounded-lg font-sat font-medium'
               onChange={handleChange}
@@ -228,11 +202,6 @@ export default function Community() {
               {selectedFile ? <div> | Change</div> : null}
             </div>
             <input ref={fileRef} onChange={onSelectFile} hidden type={'file'} multiple={false} id="headshot" />
-
-            <PaystackConsumer {...componentProps}>
-              {({ initializePayment }) => <button className='hidden' ref={paystackBtn}
-                onClick={() => initializePayment(handlePaystackSuccessAction, handlePaystackCloseAction)}></button>}
-            </PaystackConsumer>
           </div>
         </Modal>
         <header className='bg-primary'>

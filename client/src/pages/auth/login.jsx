@@ -59,7 +59,7 @@ export default function register() {
             //   sameSite: "lax",
             //   domain: process.env.NODE_ENV === "development" ? "localhost" : "creosxyz.com",
             // });
-            document.cookie = `token=${token}; expires=7; path=/; secure; HttpOnly`;
+            // document.cookie = `token=${token}; expires=7; path=/; secure; HttpOnly`;
             navigate("/dashboard/events")
             setFormData({
               email: '',

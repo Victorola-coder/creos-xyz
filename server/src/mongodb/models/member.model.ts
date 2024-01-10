@@ -23,7 +23,7 @@ const Member = new Schema(
             type: String,
             required: true,
         },
-        txnId: {
+        txn: {
             type: Schema.Types.ObjectId,
             required: true,
             ref: 'Transaction',

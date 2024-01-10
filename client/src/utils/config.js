@@ -36,7 +36,7 @@ export const linkedInURL = `${BASE_API_ENDPOINT}/submissions/linkedin`
 export const addressURL = `${BASE_API_ENDPOINT}/submissions/address`
 export const membershipURL = `${BASE_API_ENDPOINT}/submissions/membership`
 
-export const verifyTransactionURL = `${BASE_API_ENDPOINT}/transactions/verify`
+export const verifyTransactionURL = `${BASE_API_ENDPOINT}/transactions/verify` // /:description/:reference
 
 
 export const profileURL = `${BASE_API_ENDPOINT}/users/profile`

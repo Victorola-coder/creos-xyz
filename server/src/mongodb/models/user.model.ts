@@ -4,49 +4,20 @@ import { appConfig } from '../../utils/constants';
 
 const User = new Schema(
     {
-        name: {
-            type: String,
-            required: true,
-        },
-        profession: {
-            type: String,
-            required: true,
-        },
-        avatar: {
-            type: String,
-            required: false,
-        },
-        distinction: {
-            type: String,
-            required: true,
-        },
-        linkedInUrl: {
-            type: String,
-            required: true,
-        },
-        email: {
-            type: String,
-            required: true,
-            unique: true
-        },
-        password: {
-            type: String,
-            required: true
-        },
-        role: {
-            type: String,
-            enum: appConfig.ROLES,
-            default: 'user'
-        },
-        gender: {
-            type: String,
-            enum: appConfig.GENDERS
-        },
+        name: { type: String, required: true, },
+        profession: { type: String, required: true, },
+        avatar: { type: String, required: false, },
+        distinction: { type: String, required: true, },
+        linkedInUrl: { type: String, required: true, },
+        email: { type: String, required: true, unique: true },
+        password: { type: String, required: true },
+        role: { type: String, enum: appConfig.ROLES, default: 'user' },
+        gender: { type: String, enum: appConfig.GENDERS },
     },
     {
         timestamps: true,
         toJSON: {
-            transform: (doc, rec) => {
+            transform: (_, rec) => {
                 const { __v, _id, password, ...object } = rec;
                 object.id = _id;
                 return object;
@@ -69,7 +40,7 @@ const User = new Schema(
 // });
 
 // Compare the given password with the hashed password in the database
-User.methods.comparePassword = async function (password:string) {
+User.methods.comparePassword = async function (password: string) {
     return bcrypt.compare(password, this.password)
 };
 

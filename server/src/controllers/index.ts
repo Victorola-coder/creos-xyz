@@ -26,3 +26,14 @@ export {
     verifyTransactionController,
     webhookController,
 } from './transactions.controllers'
+
+export {
+    allEventsController,
+    createEventController,
+    buyTicketController,
+    verifyTicketController,
+    singleEventController,
+    updateEventController,
+    deleteEventController,
+    usersEventsController
+} from './events.controllers'

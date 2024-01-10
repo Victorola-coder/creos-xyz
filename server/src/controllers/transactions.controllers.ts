@@ -5,8 +5,8 @@ import { appConfig } from '../utils/constants';
 
 export const verifyTransactionController: RequestHandler = async (req, res) => {
     try {
-        const { reference } = req.params;
-        const verifiedTxn = await verifyTxnByReference(reference, appConfig.TRANSACTION_DESC_TYPES.MEMBERSHIP_FEE)
+        const { reference, description } = req.params;
+        const verifiedTxn = await verifyTxnByReference(reference, description)
         return res.json({ message: appConfig.STRINGS.Success, data: verifiedTxn })
     } catch (error) {
         return res.status(400).json({ message: appConfig.ERROR_MESSAGES.BadRequestError })
@@ -16,6 +16,7 @@ export const verifyTransactionController: RequestHandler = async (req, res) => {
 export const webhookController: RequestHandler = async (req, res) => {
     const eventData = req.body;
     const signature = req.headers['x-paystack-signature'];
+    console.log(eventData)
 
     if (!verifyTransaction(eventData, signature)) {
         return res.sendStatus(400);
