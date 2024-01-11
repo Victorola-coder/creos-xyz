@@ -20,7 +20,7 @@ export const META_PUBLISHED_AT = '2023-09-27';
 export const META_KEYWORDS = 'Creos, creators, publishers,';
 
 
-export const BASE_API_ENDPOINT = process.env.NODE_ENV === 'development' ? 'http://localhost:3001/api/v1' : 'https://creos.onrender.com/api/v1'
+export const BASE_API_ENDPOINT = process.env.NODE_ENV === 'development' ? 'http://localhost:3001/api/v1' : 'https://api.creosxyz.com/api/v1'
 
 export const registerURL = `${BASE_API_ENDPOINT}/auth/register`
 export const loginURL = `${BASE_API_ENDPOINT}/auth/login`

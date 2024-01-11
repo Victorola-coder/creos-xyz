@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const BASE_API_ENDPOINT = process.env.NODE_ENV === 'development' ? 'http://localhost:3001/api/v1' : 'https://creos.onrender.com/api/v1'
+export const BASE_API_ENDPOINT = process.env.NODE_ENV === 'development' ? 'http://localhost:3001/api/v1' : 'https://api.creosxyz.com/api/v1'
 
 const getClient = (
     baseURL = BASE_API_ENDPOINT,
