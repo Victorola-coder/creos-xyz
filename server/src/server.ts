@@ -47,7 +47,7 @@ app.use('/api/v1/events', eventsRouter)
 app.use('/api/v1/guests', guestsRouter)
 
 // 
-app.get('/', (req, res) => res.status(200).json({ message: 'Welcome to Creos Lab' }));
+app.get('/', (req, res) => res.status(200).json({ message: 'Welcome to Creos XYZ API' }));
 
 
 // Start the server

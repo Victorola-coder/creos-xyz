@@ -65,7 +65,7 @@ export const loginController: RequestHandler = async (req, res, next) => {
         res.cookie('creosToken', accessToken, {
             httpOnly: true,
             maxAge: 24 * 60 * 60 * 1000, // Output: 86400000
-            sameSite: process.env.NODE_ENV === 'development' ? 'lax' : 'none',
+            sameSite: 'lax',
             secure: process.env.NODE_ENV === 'development' ? false : true,
             domain: process.env.NODE_ENV === 'development' ? 'localhost' : process.env.DOMAIN,
             path: '/',
