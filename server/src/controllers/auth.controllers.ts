@@ -68,7 +68,7 @@ export const loginController: RequestHandler = async (req, res, next) => {
             sameSite: process.env.NODE_ENV === 'development' ? 'lax' : 'none',
             secure: process.env.NODE_ENV === 'development' ? false : true,
             // domain: process.env.NODE_ENV === 'development' ? 'localhost' : process.env.DOMAIN,
-            domain: process.env.NODE_ENV === 'development' ? 'localhost' : undefined,
+            domain: process.env.NODE_ENV === 'development' ? 'localhost' : process.env.DOMAIN,
             path: '/',
         });
 
