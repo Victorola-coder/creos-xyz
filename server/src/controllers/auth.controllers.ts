@@ -33,9 +33,9 @@ export const registerController: RequestHandler = async (req, res) => {
             linkedInUrl,
             password: hashedPassword,
         });
-        console.log('user')
         await user.save();
         console.log('user saved', user)
+        // TODO: Remove this.
 
         const data = { ...req.body, id: user._id }
         return res.json({ message: appConfig.STRINGS.RegistrationSuccessful, data });

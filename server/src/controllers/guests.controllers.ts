@@ -3,12 +3,12 @@ import Joi from "joi";
 import { Guest } from "../mongodb/models";
 import { appConfig } from "../utils/constants";
 
-export const allGuestsController: RequestHandler = async (req, res) => {
+export const allGuestsController: RequestHandler = async (req: any, res) => {
     try {
         const { search } = req.query
         const filter = search ? { name: { $regex: search, $options: 'i' }, } : {}
         // const guests = await Guest.find({ ...filter, createdBy: req.user.id })
-        const guests = await Guest.find(filter)
+        const guests = await Guest.find({ ...filter, owner: req.user.id })
         const data = { guests }
         return res.json({ message: appConfig.STRINGS.Success, data });
     } catch (error) {

@@ -117,6 +117,7 @@ export const createEventController: RequestHandler = async (req: any, res) => {
             timezone: Joi.string().required(),
             eventTime: Joi.string().required(),
             eventDate: Joi.date().required(),
+            price: Joi.number().required(),
             locationType: Joi.string().required().valid(...appConfig.LOCATION_TYPES),
         });
         const { error } = schema.validate(req.body);
@@ -130,7 +131,8 @@ export const createEventController: RequestHandler = async (req: any, res) => {
             timezone,
             eventTime,
             eventDate,
-            locationType
+            locationType,
+            price
         } = req.body
 
         const event = await Event.create({
@@ -144,6 +146,7 @@ export const createEventController: RequestHandler = async (req: any, res) => {
             eventTime,
             eventDate,
             locationType,
+            price,
             createdBy: req.user.id
         })
 
