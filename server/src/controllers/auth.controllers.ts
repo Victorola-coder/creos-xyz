@@ -67,7 +67,6 @@ export const loginController: RequestHandler = async (req, res, next) => {
             maxAge: 24 * 60 * 60 * 1000, // Output: 86400000
             sameSite: process.env.NODE_ENV === 'development' ? 'lax' : 'none',
             secure: process.env.NODE_ENV === 'development' ? false : true,
-            // domain: process.env.NODE_ENV === 'development' ? 'localhost' : process.env.DOMAIN,
             domain: process.env.NODE_ENV === 'development' ? 'localhost' : process.env.DOMAIN,
             path: '/',
         });
