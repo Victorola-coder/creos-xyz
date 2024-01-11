@@ -1,13 +1,14 @@
 import { Router } from 'express';
 import {
-    createEventController,
     allEventsController,
     buyTicketController,
-    verifyTicketController,
+    createEventController,
+    deleteEventController,
+    eventGuestsController,
     singleEventController,
     updateEventController,
-    deleteEventController,
-    usersEventsController
+    usersEventsController,
+    verifyTicketController
 } from '../controllers';
 import { authenticate } from '../middlewares';
 
@@ -16,6 +17,7 @@ const router = Router();
 
 router.get('/', allEventsController);
 router.get('/mine', authenticate, usersEventsController);
+router.get('/guests/', authenticate, eventGuestsController);
 router.post('/buy-ticket', buyTicketController);
 router.get('/verfiy-ticket/:ticket', verifyTicketController)
 router.post('/create', authenticate, createEventController);

@@ -18,7 +18,7 @@ const User = new Schema(
         timestamps: true,
         toJSON: {
             transform: (_, rec) => {
-                const { __v, _id, password, ...object } = rec;
+                const { __v, _id, password, role, ...object } = rec;
                 object.id = _id;
                 return object;
             }

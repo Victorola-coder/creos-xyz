@@ -1,5 +1,5 @@
 export { default as Address } from './address.model'
-export { default as Attendant } from './attendant.model'
+export { default as Guest } from './guest.model'
 export { default as Event } from './event.model'
 export { default as LinkedInConnection } from './linkedin.model'
 export { default as Member } from './member.model'

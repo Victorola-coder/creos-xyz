@@ -1,9 +1,8 @@
 import { RequestHandler } from "express";
-import { Attendant, Event, Transaction } from "../mongodb/models";
-import { appConfig } from "../utils/constants";
 import Joi from "joi";
+import { Event, Guest, Transaction } from "../mongodb/models";
 import { sendEmail } from "../services";
-import { Types } from "mongoose";
+import { appConfig } from "../utils/constants";
 
 export const allEventsController: RequestHandler = async (req, res) => {
     try {
@@ -50,7 +49,18 @@ export const singleEventController: RequestHandler = async (req, res) => {
 }
 
 export const updateEventController: RequestHandler = async (req: any, res) => {
-    const { name, body, image } = req.body;
+    const { 
+        name,
+        image,
+        slug,
+        price,
+        description,
+        location,
+        locationType,
+        shortDescription,
+        eventDate,
+        eventTime,
+    } = req.body;
     const { id } = req.params
     try {
         // const post = await Post.findByIdAndUpdate(id, { name, slug, body, image, author }, )
@@ -59,16 +69,16 @@ export const updateEventController: RequestHandler = async (req: any, res) => {
             return res.status(401).json({ message: 'User not the author' })
         }
 
-        event.name = req.body.name || event.name;
-        event.slug = req.body.slug || event.slug;
-        event.price = req.body.price || event.price
-        event.description = req.body.description || event.description
-        event.location = req.body.location || event.location
-        event.locationType = req.body.locationType || event.locationType
-        event.shortDescription = req.body.shortDescription || event.shortDescription
-        event.image = req.body.image || event.image
-        event.eventDate = req.body.eventDate || event.eventDate
-        event.eventTime = req.body.eventTime || event.eventTime
+        event.name = name || event.name;
+        event.slug = slug || event.slug;
+        event.price = price || event.price
+        event.description = description || event.description
+        event.location = location || event.location
+        event.locationType = locationType || event.locationType
+        event.shortDescription = shortDescription || event.shortDescription
+        event.image = image || event.image
+        event.eventDate = eventDate || event.eventDate
+        event.eventTime = eventTime || event.eventTime
 
         const data = await event.save();
         res.json({ message: 'Event successfully updated', data });
@@ -152,7 +162,7 @@ export const buyTicketController: RequestHandler = async (req, res) => {
             txnId: Joi.string().required(),
             name: Joi.string().required(),
             profession: Joi.string().required(),
-            linkedInProfile: Joi.string().required(),
+            linkedInUrl: Joi.string().required(),
             email: Joi.string().required(),
         });
         const { error } = schema.validate(req.body);
@@ -163,27 +173,28 @@ export const buyTicketController: RequestHandler = async (req, res) => {
             txnId,
             name,
             profession,
-            linkedInProfile,
+            linkedInUrl,
             email,
         } = req.body
 
         const event = await Event.findOne({ id: eventId })
         const txn = await Transaction.findOne({ id: txnId })
         if (event && txn) {
-            const attendant = await Attendant.create({
+            const attendant = await Guest.create({
                 event: eventId,
                 txn: txnId,
                 name,
                 profession,
-                linkedInProfile,
+                linkedInUrl,
                 email,
+                owner: event.createdBy
             })
 
 
             const data = { ...req.body, id: attendant._id }
             sendEmail(email,
                 `Ticket bought for ${event.name}`,
-                `Your ticket reference TKT-${txn.reference}`
+                `Your ticket reference TKT-${txn.reference}, location at ${event.location}`
             )
             return res.status(201).json({ message: appConfig.STRINGS.TicketBoughtSuccessfully, data });
         }
@@ -213,7 +224,7 @@ export const verifyTicketController: RequestHandler = async (req, res) => {
 
         const txnId = ticket.replace("TKT-", "")
 
-        const attendant = await Attendant.findOne({ txn: txnId }).populate('txn')
+        const attendant = await Guest.findOne({ txn: txnId }).populate('txn')
 
         if (!attendant) {
             return res.status(400).json({ message: appConfig.ERROR_MESSAGES.NotFoundError, });
@@ -226,6 +237,20 @@ export const verifyTicketController: RequestHandler = async (req, res) => {
     }
 }
 
+
+export const eventGuestsController: RequestHandler = async (req, res) => {
+    try {
+        const { search, eventId } = req.query
+        const filter = search ? { name: { $regex: search, $options: 'i' }, } : {}
+        // const events = await Guest.find({ ...filter, createdBy: req.user.id })
+        const events = await Guest.find({ ...filter, eventId })
+        const data = { events }
+        return res.json({ message: appConfig.STRINGS.Success, data });
+    } catch (error) {
+        console.log(error)
+        return res.status(500).json({ message: appConfig.ERROR_MESSAGES.InternalServerError, error });
+    }
+}
 
 // export const getQuotesFromDB = async (queryMap: QuotesQueryMap) => {
 //     const { name = "", name = "", page = 1, pageSize = AppConfig.DEFAULT_PAGE_SIZE } = queryMap

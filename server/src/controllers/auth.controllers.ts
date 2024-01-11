@@ -1,13 +1,11 @@
-import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
-import crypto from 'crypto'
-import cookie from 'cookie'
-import { Token, User } from '../mongodb/models';
-import Joi from 'joi';
-import { sendEmail } from '../services';
-import { generateAccessToken, generateRefreshToken } from '../services';
-import { appConfig } from '../utils/constants';
+import crypto from 'crypto';
 import { RequestHandler } from 'express';
+import Joi from 'joi';
+import jwt from 'jsonwebtoken';
+import { Token, User } from '../mongodb/models';
+import { generateAccessToken, sendEmail } from '../services';
+import { appConfig } from '../utils/constants';
 
 // Register a new user
 export const registerController: RequestHandler = async (req, res) => {
@@ -47,7 +45,6 @@ export const registerController: RequestHandler = async (req, res) => {
     }
 };
 
-// TODO: Use cookies for tokens
 // Login with an existing user
 export const loginController: RequestHandler = async (req, res, next) => {
     const { email, password } = req.body;
@@ -63,33 +60,23 @@ export const loginController: RequestHandler = async (req, res, next) => {
         }
 
         const accessToken = generateAccessToken(user);
-        const refreshToken = generateRefreshToken(user);
+        // const refreshToken = generateRefreshToken(user);
+        // TODO: Refresh Tokens
         res.cookie('creosToken', accessToken, {
             httpOnly: true,
             maxAge: 24 * 60 * 60 * 1000, // Output: 86400000
             sameSite: 'lax',
             secure: process.env.NODE_ENV === 'development' ? false : true,
-            domain:  process.env.NODE_ENV === 'development' ? 'localhost' : '.creosxyz.com',
+            domain: process.env.NODE_ENV === 'development' ? 'localhost' : process.env.DOMAIN,
             path: '/',
         });
 
-        // Dev
-        res.cookie('creosToken', accessToken, {
-            httpOnly: true,
-            maxAge: 24 * 60 * 60 * 1000, // Output: 86400000
-            sameSite: 'lax',
-            secure: process.env.NODE_ENV === 'development' ? false : true,
-            domain: process.env.NODE_ENV === 'development' ? 'localhost' : '.vercel.app',
-            path: '/',
-        });
-
-        return res.status(200).json({ data: { user, accessToken, refreshToken } });
+        return res.status(200).json({ data: { user } });
     } catch (error) {
         console.error(error);
         return res.status(500).json({ message: appConfig.ERROR_MESSAGES.InternalServerError });
     }
 };
-
 
 // Route to refresh access token using the refresh token
 export const getTokenController: RequestHandler = async (req, res) => {
@@ -195,6 +182,21 @@ export const changePasswordController: RequestHandler = async (req: any, res) =>
         await user.save();
 
         return res.json({ message: appConfig.STRINGS.PasswordChangeSuccessful });
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({ message: appConfig.ERROR_MESSAGES.InternalServerError });
+    }
+};
+
+export const logoutController: RequestHandler = async (req: any, res, next) => {
+
+    try {
+        const user = await User.findById(req.user.id);
+        if (!user) {
+            return res.status(401).json({ message: appConfig.ERROR_MESSAGES.InvalidCredentialsProvided });
+        }
+        res.clearCookie('creosToken')
+        return res.status(200).json({ message: 'Logged out successfully!' });
     } catch (error) {
         console.error(error);
         return res.status(500).json({ message: appConfig.ERROR_MESSAGES.InternalServerError });

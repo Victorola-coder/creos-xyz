@@ -2,6 +2,7 @@ import { RequestHandler } from 'express';
 import { verifyTransaction } from '../utils/common';
 import { verifyTxnByReference } from '../services';
 import { appConfig } from '../utils/constants';
+import { ChargeSuccessEvent } from '../interfaces/paystack';
 
 export const verifyTransactionController: RequestHandler = async (req, res) => {
     try {
@@ -14,7 +15,7 @@ export const verifyTransactionController: RequestHandler = async (req, res) => {
 }
 
 export const webhookController: RequestHandler = async (req, res) => {
-    const eventData = req.body;
+    const eventData: ChargeSuccessEvent = req.body;
     const signature = req.headers['x-paystack-signature'];
     console.log(eventData)
 

@@ -6,6 +6,7 @@ import connectDB from './mongodb/connect';
 import {
     authRouter,
     eventsRouter,
+    guestsRouter,
     submissionsRouter,
     transactionsRouter,
     userRouter
@@ -41,6 +42,9 @@ app.use('/api/v1/transactions', transactionsRouter);
 
 // Define events routes
 app.use('/api/v1/events', eventsRouter)
+
+// Define guests routes
+app.use('/api/v1/guests', guestsRouter)
 
 // 
 app.get('/', (req, res) => res.status(200).json({ message: 'Welcome to Creos Lab' }));

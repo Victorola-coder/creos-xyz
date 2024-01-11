@@ -4,7 +4,8 @@ export {
     getTokenController,
     forgotPasswordController,
     resetPasswordController,
-    changePasswordController
+    changePasswordController,
+    logoutController
 } from './auth.controllers'
 
 export {
@@ -35,5 +36,14 @@ export {
     singleEventController,
     updateEventController,
     deleteEventController,
-    usersEventsController
+    usersEventsController,
+    eventGuestsController
 } from './events.controllers'
+
+export {
+    allGuestsController,
+    singleGuestController,
+    updateGuestController,
+    deleteGuestController,
+    createGuestController
+} from './guests.controllers'
