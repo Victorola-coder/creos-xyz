@@ -9,6 +9,19 @@ import { appConfig } from '../utils/constants';
 
 // Register a new user
 export const registerController: RequestHandler = async (req, res) => {
+    const schema = Joi.object({
+        name: Joi.string().required(),
+        profession: Joi.string().required(),
+        email: Joi.string().required(),
+        password: Joi.string().required(),
+        avatar: Joi.string(),
+        gender: Joi.string().required(),
+        distinction: Joi.string().required(),
+        linkedInUrl: Joi.string().required()
+    });
+    const { error } = schema.validate(req.body);
+    if (error) return res.status(400).json({ message: error.details[0].message });
+
     const { name,
         profession,
         email,
@@ -18,7 +31,7 @@ export const registerController: RequestHandler = async (req, res) => {
         distinction,
         linkedInUrl } = req.body;
     try {
-        const existing = await User.findOne({ email });
+        const existing = await User.findOne({ email: email.toLowerCase() });
         if (existing) {
             return res.status(404).json({ message: appConfig.ERROR_MESSAGES.UserAlreadyExists });
         }
@@ -26,7 +39,7 @@ export const registerController: RequestHandler = async (req, res) => {
         const user = new User({
             name,
             profession,
-            email,
+            email: email.toLowerCase(),
             avatar,
             gender,
             distinction,
@@ -47,9 +60,16 @@ export const registerController: RequestHandler = async (req, res) => {
 
 // Login with an existing user
 export const loginController: RequestHandler = async (req, res, next) => {
+    const schema = Joi.object({
+        email: Joi.string().required(),
+        password: Joi.string().required(),
+    });
+    const { error } = schema.validate(req.body);
+    if (error) return res.status(400).json({ message: error.details[0].message });
+
     const { email, password } = req.body;
     try {
-        const user = await User.findOne({ email });
+        const user = await User.findOne({ email: email.toLowerCase() });
 
         if (!user) {
             return res.status(401).json({ message: appConfig.ERROR_MESSAGES.InvalidCredentialsProvided });
